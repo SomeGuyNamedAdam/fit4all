@@ -1,0 +1,4152 @@
+{
+    "bicycling": [
+        {
+            "code": "01003",
+            "value": 14.0,
+            "description": "bicycling, mountain, uphill, vigorous"
+        },
+        {
+            "code": "01004",
+            "value": 16.0,
+            "description": "bicycling, mountain, competitive, racing"
+        },
+        {
+            "code": "01008",
+            "value": 8.5,
+            "description": "bicycling, BMX"
+        },
+        {
+            "code": "01009",
+            "value": 8.5,
+            "description": "bicycling, mountain, general"
+        },
+        {
+            "code": "01010",
+            "value": 4.0,
+            "description": "bicycling, <10 mph, leisure, to work or for pleasure (Taylor Code 115)"
+        },
+        {
+            "code": "01011",
+            "value": 6.8,
+            "description": "bicycling, to/from work, self selected pace"
+        },
+        {
+            "code": "01013",
+            "value": 5.8,
+            "description": "bicycling, on dirt or farm road, moderate pace"
+        },
+        {
+            "code": "01015",
+            "value": 7.5,
+            "description": "bicycling, general"
+        },
+        {
+            "code": "01018",
+            "value": 3.5,
+            "description": "bicycling, leisure, 5.5 mph"
+        },
+        {
+            "code": "01019",
+            "value": 5.8,
+            "description": "bicycling, leisure, 9.4 mph"
+        },
+        {
+            "code": "01020",
+            "value": 6.8,
+            "description": "bicycling, 10-11.9 mph, leisure, slow, light effort"
+        },
+        {
+            "code": "01030",
+            "value": 8.0,
+            "description": "bicycling, 12-13.9 mph, leisure, moderate effort"
+        },
+        {
+            "code": "01040",
+            "value": 10.0,
+            "description": "bicycling, 14-15.9 mph, racing or leisure, fast, vigorous effort"
+        },
+        {
+            "code": "01050",
+            "value": 12.0,
+            "description": "bicycling, 16-19 mph, racing/not drafting or > 19 mph drafting, very fast, racing general"
+        },
+        {
+            "code": "01060",
+            "value": 15.8,
+            "description": "bicycling, > 20 mph, racing, not drafting"
+        },
+        {
+            "code": "01065",
+            "value": 8.5,
+            "description": "bicycling, 12 mph, seated, hands on brake hoods or bar drops, 80 rpm"
+        },
+        {
+            "code": "01066",
+            "value": 9.0,
+            "description": "bicycling, 12 mph, standing, hands on brake hoods, 60 rpm"
+        },
+        {
+            "code": "01070",
+            "value": 5.0,
+            "description": "unicycling"
+        }
+    ],
+    "conditioning": [
+        {
+            "code": "02001",
+            "value": 2.3,
+            "description": "exercise activity promoting video game (e.g., Wii Fit), light effort (e.g., balance, yoga)"
+        },
+        {
+            "code": "02003",
+            "value": 3.8,
+            "description": "exercise activity promoting video game (e.g., Wii Fit), moderate effort (e.g., aerobic, resistance)"
+        },
+        {
+            "code": "02005",
+            "value": 7.2,
+            "description": "exercise activity promoting video/arcade game (e.g., Exergaming, Dance Dance Revolution), vigorous effort"
+        },
+        {
+            "code": "02008",
+            "value": 5.0,
+            "description": "exercise army type obstacle course exercise, boot camp training program"
+        },
+        {
+            "code": "02010",
+            "value": 7.0,
+            "description": "exercise bicycling, stationary, general"
+        },
+        {
+            "code": "02011",
+            "value": 3.5,
+            "description": "exercise bicycling, stationary, 30-50 watts, very light to light effort"
+        },
+        {
+            "code": "02012",
+            "value": 6.8,
+            "description": "exercise bicycling, stationary, 90-100 watts, moderate to vigorous effort"
+        },
+        {
+            "code": "02013",
+            "value": 8.8,
+            "description": "exercise bicycling, stationary, 101-160 watts, vigorous effort"
+        },
+        {
+            "code": "02014",
+            "value": 11.0,
+            "description": "exercise bicycling, stationary, 161-200 watts, vigorous effort"
+        },
+        {
+            "code": "02015",
+            "value": 14.0,
+            "description": "exercise bicycling, stationary, 201-270 watts, very vigorous effort"
+        },
+        {
+            "code": "02017",
+            "value": 4.8,
+            "description": "exercise bicycling, stationary, 51-89 watts, light-to-moderate effort"
+        },
+        {
+            "code": "02019",
+            "value": 8.5,
+            "description": "exercise bicycling, stationary, RPM/Spin bike class"
+        },
+        {
+            "code": "02020",
+            "value": 8.0,
+            "description": "exercise calisthenics (e.g., push ups, sit ups, pull-ups, jumping jacks), vigorous effort"
+        },
+        {
+            "code": "02022",
+            "value": 3.8,
+            "description": "exercise calisthenics (e.g., push ups, sit ups, pull-ups, lunges), moderate effort"
+        },
+        {
+            "code": "02024",
+            "value": 2.8,
+            "description": "exercise calisthenics (e.g., situps, abdominal crunches), light effort"
+        },
+        {
+            "code": "02030",
+            "value": 3.5,
+            "description": "exercise calisthenics, light or moderate effort, general (e.g., back exercises), going up & down from floor (Taylor Code 150)"
+        },
+        {
+            "code": "02035",
+            "value": 4.3,
+            "description": "exercise circuit training, moderate effort"
+        },
+        {
+            "code": "02040",
+            "value": 8.0,
+            "description": "exercise circuit training, including kettlebells, some aerobic movement with minimal rest, general, vigorous intensity"
+        },
+        {
+            "code": "02045",
+            "value": 3.5,
+            "description": "exercise CurvesTM exercise routines in women"
+        },
+        {
+            "code": "02048",
+            "value": 5.0,
+            "description": "exercise Elliptical trainer, moderate effort"
+        },
+        {
+            "code": "02050",
+            "value": 6.0,
+            "description": "exercise resistance training (weight lifting, free weight, nautilus or universal), power lifting or body building, vigorous effort (Taylor Code 210)"
+        },
+        {
+            "code": "02052",
+            "value": 5.0,
+            "description": "exercise resistance (weight) training, squats , slow or explosive effort"
+        },
+        {
+            "code": "02054",
+            "value": 3.5,
+            "description": "exercise resistance (weight) training, multiple exercises, 8-15 repetitions at varied resistance"
+        },
+        {
+            "code": "02060",
+            "value": 5.5,
+            "description": "exercise health club exercise, general (Taylor Code 160)"
+        },
+        {
+            "code": "02061",
+            "value": 5.0,
+            "description": "exercise health club exercise classes, general, gym/weight training combined in one visit"
+        },
+        {
+            "code": "02062",
+            "value": 7.8,
+            "description": "exercise health club exercise, conditioning classes"
+        },
+        {
+            "code": "02064",
+            "value": 3.8,
+            "description": "exercise home exercise, general"
+        },
+        {
+            "code": "02065",
+            "value": 9.0,
+            "description": "exercise stair-treadmill ergometer, general"
+        },
+        {
+            "code": "02068",
+            "value": 12.3,
+            "description": "exercise rope skipping, general"
+        },
+        {
+            "code": "02070",
+            "value": 6.0,
+            "description": "exercise rowing, stationary ergometer, general, vigorous effort"
+        },
+        {
+            "code": "02071",
+            "value": 4.8,
+            "description": "exercise rowing, stationary, general, moderate effort"
+        },
+        {
+            "code": "02072",
+            "value": 7.0,
+            "description": "exercise rowing, stationary, 100 watts, moderate effort"
+        },
+        {
+            "code": "02073",
+            "value": 8.5,
+            "description": "exercise rowing, stationary, 150 watts, vigorous effort"
+        },
+        {
+            "code": "02074",
+            "value": 12.0,
+            "description": "exercise rowing, stationary, 200 watts, very vigorous effort"
+        },
+        {
+            "code": "02080",
+            "value": 6.8,
+            "description": "exercise ski machine, general"
+        },
+        {
+            "code": "02085",
+            "value": 11.0,
+            "description": "exercise slide board exercise, general"
+        },
+        {
+            "code": "02090",
+            "value": 6.0,
+            "description": "exercise slimnastics, jazzercise"
+        },
+        {
+            "code": "02101",
+            "value": 2.3,
+            "description": "exercise stretching, mild"
+        },
+        {
+            "code": "02105",
+            "value": 3.0,
+            "description": "exercise pilates, general"
+        },
+        {
+            "code": "02110",
+            "value": 6.8,
+            "description": "exercise teaching exercise class (e.g., aerobic, water)"
+        },
+        {
+            "code": "02112",
+            "value": 2.8,
+            "description": "exercise therapeutic exercise ball, Fitball exercise"
+        },
+        {
+            "code": "02115",
+            "value": 2.8,
+            "description": "exercise upper body exercise, arm ergometer"
+        },
+        {
+            "code": "02117",
+            "value": 4.3,
+            "description": "exercise upper body exercise, stationary bicycle - Airdyne (arms only) 40 rpm, moderate"
+        },
+        {
+            "code": "02120",
+            "value": 5.3,
+            "description": "exercise water aerobics, water calisthenics, water exercise"
+        },
+        {
+            "code": "02135",
+            "value": 1.3,
+            "description": "exercise whirlpool, sitting"
+        },
+        {
+            "code": "02140",
+            "value": 2.3,
+            "description": "exercise video exercise workouts, TV conditioning programs (e.g., yoga, stretching), light effort"
+        },
+        {
+            "code": "02143",
+            "value": 4.0,
+            "description": "exercise video exercise workouts, TV conditioning programs (e.g., cardio-resistance), moderate effort"
+        },
+        {
+            "code": "02146",
+            "value": 6.0,
+            "description": "exercise video exercise workouts, TV conditioning programs (e.g., cardio-resistance), vigorous effort"
+        },
+        {
+            "code": "02150",
+            "value": 2.5,
+            "description": "exercise yoga, Hatha"
+        },
+        {
+            "code": "02160",
+            "value": 4.0,
+            "description": "exercise yoga, Power"
+        },
+        {
+            "code": "02170",
+            "value": 2.0,
+            "description": "exercise yoga, Nadisodhana"
+        },
+        {
+            "code": "02180",
+            "value": 3.3,
+            "description": "exercise yoga, Surya Namaskar"
+        },
+        {
+            "code": "02200",
+            "value": 5.3,
+            "description": "exercise native New Zealander physical activities (e.g., Haka Powhiri, Moteatea, Waita Tira, Whakawatea, etc.), general, moderate effort"
+        },
+        {
+            "code": "02205",
+            "value": 6.8,
+            "description": "exercise native New Zealander physical activities (e.g., Haka, Taiahab), general, vigorous effort"
+        }
+    ],
+    "dancing": [
+        {
+            "code": "03010",
+            "value": 5.0,
+            "description": "ballet, modern, or jazz, general, rehearsal or class"
+        },
+        {
+            "code": "03012",
+            "value": 6.8,
+            "description": "ballet, modern, or jazz, performance, vigorous effort"
+        },
+        {
+            "code": "03014",
+            "value": 4.8,
+            "description": "tap"
+        },
+        {
+            "code": "03015",
+            "value": 7.3,
+            "description": "aerobic, general"
+        },
+        {
+            "code": "03016",
+            "value": 7.5,
+            "description": "aerobic, step, with 6 - 8 inch step"
+        },
+        {
+            "code": "03017",
+            "value": 9.5,
+            "description": "aerobic, step, with 10 - 12 inch step"
+        },
+        {
+            "code": "03018",
+            "value": 5.5,
+            "description": "aerobic, step, with 4-inch step"
+        },
+        {
+            "code": "03019",
+            "value": 8.5,
+            "description": "bench step class, general"
+        },
+        {
+            "code": "03020",
+            "value": 5.0,
+            "description": "aerobic, low impact"
+        },
+        {
+            "code": "03021",
+            "value": 7.3,
+            "description": "aerobic, high impact"
+        },
+        {
+            "code": "03022",
+            "value": 10.0,
+            "description": "aerobic dance wearing 10-15 lb weights"
+        },
+        {
+            "code": "03025",
+            "value": 4.5,
+            "description": "ethnic or cultural dancing (e.g., Greek, Middle Eastern, hula, salsa, merengue, bamba y plena, flamenco, belly, and swing)"
+        },
+        {
+            "code": "03030",
+            "value": 5.5,
+            "description": "ballroom, fast (Taylor Code 125)"
+        },
+        {
+            "code": "03031",
+            "value": 7.8,
+            "description": "general dancing (e.g., disco, folk, Irish step dancing, line dancing, polka, contra, country)"
+        },
+        {
+            "code": "03038",
+            "value": 11.3,
+            "description": "ballroom dancing, competitive, general"
+        },
+        {
+            "code": "03040",
+            "value": 3.0,
+            "description": "ballroom, slow (e.g., waltz, foxtrot, slow dancing, samba, tango, 19th century dance, mambo, cha cha)"
+        },
+        {
+            "code": "03050",
+            "value": 5.5,
+            "description": "Anishinaabe Jingle Dancing"
+        },
+        {
+            "code": "03060",
+            "value": 3.5,
+            "description": "Caribbean dance (Abakua, Beguine, Bellair, Bongo, Brukin's, Caribbean Quadrills, Dinki Mini, Gere, Gumbay, Ibo, Jonkonnu, Kumina, Oreisha, Jambu)"
+        }
+    ],
+    "fishing": [
+        {
+            "code": "04001",
+            "value": 3.5,
+            "description": "and hunting fishing, general"
+        },
+        {
+            "code": "04005",
+            "value": 4.5,
+            "description": "and hunting fishing, crab fishing"
+        },
+        {
+            "code": "04007",
+            "value": 4.0,
+            "description": "and hunting fishing, catching fish with hands"
+        },
+        {
+            "code": "04010",
+            "value": 4.3,
+            "description": "and hunting fishing related, digging worms, with shovel"
+        },
+        {
+            "code": "04020",
+            "value": 4.0,
+            "description": "and hunting fishing from river bank and walking"
+        },
+        {
+            "code": "04030",
+            "value": 2.0,
+            "description": "and hunting fishing from boat or canoe, sitting"
+        },
+        {
+            "code": "04040",
+            "value": 3.5,
+            "description": "and hunting fishing from river bank, standing (Taylor Code 660)"
+        },
+        {
+            "code": "04050",
+            "value": 6.0,
+            "description": "and hunting fishing in stream, in waders (Taylor Code 670)"
+        },
+        {
+            "code": "04060",
+            "value": 2.0,
+            "description": "and hunting fishing, ice, sitting"
+        },
+        {
+            "code": "04061",
+            "value": 1.8,
+            "description": "and hunting fishing, jog or line, standing, general"
+        },
+        {
+            "code": "04062",
+            "value": 3.5,
+            "description": "and hunting fishing, dip net, setting net and retrieving fish, general"
+        },
+        {
+            "code": "04063",
+            "value": 3.8,
+            "description": "and hunting fishing, set net, setting net and retrieving fish, general"
+        },
+        {
+            "code": "04064",
+            "value": 3.0,
+            "description": "and hunting fishing, fishing wheel, setting net and retrieving fish, general"
+        },
+        {
+            "code": "04065",
+            "value": 2.3,
+            "description": "and hunting fishing with a spear, standing"
+        },
+        {
+            "code": "04070",
+            "value": 2.5,
+            "description": "and hunting hunting, bow and arrow, or crossbow"
+        },
+        {
+            "code": "04080",
+            "value": 6.0,
+            "description": "and hunting hunting, deer, elk, large game (Taylor Code 170)"
+        },
+        {
+            "code": "04081",
+            "value": 11.3,
+            "description": "and hunting hunting large game, dragging carcass"
+        },
+        {
+            "code": "04083",
+            "value": 4.0,
+            "description": "and hunting hunting large marine animals"
+        },
+        {
+            "code": "04085",
+            "value": 2.5,
+            "description": "and hunting hunting large game, from a hunting stand, limited walking"
+        },
+        {
+            "code": "04086",
+            "value": 2.0,
+            "description": "and hunting hunting large game from a car, plane, or boat"
+        },
+        {
+            "code": "04090",
+            "value": 2.5,
+            "description": "and hunting hunting, duck, wading"
+        },
+        {
+            "code": "04095",
+            "value": 3.0,
+            "description": "and hunting hunting, flying fox, squirrel"
+        },
+        {
+            "code": "04100",
+            "value": 5.0,
+            "description": "and hunting hunting, general"
+        },
+        {
+            "code": "04110",
+            "value": 6.0,
+            "description": "and hunting hunting, pheasants or grouse (Taylor Code 680)"
+        },
+        {
+            "code": "04115",
+            "value": 3.3,
+            "description": "and hunting hunting, birds"
+        },
+        {
+            "code": "04120",
+            "value": 5.0,
+            "description": "and hunting hunting, rabbit, squirrel, prairie chick, raccoon, small game (Taylor Code 690)"
+        },
+        {
+            "code": "04123",
+            "value": 3.3,
+            "description": "and hunting hunting, pigs, wild"
+        },
+        {
+            "code": "04124",
+            "value": 2.0,
+            "description": "and hunting trapping game, general"
+        },
+        {
+            "code": "04125",
+            "value": 9.5,
+            "description": "and hunting hunting, hiking with hunting gear"
+        },
+        {
+            "code": "04130",
+            "value": 2.5,
+            "description": "and hunting pistol shooting or trap shooting, standing"
+        },
+        {
+            "code": "04140",
+            "value": 2.3,
+            "description": "and hunting rifle exercises, shooting, lying down"
+        },
+        {
+            "code": "04145",
+            "value": 2.5,
+            "description": "and hunting rifle exercises, shooting, kneeling or standing"
+        }
+    ],
+    "home": [
+        {
+            "code": "05010",
+            "value": 3.3,
+            "description": "activities cleaning, sweeping carpet or floors, general"
+        },
+        {
+            "code": "05011",
+            "value": 2.3,
+            "description": "activities cleaning, sweeping, slow, light effort"
+        },
+        {
+            "code": "05012",
+            "value": 3.8,
+            "description": "activities cleaning, sweeping, slow, moderate effort"
+        },
+        {
+            "code": "05020",
+            "value": 3.5,
+            "description": "activities cleaning, heavy or major (e.g. wash car, wash windows, clean garage), moderate effort"
+        },
+        {
+            "code": "05021",
+            "value": 3.5,
+            "description": "activities cleaning, mopping, standing, moderate effort"
+        },
+        {
+            "code": "05022",
+            "value": 3.2,
+            "description": "activities cleaning windows, washing windows, general"
+        },
+        {
+            "code": "05023",
+            "value": 2.5,
+            "description": "activities mopping, standing, light effort"
+        },
+        {
+            "code": "05024",
+            "value": 4.5,
+            "description": "activities polishing floors, standing, walking slowly, using electric polishing machine"
+        },
+        {
+            "code": "05025",
+            "value": 2.8,
+            "description": "activities multiple household tasks all at once, light effort"
+        },
+        {
+            "code": "05026",
+            "value": 3.5,
+            "description": "activities multiple household tasks all at once, moderate effort"
+        },
+        {
+            "code": "05027",
+            "value": 4.3,
+            "description": "activities multiple household tasks all at once, vigorous effort"
+        },
+        {
+            "code": "05030",
+            "value": 3.3,
+            "description": "activities cleaning, house or cabin, general, moderate effort"
+        },
+        {
+            "code": "05032",
+            "value": 2.3,
+            "description": "activities dusting or polishing furniture, general"
+        },
+        {
+            "code": "05035",
+            "value": 3.3,
+            "description": "activities kitchen activity, general, (e.g., cooking, washing dishes, cleaning up), moderate effort"
+        },
+        {
+            "code": "05040",
+            "value": 2.5,
+            "description": "activities cleaning, general (straightening up, changing linen, carrying out trash, light effort"
+        },
+        {
+            "code": "05041",
+            "value": 1.8,
+            "description": "activities wash dishes, standing or in general (not broken into stand/walk components)"
+        },
+        {
+            "code": "05042",
+            "value": 2.5,
+            "description": "activities wash dishes, clearing dishes from table, walking, light effort"
+        },
+        {
+            "code": "05043",
+            "value": 3.3,
+            "description": "activities vacuuming, general, moderate effort"
+        },
+        {
+            "code": "05044",
+            "value": 3.0,
+            "description": "activities butchering animals, small"
+        },
+        {
+            "code": "05045",
+            "value": 6.0,
+            "description": "activities butchering animal, large, vigorous effort"
+        },
+        {
+            "code": "05046",
+            "value": 2.3,
+            "description": "activities cutting and smoking fish, drying fish or meat"
+        },
+        {
+            "code": "05048",
+            "value": 4.0,
+            "description": "activities tanning hides, general"
+        },
+        {
+            "code": "05049",
+            "value": 3.5,
+            "description": "activities cooking or food preparation, moderate effort"
+        },
+        {
+            "code": "05050",
+            "value": 2.0,
+            "description": "activities cooking or food preparation - standing or sitting or in general (not broken into stand/walk components), manual appliances, light effort"
+        },
+        {
+            "code": "05051",
+            "value": 2.5,
+            "description": "activities serving food, setting table, implied walking or standing"
+        },
+        {
+            "code": "05052",
+            "value": 2.5,
+            "description": "activities cooking or food preparation, walking"
+        },
+        {
+            "code": "05053",
+            "value": 2.5,
+            "description": "activities feeding household animals"
+        },
+        {
+            "code": "05055",
+            "value": 2.5,
+            "description": "activities putting away groceries (e.g. carrying groceries, shopping without a grocery cart), carrying packages"
+        },
+        {
+            "code": "05056",
+            "value": 7.5,
+            "description": "activities carrying groceries upstairs"
+        },
+        {
+            "code": "05057",
+            "value": 3.0,
+            "description": "activities cooking Indian bread on an outside stove"
+        },
+        {
+            "code": "05060",
+            "value": 2.3,
+            "description": "activities food shopping with or without a grocery cart, standing or walking"
+        },
+        {
+            "code": "05065",
+            "value": 2.3,
+            "description": "activities non-food shopping, with or without a cart, standing or walking"
+        },
+        {
+            "code": "05070",
+            "value": 1.8,
+            "description": "activities ironing"
+        },
+        {
+            "code": "05080",
+            "value": 1.3,
+            "description": "activities knitting, sewing, light effort, wrapping presents, sitting"
+        },
+        {
+            "code": "05082",
+            "value": 2.8,
+            "description": "activities sewing with a machine"
+        },
+        {
+            "code": "05090",
+            "value": 2.0,
+            "description": "activities laundry, fold or hang clothes, put clothes in washer or dryer, packing suitcase, washing clothes by hand, implied standing, light effort"
+        },
+        {
+            "code": "05092",
+            "value": 4.0,
+            "description": "activities laundry, hanging wash, washing clothes by hand, moderate effort"
+        },
+        {
+            "code": "05095",
+            "value": 2.3,
+            "description": "activities laundry, putting away clothes, gathering clothes to pack, putting away laundry, implied walking"
+        },
+        {
+            "code": "05100",
+            "value": 3.3,
+            "description": "activities making bed, changing linens"
+        },
+        {
+            "code": "05110",
+            "value": 5.0,
+            "description": "activities maple syruping/sugar bushing (including carrying buckets, carrying wood)"
+        },
+        {
+            "code": "05120",
+            "value": 5.8,
+            "description": "activities moving furniture, household items, carrying boxes"
+        },
+        {
+            "code": "05121",
+            "value": 5.0,
+            "description": "activities moving, lifting light loads"
+        },
+        {
+            "code": "05125",
+            "value": 4.8,
+            "description": "activities organizing room"
+        },
+        {
+            "code": "05130",
+            "value": 3.5,
+            "description": "activities scrubbing floors, on hands and knees, scrubbing bathroom, bathtub, moderate effort"
+        },
+        {
+            "code": "05131",
+            "value": 2.0,
+            "description": "activities scrubbing floors, on hands and knees, scrubbing bathroom, bathtub, light effort"
+        },
+        {
+            "code": "05132",
+            "value": 6.5,
+            "description": "activities scrubbing floors, on hands and knees, scrubbing bathroom, bathtub, vigorous effort"
+        },
+        {
+            "code": "05140",
+            "value": 4.0,
+            "description": "activities sweeping garage, sidewalk or outside of house"
+        },
+        {
+            "code": "05146",
+            "value": 3.5,
+            "description": "activities standing, packing/unpacking boxes, occasional lifting of lightweight household items, loading or unloading items in car, moderate effort"
+        },
+        {
+            "code": "05147",
+            "value": 3.0,
+            "description": "activities implied walking, putting away household items, moderate effort"
+        },
+        {
+            "code": "05148",
+            "value": 2.5,
+            "description": "activities watering plants"
+        },
+        {
+            "code": "05149",
+            "value": 2.5,
+            "description": "activities building a fire inside"
+        },
+        {
+            "code": "05150",
+            "value": 9.0,
+            "description": "activities moving household items upstairs, carrying boxes or furniture"
+        },
+        {
+            "code": "05160",
+            "value": 2.0,
+            "description": "activities standing, light effort tasks (pump gas, change light bulb, etc.)"
+        },
+        {
+            "code": "05165",
+            "value": 3.5,
+            "description": "activities walking, moderate effort tasks, non-cleaning (readying to leave, shut/lock doors, close windows, etc.)"
+        },
+        {
+            "code": "05170",
+            "value": 2.2,
+            "description": "activities sitting, playing with child(ren), light effort, only active periods"
+        },
+        {
+            "code": "05171",
+            "value": 2.8,
+            "description": "activities standing, playing with child(ren) light effort, only active periods"
+        },
+        {
+            "code": "05175",
+            "value": 3.5,
+            "description": "activities walking/running, playing with child(ren), moderate effort, only active periods"
+        },
+        {
+            "code": "05180",
+            "value": 5.8,
+            "description": "activities walking/running, playing with child(ren), vigorous effort, only active periods"
+        },
+        {
+            "code": "05181",
+            "value": 3.0,
+            "description": "activities walking and carrying small child, child weighing 15 lbs or more"
+        },
+        {
+            "code": "05182",
+            "value": 2.3,
+            "description": "activities walking and carrying small child, child weighing less than 15 lbs"
+        },
+        {
+            "code": "05183",
+            "value": 2.0,
+            "description": "activities standing, holding child"
+        },
+        {
+            "code": "05184",
+            "value": 2.5,
+            "description": "activities child care, infant, general"
+        },
+        {
+            "code": "05185",
+            "value": 2.0,
+            "description": "activities child care, sitting/kneeling (e.g., dressing, bathing, grooming, feeding, occasional lifting of child), light effort, general"
+        },
+        {
+            "code": "05186",
+            "value": 3.0,
+            "description": "activities child care, standing (e.g., dressing, bathing, grooming, feeding, occasional lifting of child), moderate effort"
+        },
+        {
+            "code": "05188",
+            "value": 1.5,
+            "description": "activities reclining with baby"
+        },
+        {
+            "code": "05189",
+            "value": 2.0,
+            "description": "activities breastfeeding, sitting or reclining"
+        },
+        {
+            "code": "05190",
+            "value": 2.5,
+            "description": "activities sit, playing with animals, light effort, only active periods"
+        },
+        {
+            "code": "05191",
+            "value": 2.8,
+            "description": "activities stand, playing with animals, light effort, only active periods"
+        },
+        {
+            "code": "05192",
+            "value": 3.0,
+            "description": "activities walk/run, playing with animals, general, light effort, only active periods"
+        },
+        {
+            "code": "05193",
+            "value": 4.0,
+            "description": "activities walk/run, playing with animals, moderate effort, only active periods"
+        },
+        {
+            "code": "05194",
+            "value": 5.0,
+            "description": "activities walk/run, playing with animals, vigorous effort, only active periods"
+        },
+        {
+            "code": "05195",
+            "value": 3.5,
+            "description": "activities standing, bathing dog"
+        },
+        {
+            "code": "05197",
+            "value": 2.3,
+            "description": "activities animal care, household animals, general"
+        },
+        {
+            "code": "05200",
+            "value": 4.0,
+            "description": "activities elder care, disabled adult, bathing, dressing, moving into and out of bed, only active periods"
+        },
+        {
+            "code": "05205",
+            "value": 2.3,
+            "description": "activities elder care, disabled adult, feeding, combing hair, light effort, only active periods"
+        },
+        {
+            "code": "06010",
+            "value": 3.0,
+            "description": "repair airplane repair"
+        },
+        {
+            "code": "06020",
+            "value": 4.0,
+            "description": "repair automobile body work"
+        },
+        {
+            "code": "06030",
+            "value": 3.3,
+            "description": "repair automobile repair, light or moderate effort"
+        },
+        {
+            "code": "06040",
+            "value": 3.0,
+            "description": "repair carpentry, general, workshop (Taylor Code 620)"
+        },
+        {
+            "code": "06050",
+            "value": 6.0,
+            "description": "repair carpentry, outside house, installing rain gutters (Taylor Code 640),carpentry, outside house, building a fence"
+        },
+        {
+            "code": "06052",
+            "value": 3.8,
+            "description": "repair carpentry, outside house, building a fence"
+        },
+        {
+            "code": "06060",
+            "value": 3.3,
+            "description": "repair carpentry, finishing or refinishing cabinets or furniture"
+        },
+        {
+            "code": "06070",
+            "value": 6.0,
+            "description": "repair carpentry, sawing hardwood"
+        },
+        {
+            "code": "06072",
+            "value": 4.0,
+            "description": "repair carpentry, home remodeling tasks, moderate effort"
+        },
+        {
+            "code": "06074",
+            "value": 2.3,
+            "description": "repair carpentry, home remodeling tasks, light effort"
+        },
+        {
+            "code": "06080",
+            "value": 5.0,
+            "description": "repair caulking, chinking log cabin"
+        },
+        {
+            "code": "06090",
+            "value": 4.5,
+            "description": "repair caulking, except log cabin"
+        },
+        {
+            "code": "06100",
+            "value": 5.0,
+            "description": "repair cleaning gutters"
+        },
+        {
+            "code": "06110",
+            "value": 5.0,
+            "description": "repair excavating garage"
+        },
+        {
+            "code": "06120",
+            "value": 5.0,
+            "description": "repair hanging storm windows"
+        },
+        {
+            "code": "06122",
+            "value": 5.0,
+            "description": "repair hanging sheet rock inside house"
+        },
+        {
+            "code": "06124",
+            "value": 3.0,
+            "description": "repair hammering nails"
+        },
+        {
+            "code": "06126",
+            "value": 2.5,
+            "description": "repair home repair, general, light effort"
+        },
+        {
+            "code": "06127",
+            "value": 4.5,
+            "description": "repair home repair, general, moderate effort"
+        },
+        {
+            "code": "06128",
+            "value": 6.0,
+            "description": "repair home repair, general, vigorous effort"
+        },
+        {
+            "code": "06130",
+            "value": 4.5,
+            "description": "repair laying or removing carpet"
+        },
+        {
+            "code": "06140",
+            "value": 3.8,
+            "description": "repair laying tile or linoleum,repairing appliances"
+        },
+        {
+            "code": "06144",
+            "value": 3.0,
+            "description": "repair repairing appliances"
+        },
+        {
+            "code": "06150",
+            "value": 5.0,
+            "description": "repair painting, outside home (Taylor Code 650)"
+        },
+        {
+            "code": "06160",
+            "value": 3.3,
+            "description": "repair painting inside house,wallpapering, scraping paint"
+        },
+        {
+            "code": "06165",
+            "value": 4.5,
+            "description": "repair painting, (Taylor Code 630)"
+        },
+        {
+            "code": "06167",
+            "value": 3.0,
+            "description": "repair plumbing, general"
+        },
+        {
+            "code": "06170",
+            "value": 3.0,
+            "description": "repair put on and removal of tarp - sailboat"
+        },
+        {
+            "code": "06180",
+            "value": 6.0,
+            "description": "repair roofing"
+        },
+        {
+            "code": "06190",
+            "value": 4.5,
+            "description": "repair sanding floors with a power sander"
+        },
+        {
+            "code": "06200",
+            "value": 4.5,
+            "description": "repair scraping and painting sailboat or powerboat"
+        },
+        {
+            "code": "06205",
+            "value": 2.0,
+            "description": "repair sharpening tools"
+        },
+        {
+            "code": "06210",
+            "value": 5.0,
+            "description": "repair spreading dirt with a shovel"
+        },
+        {
+            "code": "06220",
+            "value": 4.5,
+            "description": "repair washing and waxing hull of sailboat or airplane"
+        },
+        {
+            "code": "06225",
+            "value": 2.0,
+            "description": "repair washing and waxing car"
+        },
+        {
+            "code": "06230",
+            "value": 4.5,
+            "description": "repair washing fence, painting fence, moderate effort"
+        },
+        {
+            "code": "06240",
+            "value": 3.3,
+            "description": "repair wiring, tapping-splicing"
+        }
+    ],
+    "inactivity": [
+        {
+            "code": "07010",
+            "value": 1.0,
+            "description": "quiet/light lying quietly and watching television"
+        },
+        {
+            "code": "07011",
+            "value": 1.3,
+            "description": "quiet/light lying quietly, doing nothing, lying in bed awake, listening to music (not talking or reading)"
+        },
+        {
+            "code": "07020",
+            "value": 1.3,
+            "description": "quiet/light sitting quietly and watching television"
+        },
+        {
+            "code": "07021",
+            "value": 1.3,
+            "description": "quiet/light sitting quietly, general"
+        },
+        {
+            "code": "07022",
+            "value": 1.5,
+            "description": "quiet/light sitting quietly, fidgeting, general, fidgeting hands"
+        },
+        {
+            "code": "07023",
+            "value": 1.8,
+            "description": "quiet/light sitting, fidgeting feet"
+        },
+        {
+            "code": "07024",
+            "value": 1.3,
+            "description": "quiet/light sitting, smoking"
+        },
+        {
+            "code": "07025",
+            "value": 1.5,
+            "description": "quiet/light sitting, listening to music (not talking or reading) or watching a movie in a theater"
+        },
+        {
+            "code": "07026",
+            "value": 1.3,
+            "description": "quiet/light sitting at a desk, resting head in hands"
+        },
+        {
+            "code": "07030",
+            "value": 0.95,
+            "description": "quiet/light sleeping"
+        },
+        {
+            "code": "07040",
+            "value": 1.3,
+            "description": "quiet/light standing quietly, standing in a line"
+        },
+        {
+            "code": "07041",
+            "value": 1.8,
+            "description": "quiet/light standing, fidgeting"
+        },
+        {
+            "code": "07050",
+            "value": 1.3,
+            "description": "quiet/light reclining, writing"
+        },
+        {
+            "code": "07060",
+            "value": 1.3,
+            "description": "quiet/light reclining, talking or talking on phone"
+        },
+        {
+            "code": "07070",
+            "value": 1.3,
+            "description": "quiet/light reclining, reading"
+        },
+        {
+            "code": "07075",
+            "value": 1.0,
+            "description": "quiet/light meditating"
+        }
+    ],
+    "lawn": [
+        {
+            "code": "08009",
+            "value": 3.3,
+            "description": "and garden carrying, loading or stacking wood, loading/unloading or carrying lumber, light-to-moderate effort"
+        },
+        {
+            "code": "08010",
+            "value": 5.5,
+            "description": "and garden carrying, loading or stacking wood, loading/unloading or carrying lumber"
+        },
+        {
+            "code": "08019",
+            "value": 4.5,
+            "description": "and garden chopping wood, splitting logs, moderate effort"
+        },
+        {
+            "code": "08020",
+            "value": 6.3,
+            "description": "and garden chopping wood, splitting logs, vigorous effort"
+        },
+        {
+            "code": "08025",
+            "value": 3.5,
+            "description": "and garden clearing light brush, thinning garden, moderate effort"
+        },
+        {
+            "code": "08030",
+            "value": 6.3,
+            "description": "and garden clearing brush/land, undergrowth, or ground, hauling branches, wheelbarrow chores, vigorous effort"
+        },
+        {
+            "code": "08040",
+            "value": 5.0,
+            "description": "and garden digging sandbox, shoveling sand"
+        },
+        {
+            "code": "08045",
+            "value": 3.5,
+            "description": "and garden digging, spading, filling garden, composting, light-to-moderate effort"
+        },
+        {
+            "code": "08050",
+            "value": 5.0,
+            "description": "and garden digging, spading, filling garden, compositing, (Taylor Code 590)"
+        },
+        {
+            "code": "08052",
+            "value": 7.8,
+            "description": "and garden digging, spading, filling garden, composting, vigorous effort"
+        },
+        {
+            "code": "08055",
+            "value": 2.8,
+            "description": "and garden driving tractor"
+        },
+        {
+            "code": "08057",
+            "value": 8.3,
+            "description": "and garden felling trees, large size"
+        },
+        {
+            "code": "08058",
+            "value": 5.3,
+            "description": "and garden felling trees, small-medium size"
+        },
+        {
+            "code": "08060",
+            "value": 5.8,
+            "description": "and garden gardening with heavy power tools, tilling a garden, chain saw"
+        },
+        {
+            "code": "08065",
+            "value": 2.3,
+            "description": "and garden gardening, using containers, older adults > 60 years"
+        },
+        {
+            "code": "08070",
+            "value": 4.0,
+            "description": "and garden irrigation channels, opening and closing ports"
+        },
+        {
+            "code": "08080",
+            "value": 6.3,
+            "description": "and garden laying crushed rock"
+        },
+        {
+            "code": "08090",
+            "value": 5.0,
+            "description": "and garden laying sod"
+        },
+        {
+            "code": "08095",
+            "value": 5.5,
+            "description": "and garden mowing lawn, general"
+        },
+        {
+            "code": "08100",
+            "value": 2.5,
+            "description": "and garden mowing lawn, riding mower (Taylor Code 550)"
+        },
+        {
+            "code": "08110",
+            "value": 6.0,
+            "description": "and garden mowing lawn, walk, hand mower (Taylor Code 570)"
+        },
+        {
+            "code": "08120",
+            "value": 5.0,
+            "description": "and garden mowing lawn, walk, power mower, moderate or vigorous effort"
+        },
+        {
+            "code": "08125",
+            "value": 4.5,
+            "description": "and garden mowing lawn, power mower, light or moderate effort (Taylor Code 590)"
+        },
+        {
+            "code": "08130",
+            "value": 2.5,
+            "description": "and garden operating snow blower, walking"
+        },
+        {
+            "code": "08135",
+            "value": 2.0,
+            "description": "and garden planting, potting, transplanting seedlings or plants, light effort"
+        },
+        {
+            "code": "08140",
+            "value": 4.3,
+            "description": "and garden planting seedlings, shrub, stooping, moderate effort"
+        },
+        {
+            "code": "08145",
+            "value": 4.3,
+            "description": "and garden planting crops or garden, stooping, moderate effort"
+        },
+        {
+            "code": "08150",
+            "value": 4.5,
+            "description": "and garden planting trees"
+        },
+        {
+            "code": "08160",
+            "value": 3.8,
+            "description": "and garden raking lawn or leaves, moderate effort"
+        },
+        {
+            "code": "08165",
+            "value": 4.0,
+            "description": "and garden raking lawn (Taylor Code 600)"
+        },
+        {
+            "code": "08170",
+            "value": 4.0,
+            "description": "and garden raking roof with snow rake"
+        },
+        {
+            "code": "08180",
+            "value": 3.0,
+            "description": "and garden riding snow blower"
+        },
+        {
+            "code": "08190",
+            "value": 4.0,
+            "description": "and garden sacking grass, leaves"
+        },
+        {
+            "code": "08192",
+            "value": 5.5,
+            "description": "and garden shoveling dirt or mud"
+        },
+        {
+            "code": "08195",
+            "value": 5.3,
+            "description": "and garden shoveling snow, by hand, moderate effort"
+        },
+        {
+            "code": "08200",
+            "value": 6.0,
+            "description": "and garden shovelling snow, by hand (Taylor Code 610)"
+        },
+        {
+            "code": "08202",
+            "value": 7.5,
+            "description": "and garden shoveling snow, by hand, vigorous effort"
+        },
+        {
+            "code": "08210",
+            "value": 4.0,
+            "description": "and garden trimming shrubs or trees, manual cutter"
+        },
+        {
+            "code": "08215",
+            "value": 3.5,
+            "description": "and garden trimming shrubs or trees, power cutter, using leaf blower, edge, moderate effort"
+        },
+        {
+            "code": "08220",
+            "value": 3.0,
+            "description": "and garden walking, applying fertilizer or seeding a lawn, push applicator"
+        },
+        {
+            "code": "08230",
+            "value": 1.5,
+            "description": "and garden watering lawn or garden, standing or walking"
+        },
+        {
+            "code": "08239",
+            "value": 3.5,
+            "description": "and garden weeding, cultivating garden, light-to-moderate effort"
+        },
+        {
+            "code": "08240",
+            "value": 4.5,
+            "description": "and garden weeding, cultivating garden (Taylor Code 580)"
+        },
+        {
+            "code": "08241",
+            "value": 5.0,
+            "description": "and garden weeding, cultivating garden, using a hoe, moderate-to-vigorous effort"
+        },
+        {
+            "code": "08245",
+            "value": 3.8,
+            "description": "and garden gardening, general, moderate effort"
+        },
+        {
+            "code": "08246",
+            "value": 3.5,
+            "description": "and garden picking fruit off trees, picking fruits/vegetables, moderate effort"
+        },
+        {
+            "code": "08248",
+            "value": 4.5,
+            "description": "and garden picking fruit off trees, gleaning fruits, picking fruits/vegetables, climbing ladder to pick fruit, vigorous effort"
+        },
+        {
+            "code": "08250",
+            "value": 3.3,
+            "description": "and garden implied walking/standing - picking up yard, light, picking flowers or vegetables"
+        },
+        {
+            "code": "08251",
+            "value": 3.0,
+            "description": "and garden walking, gathering gardening tools"
+        },
+        {
+            "code": "08255",
+            "value": 5.5,
+            "description": "and garden wheelbarrow, pushing garden cart or wheelbarrow"
+        },
+        {
+            "code": "08260",
+            "value": 3.0,
+            "description": "and garden yard work, general, light effort"
+        },
+        {
+            "code": "08261",
+            "value": 4.0,
+            "description": "and garden yard work, general, moderate effort"
+        },
+        {
+            "code": "08262",
+            "value": 6.0,
+            "description": "and garden yard work, general, vigorous effort"
+        }
+    ],
+    "miscellaneous": [
+        {
+            "code": "09000",
+            "value": 1.5,
+            "description": "board game playing, sitting"
+        },
+        {
+            "code": "09005",
+            "value": 2.5,
+            "description": "casino gambling, standing"
+        },
+        {
+            "code": "09010",
+            "value": 1.5,
+            "description": "card playing, sitting"
+        },
+        {
+            "code": "09013",
+            "value": 1.5,
+            "description": "chess game, sitting"
+        },
+        {
+            "code": "09015",
+            "value": 1.5,
+            "description": "copying documents, standing"
+        },
+        {
+            "code": "09020",
+            "value": 1.8,
+            "description": "drawing, writing, painting, standing"
+        },
+        {
+            "code": "09025",
+            "value": 1.0,
+            "description": "laughing, sitting"
+        },
+        {
+            "code": "09030",
+            "value": 1.3,
+            "description": "sitting, reading, book, newspaper, etc."
+        },
+        {
+            "code": "09040",
+            "value": 1.3,
+            "description": "sitting, writing, desk work, typing"
+        },
+        {
+            "code": "09045",
+            "value": 1.0,
+            "description": "sitting, playing traditional video game, computer game"
+        },
+        {
+            "code": "09050",
+            "value": 1.8,
+            "description": "standing, talking in person, on the phone, computer, or text messaging, light effort"
+        },
+        {
+            "code": "09055",
+            "value": 1.5,
+            "description": "sitting, talking in person, on the phone, computer, or text messaging, light effort"
+        },
+        {
+            "code": "09060",
+            "value": 1.3,
+            "description": "sitting, studying, general, including reading and/or writing, light effort"
+        },
+        {
+            "code": "09065",
+            "value": 1.8,
+            "description": "sitting, in class, general, including note-taking or class discussion"
+        },
+        {
+            "code": "09070",
+            "value": 1.8,
+            "description": "standing, reading"
+        },
+        {
+            "code": "09071",
+            "value": 2.5,
+            "description": "standing, miscellaneous"
+        },
+        {
+            "code": "09075",
+            "value": 1.8,
+            "description": "sitting, arts and crafts, carving wood, weaving, spinning wool, light effort"
+        },
+        {
+            "code": "09080",
+            "value": 3.0,
+            "description": "sitting, arts and crafts, carving wood, weaving, spinning wool, moderate effort"
+        },
+        {
+            "code": "09085",
+            "value": 2.5,
+            "description": "standing, arts and crafts, sand painting, carving, weaving, light effort"
+        },
+        {
+            "code": "09090",
+            "value": 3.3,
+            "description": "standing, arts and crafts, sand painting, carving, weaving, moderate effort"
+        },
+        {
+            "code": "09095",
+            "value": 3.5,
+            "description": "standing, arts and crafts, sand painting, carving, weaving, vigorous effort"
+        },
+        {
+            "code": "09100",
+            "value": 1.8,
+            "description": "retreat/family reunion activities involving sitting, relaxing, talking, eating"
+        },
+        {
+            "code": "09101",
+            "value": 3.0,
+            "description": "retreat/family reunion activities involving playing games with children"
+        },
+        {
+            "code": "09105",
+            "value": 2.0,
+            "description": "touring/traveling/vacation involving riding in a vehicle"
+        },
+        {
+            "code": "09106",
+            "value": 3.5,
+            "description": "touring/traveling/vacation involving walking"
+        },
+        {
+            "code": "09110",
+            "value": 2.5,
+            "description": "camping involving standing, walking, sitting, light-to-moderate effort"
+        },
+        {
+            "code": "09115",
+            "value": 1.5,
+            "description": "sitting at a sporting event, spectator"
+        }
+    ],
+    "music": [
+        {
+            "code": "10010",
+            "value": 1.8,
+            "description": "playing accordion, sitting"
+        },
+        {
+            "code": "10020",
+            "value": 2.3,
+            "description": "playing cello, sitting"
+        },
+        {
+            "code": "10030",
+            "value": 2.3,
+            "description": "playing conducting orchestra, standing"
+        },
+        {
+            "code": "10035",
+            "value": 2.5,
+            "description": "playing double bass, standing"
+        },
+        {
+            "code": "10040",
+            "value": 3.8,
+            "description": "playing drums, sitting"
+        },
+        {
+            "code": "10045",
+            "value": 3.0,
+            "description": "playing drumming (e.g., bongo, conga, benbe), moderate, sitting"
+        },
+        {
+            "code": "10050",
+            "value": 2.0,
+            "description": "playing flute, sitting"
+        },
+        {
+            "code": "10060",
+            "value": 1.8,
+            "description": "playing horn, standing"
+        },
+        {
+            "code": "10070",
+            "value": 2.3,
+            "description": "playing piano, sitting"
+        },
+        {
+            "code": "10074",
+            "value": 2.0,
+            "description": "playing playing musical instruments, general"
+        },
+        {
+            "code": "10077",
+            "value": 2.0,
+            "description": "playing organ, sitting"
+        },
+        {
+            "code": "10080",
+            "value": 3.5,
+            "description": "playing trombone, standing"
+        },
+        {
+            "code": "10090",
+            "value": 1.8,
+            "description": "playing trumpet, standing"
+        },
+        {
+            "code": "10100",
+            "value": 2.5,
+            "description": "playing violin, sitting"
+        },
+        {
+            "code": "10110",
+            "value": 1.8,
+            "description": "playing woodwind, sitting"
+        },
+        {
+            "code": "10120",
+            "value": 2.0,
+            "description": "playing guitar, classical, folk, sitting"
+        },
+        {
+            "code": "10125",
+            "value": 3.0,
+            "description": "playing guitar, rock and roll band, standing"
+        },
+        {
+            "code": "10130",
+            "value": 4.0,
+            "description": "playing marching band, baton twirling, walking, moderate pace, general"
+        },
+        {
+            "code": "10131",
+            "value": 5.5,
+            "description": "playing marching band, playing an instrument, walking, brisk pace, general"
+        },
+        {
+            "code": "10135",
+            "value": 3.5,
+            "description": "playing marching band, drum major, walking"
+        }
+    ],
+    "occupation": [
+        {
+            "code": "11003",
+            "value": 2.3,
+            "description": "active workstation, treadmill desk, walking"
+        },
+        {
+            "code": "11006",
+            "value": 3.0,
+            "description": "airline flight attendant"
+        },
+        {
+            "code": "11010",
+            "value": 4.0,
+            "description": "bakery, general, moderate effort"
+        },
+        {
+            "code": "11015",
+            "value": 2.0,
+            "description": "bakery, light effort"
+        },
+        {
+            "code": "11020",
+            "value": 2.3,
+            "description": "bookbinding"
+        },
+        {
+            "code": "11030",
+            "value": 6.0,
+            "description": "building road, driving heavy machinery"
+        },
+        {
+            "code": "11035",
+            "value": 2.0,
+            "description": "building road, directing traffic, standing"
+        },
+        {
+            "code": "11038",
+            "value": 2.5,
+            "description": "carpentry, general, light effort"
+        },
+        {
+            "code": "11040",
+            "value": 4.3,
+            "description": "carpentry, general, moderate effort"
+        },
+        {
+            "code": "11042",
+            "value": 7.0,
+            "description": "carpentry, general, heavy or vigorous effort"
+        },
+        {
+            "code": "11050",
+            "value": 8.0,
+            "description": "carrying heavy loads (e.g., bricks, tools)"
+        },
+        {
+            "code": "11060",
+            "value": 8.0,
+            "description": "carrying moderate loads up stairs, moving boxes 25-49 lbs"
+        },
+        {
+            "code": "11070",
+            "value": 4.0,
+            "description": "chambermaid, hotel housekeeper, making bed, cleaning bathroom, pushing cart"
+        },
+        {
+            "code": "11080",
+            "value": 5.3,
+            "description": "coal mining, drilling coal, rock"
+        },
+        {
+            "code": "11090",
+            "value": 5.0,
+            "description": "coal mining, erecting supports"
+        },
+        {
+            "code": "11100",
+            "value": 5.5,
+            "description": "coal mining, general"
+        },
+        {
+            "code": "11110",
+            "value": 6.3,
+            "description": "coal mining, shoveling coal"
+        },
+        {
+            "code": "11115",
+            "value": 2.5,
+            "description": "cook, chef"
+        },
+        {
+            "code": "11120",
+            "value": 4.0,
+            "description": "construction, outside, remodeling, new structures (e.g., roof repair, miscellaneous)"
+        },
+        {
+            "code": "11125",
+            "value": 2.3,
+            "description": "custodial work, light effort (e.g., cleaning sink and toilet, dusting, vacuuming, light cleaning)"
+        },
+        {
+            "code": "11126",
+            "value": 3.8,
+            "description": "custodial work, moderate effort (e.g., electric buffer, feathering arena floors, mopping, taking out trash, vacuuming)"
+        },
+        {
+            "code": "11128",
+            "value": 2.0,
+            "description": "driving delivery truck, taxi, shuttle bus, school bus"
+        },
+        {
+            "code": "11130",
+            "value": 3.3,
+            "description": "electrical work (e.g., hook up wire, tapping-splicing)"
+        },
+        {
+            "code": "11135",
+            "value": 1.8,
+            "description": "engineer (e.g., mechanical or electrical)"
+        },
+        {
+            "code": "11145",
+            "value": 7.8,
+            "description": "farming, vigorous effort (e.g., baling hay, cleaning barn)"
+        },
+        {
+            "code": "11146",
+            "value": 4.8,
+            "description": "farming, moderate effort (e.g., feeding animals, chasing cattle by walking and/or horseback, spreading manure, harvesting crops)"
+        },
+        {
+            "code": "11147",
+            "value": 2.0,
+            "description": "farming, light effort (e.g., cleaning animal sheds, preparing animal feed)"
+        },
+        {
+            "code": "11170",
+            "value": 2.8,
+            "description": "farming, driving tasks (e.g., driving tractor or harvester)"
+        },
+        {
+            "code": "11180",
+            "value": 3.5,
+            "description": "farming, feeding small animals"
+        },
+        {
+            "code": "11190",
+            "value": 4.3,
+            "description": "farming, feeding cattle, horses"
+        },
+        {
+            "code": "11191",
+            "value": 4.3,
+            "description": "farming, hauling water for animals, general hauling water,farming, general hauling water"
+        },
+        {
+            "code": "11192",
+            "value": 4.5,
+            "description": "farming, taking care of animals (e.g., grooming, brushing, shearing sheep, assisting with birthing, medical care, branding), general"
+        },
+        {
+            "code": "11195",
+            "value": 3.8,
+            "description": "farming, rice, planting, grain milling activities"
+        },
+        {
+            "code": "11210",
+            "value": 3.5,
+            "description": "farming, milking by hand, cleaning pails, moderate effort"
+        },
+        {
+            "code": "11220",
+            "value": 1.3,
+            "description": "farming, milking by machine, light effort"
+        },
+        {
+            "code": "11240",
+            "value": 8.0,
+            "description": "fire fighter, general"
+        },
+        {
+            "code": "11244",
+            "value": 6.8,
+            "description": "fire fighter, rescue victim, automobile accident, using pike pole"
+        },
+        {
+            "code": "11245",
+            "value": 8.0,
+            "description": "fire fighter, raising and climbing ladder with full gear, simulated fire supression"
+        },
+        {
+            "code": "11246",
+            "value": 9.0,
+            "description": "fire fighter, hauling hoses on ground, carrying/hoisting equipment, breaking down walls etc., wearing full gear"
+        },
+        {
+            "code": "11247",
+            "value": 3.5,
+            "description": "fishing, commercial, light effort"
+        },
+        {
+            "code": "11248",
+            "value": 5.0,
+            "description": "fishing, commercial, moderate effort"
+        },
+        {
+            "code": "11249",
+            "value": 7.0,
+            "description": "fishing, commercial, vigorous effort"
+        },
+        {
+            "code": "11250",
+            "value": 17.5,
+            "description": "forestry, ax chopping, very fast, 1.25 kg axe, 51 blows/min, extremely vigorous effort"
+        },
+        {
+            "code": "11260",
+            "value": 5.0,
+            "description": "forestry, ax chopping, slow, 1.25 kg axe, 19 blows/min, moderate effort"
+        },
+        {
+            "code": "11262",
+            "value": 8.0,
+            "description": "forestry, ax chopping, fast, 1.25 kg axe, 35 blows/min, vigorous effort"
+        },
+        {
+            "code": "11264",
+            "value": 4.5,
+            "description": "forestry, moderate effort (e.g., sawing wood with power saw, weeding, hoeing)"
+        },
+        {
+            "code": "11266",
+            "value": 8.0,
+            "description": "forestry, vigorous effort (e.g., barking, felling, or trimming trees, carrying or stacking logs, planting seeds, sawing lumber by hand)"
+        },
+        {
+            "code": "11370",
+            "value": 4.5,
+            "description": "furriery"
+        },
+        {
+            "code": "11375",
+            "value": 4.0,
+            "description": "garbage collector, walking, dumping bins into truck"
+        },
+        {
+            "code": "11378",
+            "value": 1.8,
+            "description": "hairstylist (e.g., plaiting hair, manicure, make-up artist)"
+        },
+        {
+            "code": "11380",
+            "value": 7.3,
+            "description": "horse grooming, including feeding, cleaning stalls, bathing, brushing, clipping, longeing and exercising horses"
+        },
+        {
+            "code": "11381",
+            "value": 4.3,
+            "description": "horse, feeding, watering, cleaning stalls, implied walking and lifting loads"
+        },
+        {
+            "code": "11390",
+            "value": 7.3,
+            "description": "horse racing, galloping"
+        },
+        {
+            "code": "11400",
+            "value": 5.8,
+            "description": "horse racing, trotting"
+        },
+        {
+            "code": "11410",
+            "value": 3.8,
+            "description": "horse racing, walking"
+        },
+        {
+            "code": "11413",
+            "value": 3.0,
+            "description": "kitchen maid"
+        },
+        {
+            "code": "11415",
+            "value": 4.0,
+            "description": "lawn keeper, yard work, general"
+        },
+        {
+            "code": "11418",
+            "value": 3.3,
+            "description": "laundry worker"
+        },
+        {
+            "code": "11420",
+            "value": 3.0,
+            "description": "locksmith"
+        },
+        {
+            "code": "11430",
+            "value": 3.0,
+            "description": "machine tooling (e.g., machining, working sheet metal, machine fitter, operating lathe, welding) light-to-moderate effort"
+        },
+        {
+            "code": "11450",
+            "value": 5.0,
+            "description": "Machine tooling, operating punch press, moderate effort"
+        },
+        {
+            "code": "11472",
+            "value": 1.8,
+            "description": "manager, property"
+        },
+        {
+            "code": "11475",
+            "value": 2.8,
+            "description": "manual or unskilled labor, general, light effort"
+        },
+        {
+            "code": "11476",
+            "value": 4.5,
+            "description": "manual or unskilled labor, general, moderate effort"
+        },
+        {
+            "code": "11477",
+            "value": 6.5,
+            "description": "manual or unskilled labor, general, vigorous effort"
+        },
+        {
+            "code": "11480",
+            "value": 4.3,
+            "description": "masonry, concrete, moderate effort"
+        },
+        {
+            "code": "11482",
+            "value": 2.5,
+            "description": "masonry, concrete, light effort"
+        },
+        {
+            "code": "11485",
+            "value": 4.0,
+            "description": "massage therapist, standing"
+        },
+        {
+            "code": "11490",
+            "value": 7.5,
+            "description": "moving, carrying or pushing heavy objects, 75 lbs or more, only active time (e.g., desks, moving van work)"
+        },
+        {
+            "code": "11495",
+            "value": 12.0,
+            "description": "skindiving or SCUBA diving as a frogman, Navy Seal"
+        },
+        {
+            "code": "11500",
+            "value": 2.5,
+            "description": "operating heavy duty equipment, automated, not driving"
+        },
+        {
+            "code": "11510",
+            "value": 4.5,
+            "description": "orange grove work, picking fruit"
+        },
+        {
+            "code": "11514",
+            "value": 3.3,
+            "description": "painting,house, furniture, moderate effort"
+        },
+        {
+            "code": "11516",
+            "value": 3.0,
+            "description": "plumbing activities"
+        },
+        {
+            "code": "11520",
+            "value": 2.0,
+            "description": "printing, paper industry worker, standing"
+        },
+        {
+            "code": "11525",
+            "value": 2.5,
+            "description": "police, directing traffic, standing"
+        },
+        {
+            "code": "11526",
+            "value": 2.5,
+            "description": "police, driving a squad car, sitting"
+        },
+        {
+            "code": "11527",
+            "value": 1.3,
+            "description": "police, riding in a squad car, sitting"
+        },
+        {
+            "code": "11528",
+            "value": 4.0,
+            "description": "police, making an arrest, standing"
+        },
+        {
+            "code": "11529",
+            "value": 2.3,
+            "description": "postal carrier, walking to deliver mail"
+        },
+        {
+            "code": "11530",
+            "value": 2.0,
+            "description": "shoe repair, general"
+        },
+        {
+            "code": "11540",
+            "value": 7.8,
+            "description": "shoveling, digging ditches"
+        },
+        {
+            "code": "11550",
+            "value": 8.8,
+            "description": "shoveling, more than 16 lbs/minute, deep digging, vigorous effort"
+        },
+        {
+            "code": "11560",
+            "value": 5.0,
+            "description": "shoveling, less than 10 lbs/minute, moderate effort"
+        },
+        {
+            "code": "11570",
+            "value": 6.5,
+            "description": "shoveling, 10 to 15 lbs/minute, vigorous effort"
+        },
+        {
+            "code": "11580",
+            "value": 1.5,
+            "description": "sitting tasks, light effort (e.g., office work, chemistry lab work, computer work, light assembly repair, watch repair, reading, desk work)"
+        },
+        {
+            "code": "11585",
+            "value": 1.5,
+            "description": "sitting meetings, light effort, general, and/or with talking involved (e.g., eating at a business meeting)"
+        },
+        {
+            "code": "11590",
+            "value": 2.5,
+            "description": "sitting tasks, moderate effort (e.g., pushing heavy levers, riding mower/forklift, crane operation)"
+        },
+        {
+            "code": "11593",
+            "value": 2.8,
+            "description": "sitting, teaching stretching or yoga, or light effort exercise class"
+        },
+        {
+            "code": "11600",
+            "value": 3.0,
+            "description": "standing tasks, light effort (e.g., bartending, store clerk, assembling, filing, duplicating, librarian, putting up a Christmas tree, standing and talking at work,changing clothes when teaching physical education, standing)"
+        },
+        {
+            "code": "11610",
+            "value": 3.0,
+            "description": "standing, light/moderate effort (e.g., assemble/repair heavy parts, welding,stocking parts,auto repair,standing, packing boxes, nursing patient care)"
+        },
+        {
+            "code": "11615",
+            "value": 4.5,
+            "description": "standing, moderate effort, lifting items continuously, 10 \u2013 20 lbs, with limited walking or resting"
+        },
+        {
+            "code": "11620",
+            "value": 3.5,
+            "description": "standing, moderate effort, intermittent lifting 50 lbs, hitch/twisting ropes"
+        },
+        {
+            "code": "11630",
+            "value": 4.5,
+            "description": "standing, moderate/heavy tasks (e.g., lifting more than 50 lbs, masonry, painting, paper hanging)"
+        },
+        {
+            "code": "11708",
+            "value": 5.3,
+            "description": "steel mill, moderate effort (e.g., fettling, forging, tipping molds)"
+        },
+        {
+            "code": "11710",
+            "value": 8.3,
+            "description": "steel mill, vigorous effort (e.g., hand rolling, merchant mill rolling, removing slag, tending furnace)"
+        },
+        {
+            "code": "11720",
+            "value": 2.3,
+            "description": "tailoring, cutting fabric"
+        },
+        {
+            "code": "11730",
+            "value": 2.5,
+            "description": "tailoring, general"
+        },
+        {
+            "code": "11740",
+            "value": 1.8,
+            "description": "tailoring, hand sewing"
+        },
+        {
+            "code": "11750",
+            "value": 2.5,
+            "description": "tailoring, machine sewing"
+        },
+        {
+            "code": "11760",
+            "value": 3.5,
+            "description": "tailoring, pressing"
+        },
+        {
+            "code": "11763",
+            "value": 2.0,
+            "description": "tailoring, weaving, light effort (e.g., finishing operations, washing, dyeing, inspecting cloth, counting yards, paperwork)"
+        },
+        {
+            "code": "11765",
+            "value": 4.0,
+            "description": "tailoring, weaving, moderate effort (e.g., spinning and weaving operations, delivering boxes of yam to spinners, loading of warp bean, pinwinding,conewinding, warping, cloth cutting)"
+        },
+        {
+            "code": "11766",
+            "value": 6.5,
+            "description": "truck driving, loading and unloading truck, tying down load, standing, walking and carrying heavy loads"
+        },
+        {
+            "code": "11767",
+            "value": 2.0,
+            "description": "Truch, driving delivery truck, taxi, shuttlebus, school bus"
+        },
+        {
+            "code": "11770",
+            "value": 1.3,
+            "description": "typing, electric, manual or computer"
+        },
+        {
+            "code": "11780",
+            "value": 6.3,
+            "description": "using heavy power tools such as pneumatic tools (e.g., jackhammers, drills)"
+        },
+        {
+            "code": "11790",
+            "value": 8.0,
+            "description": "using heavy tools (not power) such as shovel, pick, tunnel bar, spade"
+        },
+        {
+            "code": "11791",
+            "value": 2.0,
+            "description": "walking on job, less than 2.0 mph, very slow speed, in office or lab area"
+        },
+        {
+            "code": "11792",
+            "value": 3.5,
+            "description": "walking on job, 3.0 mph, in office, moderate speed, not carrying anything"
+        },
+        {
+            "code": "11793",
+            "value": 4.3,
+            "description": "walking on job, 3.5 mph, in office, brisk speed, not carrying anything"
+        },
+        {
+            "code": "11795",
+            "value": 3.5,
+            "description": "walking on job, 2.5 mph, slow speed and carrying light objects less than 25 lbs"
+        },
+        {
+            "code": "11796",
+            "value": 3.0,
+            "description": "walking, gathering things at work, ready to leave"
+        },
+        {
+            "code": "11797",
+            "value": 3.8,
+            "description": "walking, 2.5 mph, slow speed, carrying heavy objects more than 25 lbs"
+        },
+        {
+            "code": "11800",
+            "value": 4.5,
+            "description": "walking, 3.0 mph, moderately and carrying light objects less than 25 lbs"
+        },
+        {
+            "code": "11805",
+            "value": 3.5,
+            "description": "walking, pushing a wheelchair"
+        },
+        {
+            "code": "11810",
+            "value": 4.8,
+            "description": "walking, 3.5 mph, briskly and carrying objects less than 25 lbs"
+        },
+        {
+            "code": "11820",
+            "value": 5.0,
+            "description": "walking or walk downstairs or standing, carrying objects about 25 to 49 lbs"
+        },
+        {
+            "code": "11830",
+            "value": 6.5,
+            "description": "walking or walk downstairs or standing, carrying objects about 50 to 74 lbs"
+        },
+        {
+            "code": "11840",
+            "value": 7.5,
+            "description": "walking or walk downstairs or standing, carrying objects about 75 to 99 lbs"
+        },
+        {
+            "code": "11850",
+            "value": 8.5,
+            "description": "walking or walk downstairs or standing, carrying objects about 100 lbs or more"
+        },
+        {
+            "code": "11870",
+            "value": 3.0,
+            "description": "working in scene shop, theater actor, backstage employee"
+        }
+    ],
+    "running": [
+        {
+            "code": "12010",
+            "value": 6.0,
+            "description": "jog/walk combination (jogging component of less than 10 minutes) (Taylor Code 180)"
+        },
+        {
+            "code": "12020",
+            "value": 7.0,
+            "description": "jogging, general"
+        },
+        {
+            "code": "12025",
+            "value": 8.0,
+            "description": "jogging, in place"
+        },
+        {
+            "code": "12027",
+            "value": 4.5,
+            "description": "jogging, on a mini-tramp"
+        },
+        {
+            "code": "12029",
+            "value": 6.0,
+            "description": "Running, 4 mph (13 min/mile)"
+        },
+        {
+            "code": "12030",
+            "value": 8.3,
+            "description": "running, 5 mph (12 min/mile)"
+        },
+        {
+            "code": "12040",
+            "value": 9.0,
+            "description": "running, 5.2 mph (11.5 min/mile)"
+        },
+        {
+            "code": "12050",
+            "value": 9.8,
+            "description": "running, 6 mph (10 min/mile)"
+        },
+        {
+            "code": "12060",
+            "value": 10.5,
+            "description": "running, 6.7 mph (9 min/mile)"
+        },
+        {
+            "code": "12070",
+            "value": 11.0,
+            "description": "running, 7 mph (8.5 min/mile)"
+        },
+        {
+            "code": "12080",
+            "value": 11.5,
+            "description": "running, 7.5 mph (8 min/mile)"
+        },
+        {
+            "code": "12090",
+            "value": 11.8,
+            "description": "running, 8 mph (7.5 min/mile)"
+        },
+        {
+            "code": "12100",
+            "value": 12.3,
+            "description": "running, 8.6 mph (7 min/mile)"
+        },
+        {
+            "code": "12110",
+            "value": 12.8,
+            "description": "running, 9 mph (6.5 min/mile)"
+        },
+        {
+            "code": "12120",
+            "value": 14.5,
+            "description": "running, 10 mph (6 min/mile)"
+        },
+        {
+            "code": "12130",
+            "value": 16.0,
+            "description": "running, 11 mph (5.5 min/mile)"
+        },
+        {
+            "code": "12132",
+            "value": 19.0,
+            "description": "running, 12 mph (5 min/mile)"
+        },
+        {
+            "code": "12134",
+            "value": 19.8,
+            "description": "running, 13 mph (4.6 min/mile)"
+        },
+        {
+            "code": "12135",
+            "value": 23.0,
+            "description": "running, 14 mph (4.3 min/mile)"
+        },
+        {
+            "code": "12140",
+            "value": 9.0,
+            "description": "running, cross country"
+        },
+        {
+            "code": "12150",
+            "value": 8.0,
+            "description": "running, (Taylor code 200)"
+        },
+        {
+            "code": "12170",
+            "value": 15.0,
+            "description": "running, stairs, up"
+        },
+        {
+            "code": "12180",
+            "value": 10.0,
+            "description": "running, on a track, team practice"
+        },
+        {
+            "code": "12190",
+            "value": 8.0,
+            "description": "running, training, pushing a wheelchair or baby carrier"
+        },
+        {
+            "code": "12200",
+            "value": 13.3,
+            "description": "running, marathon"
+        }
+    ],
+    "self": [
+        {
+            "code": "13000",
+            "value": 2.3,
+            "description": "care getting ready for bed, general, standing"
+        },
+        {
+            "code": "13009",
+            "value": 1.8,
+            "description": "care sitting on toilet, eliminating while standing or squating"
+        },
+        {
+            "code": "13010",
+            "value": 1.5,
+            "description": "care bathing, sitting"
+        },
+        {
+            "code": "13020",
+            "value": 2.5,
+            "description": "care dressing, undressing, standing or sitting"
+        },
+        {
+            "code": "13030",
+            "value": 1.5,
+            "description": "care eating, sitting"
+        },
+        {
+            "code": "13035",
+            "value": 2.0,
+            "description": "care talking and eating or eating only, standing"
+        },
+        {
+            "code": "13036",
+            "value": 1.5,
+            "description": "care taking medication, sitting or standing"
+        },
+        {
+            "code": "13040",
+            "value": 2.0,
+            "description": "care grooming, washing hands, shaving, brushing teeth, putting on make-up, sitting or standing"
+        },
+        {
+            "code": "13045",
+            "value": 2.5,
+            "description": "care hairstyling, standing"
+        },
+        {
+            "code": "13046",
+            "value": 1.3,
+            "description": "care having hair or nails done by someone else, sitting"
+        },
+        {
+            "code": "13050",
+            "value": 2.0,
+            "description": "care showering, toweling off, standing"
+        }
+    ],
+    "sexual": [
+        {
+            "code": "14010",
+            "value": 2.8,
+            "description": "activity active, vigorous effort"
+        },
+        {
+            "code": "14020",
+            "value": 1.8,
+            "description": "activity general, moderate effort"
+        },
+        {
+            "code": "14030",
+            "value": 1.3,
+            "description": "activity passive, light effort, kissing, hugging"
+        }
+    ],
+    "sports": [
+        {
+            "code": "15000",
+            "value": 5.5,
+            "description": "Alaska Native Games, Eskimo Olympics, general"
+        },
+        {
+            "code": "15010",
+            "value": 4.3,
+            "description": "archery, non-hunting"
+        },
+        {
+            "code": "15020",
+            "value": 7.0,
+            "description": "badminton, competitive (Taylor Code 450)"
+        },
+        {
+            "code": "15030",
+            "value": 5.5,
+            "description": "badminton, social singles and doubles, general"
+        },
+        {
+            "code": "15040",
+            "value": 8.0,
+            "description": "basketball, game (Taylor Code 490)"
+        },
+        {
+            "code": "15050",
+            "value": 6.0,
+            "description": "basketball, non-game, general (Taylor Code 480)"
+        },
+        {
+            "code": "15055",
+            "value": 6.5,
+            "description": "basketball, general"
+        },
+        {
+            "code": "15060",
+            "value": 7.0,
+            "description": "basketball, officiating (Taylor Code 500)"
+        },
+        {
+            "code": "15070",
+            "value": 4.5,
+            "description": "basketball, shooting baskets"
+        },
+        {
+            "code": "15072",
+            "value": 9.3,
+            "description": "basketball, drills, practice"
+        },
+        {
+            "code": "15075",
+            "value": 7.8,
+            "description": "basketball, wheelchair"
+        },
+        {
+            "code": "15080",
+            "value": 2.5,
+            "description": "billiards"
+        },
+        {
+            "code": "15090",
+            "value": 3.0,
+            "description": "bowling (Taylor Code 390)"
+        },
+        {
+            "code": "15092",
+            "value": 3.8,
+            "description": "bowling, indoor, bowling alley"
+        },
+        {
+            "code": "15100",
+            "value": 12.8,
+            "description": "boxing, in ring, general"
+        },
+        {
+            "code": "15110",
+            "value": 5.5,
+            "description": "boxing, punching bag"
+        },
+        {
+            "code": "15120",
+            "value": 7.8,
+            "description": "boxing, sparring"
+        },
+        {
+            "code": "15130",
+            "value": 7.0,
+            "description": "broomball"
+        },
+        {
+            "code": "15135",
+            "value": 5.8,
+            "description": "children\u2019s games, adults playing (e.g., hopscotch, 4-square, dodgeball, playground apparatus, t-ball, tetherball, marbles, arcade games), moderate effort"
+        },
+        {
+            "code": "15138",
+            "value": 6.0,
+            "description": "cheerleading, gymnastic moves, competitive"
+        },
+        {
+            "code": "15140",
+            "value": 4.0,
+            "description": "coaching, football, soccer, basketball, baseball, swimming, etc."
+        },
+        {
+            "code": "15142",
+            "value": 8.0,
+            "description": "coaching, actively playing sport with players"
+        },
+        {
+            "code": "15150",
+            "value": 4.8,
+            "description": "cricket, batting, bowling, fielding"
+        },
+        {
+            "code": "15160",
+            "value": 3.3,
+            "description": "croquet"
+        },
+        {
+            "code": "15170",
+            "value": 4.0,
+            "description": "curling"
+        },
+        {
+            "code": "15180",
+            "value": 2.5,
+            "description": "darts, wall or lawn"
+        },
+        {
+            "code": "15190",
+            "value": 6.0,
+            "description": "drag racing, pushing or driving a car"
+        },
+        {
+            "code": "15192",
+            "value": 8.5,
+            "description": "auto racing, open wheel"
+        },
+        {
+            "code": "15200",
+            "value": 6.0,
+            "description": "fencing"
+        },
+        {
+            "code": "15210",
+            "value": 8.0,
+            "description": "football, competitive"
+        },
+        {
+            "code": "15230",
+            "value": 8.0,
+            "description": "football, touch, flag, general (Taylor Code 510)"
+        },
+        {
+            "code": "15232",
+            "value": 4.0,
+            "description": "football, touch, flag, light effort"
+        },
+        {
+            "code": "15235",
+            "value": 2.5,
+            "description": "football or baseball, playing catch"
+        },
+        {
+            "code": "15240",
+            "value": 3.0,
+            "description": "frisbee playing, general"
+        },
+        {
+            "code": "15250",
+            "value": 8.0,
+            "description": "frisbee, ultimate"
+        },
+        {
+            "code": "15255",
+            "value": 4.8,
+            "description": "golf, general"
+        },
+        {
+            "code": "15265",
+            "value": 4.3,
+            "description": "golf, walking, carrying clubs"
+        },
+        {
+            "code": "15270",
+            "value": 3.0,
+            "description": "golf, miniature, driving range"
+        },
+        {
+            "code": "15285",
+            "value": 5.3,
+            "description": "golf, walking, pulling clubs"
+        },
+        {
+            "code": "15290",
+            "value": 3.5,
+            "description": "golf, using power cart (Taylor Code 070)"
+        },
+        {
+            "code": "15300",
+            "value": 3.8,
+            "description": "gymnastics, general"
+        },
+        {
+            "code": "15310",
+            "value": 4.0,
+            "description": "hacky sack"
+        },
+        {
+            "code": "15320",
+            "value": 12.0,
+            "description": "handball, general (Taylor Code 520)"
+        },
+        {
+            "code": "15330",
+            "value": 8.0,
+            "description": "handball, team"
+        },
+        {
+            "code": "15335",
+            "value": 4.0,
+            "description": "high ropes course, multiple elements"
+        },
+        {
+            "code": "15340",
+            "value": 3.5,
+            "description": "hang gliding"
+        },
+        {
+            "code": "15350",
+            "value": 7.8,
+            "description": "hockey, field"
+        },
+        {
+            "code": "15360",
+            "value": 8.0,
+            "description": "hockey, ice, general"
+        },
+        {
+            "code": "15362",
+            "value": 10.0,
+            "description": "hockey, ice, competitive"
+        },
+        {
+            "code": "15370",
+            "value": 5.5,
+            "description": "horseback riding, general"
+        },
+        {
+            "code": "15375",
+            "value": 4.3,
+            "description": "horse chores, feeding, watering, cleaning stalls, implied walking and lifting loads"
+        },
+        {
+            "code": "15380",
+            "value": 4.5,
+            "description": "saddling, cleaning, grooming, harnessing and unharnessing horse"
+        },
+        {
+            "code": "15390",
+            "value": 5.8,
+            "description": "horseback riding, trotting"
+        },
+        {
+            "code": "15395",
+            "value": 7.3,
+            "description": "horseback riding, canter or gallop"
+        },
+        {
+            "code": "15400",
+            "value": 3.8,
+            "description": "horseback riding,walking"
+        },
+        {
+            "code": "15402",
+            "value": 9.0,
+            "description": "horseback riding, jumping"
+        },
+        {
+            "code": "15408",
+            "value": 1.8,
+            "description": "horse cart, driving, standing or sitting"
+        },
+        {
+            "code": "15410",
+            "value": 3.0,
+            "description": "horseshoe pitching, quoits"
+        },
+        {
+            "code": "15420",
+            "value": 12.0,
+            "description": "jai alai"
+        },
+        {
+            "code": "15425",
+            "value": 5.3,
+            "description": "martial arts, different types, slower pace, novice performers, practice"
+        },
+        {
+            "code": "15430",
+            "value": 10.3,
+            "description": "martial arts, different types, moderate pace (e.g., judo, jujitsu, karate, kick boxing, tae kwan do, tai-bo, Muay Thai boxing)"
+        },
+        {
+            "code": "15440",
+            "value": 4.0,
+            "description": "juggling"
+        },
+        {
+            "code": "15450",
+            "value": 7.0,
+            "description": "kickball"
+        },
+        {
+            "code": "15460",
+            "value": 8.0,
+            "description": "lacrosse"
+        },
+        {
+            "code": "15465",
+            "value": 3.3,
+            "description": "lawn bowling, bocce ball, outdoor"
+        },
+        {
+            "code": "15470",
+            "value": 4.0,
+            "description": "moto-cross, off-road motor sports, all-terrain vehicle, general"
+        },
+        {
+            "code": "15480",
+            "value": 9.0,
+            "description": "orienteering"
+        },
+        {
+            "code": "15490",
+            "value": 10.0,
+            "description": "paddleball, competitive"
+        },
+        {
+            "code": "15500",
+            "value": 6.0,
+            "description": "paddleball, casual, general (Taylor Code 460)"
+        },
+        {
+            "code": "15510",
+            "value": 8.0,
+            "description": "polo, on horseback"
+        },
+        {
+            "code": "15520",
+            "value": 10.0,
+            "description": "racquetball, competitive"
+        },
+        {
+            "code": "15530",
+            "value": 7.0,
+            "description": "racquetball, general (Taylor Code 470)"
+        },
+        {
+            "code": "15533",
+            "value": 8.0,
+            "description": "rock or mountain climbing (Taylor Code 470) (Formerly code = 17120)"
+        },
+        {
+            "code": "15535",
+            "value": 7.5,
+            "description": "rock climbing, ascending rock, high difficulty"
+        },
+        {
+            "code": "15537",
+            "value": 5.8,
+            "description": "rock climbing, ascending or traversing rock, low-to-moderate difficulty"
+        },
+        {
+            "code": "15540",
+            "value": 5.0,
+            "description": "rock climbing, rappelling"
+        },
+        {
+            "code": "15542",
+            "value": 4.0,
+            "description": "rodeo sports, general, light effort"
+        },
+        {
+            "code": "15544",
+            "value": 5.5,
+            "description": "rodeo sports, general, moderate effort"
+        },
+        {
+            "code": "15546",
+            "value": 7.0,
+            "description": "rodeo sports, general, vigorous effort"
+        },
+        {
+            "code": "15550",
+            "value": 12.3,
+            "description": "rope jumping, fast pace, 120-160 skips/min"
+        },
+        {
+            "code": "15551",
+            "value": 11.8,
+            "description": "rope jumping, moderate pace, 100-120 skips/min, general, 2 foot skip, plain bounce"
+        },
+        {
+            "code": "15552",
+            "value": 8.8,
+            "description": "rope jumping, slow pace, < 100 skips/min, 2 foot skip, rhythm bounce"
+        },
+        {
+            "code": "15560",
+            "value": 8.3,
+            "description": "rugby, union, team, competitive"
+        },
+        {
+            "code": "15562",
+            "value": 6.3,
+            "description": "rugby, touch, non-competitive"
+        },
+        {
+            "code": "15570",
+            "value": 3.0,
+            "description": "shuffleboard"
+        },
+        {
+            "code": "15580",
+            "value": 5.0,
+            "description": "skateboarding, general, moderate effort"
+        },
+        {
+            "code": "15582",
+            "value": 6.0,
+            "description": "skateboarding, competitive, vigorous effort"
+        },
+        {
+            "code": "15590",
+            "value": 7.0,
+            "description": "skating, roller (Taylor Code 360)"
+        },
+        {
+            "code": "15591",
+            "value": 7.5,
+            "description": "rollerblading, in-line skating, 14.4 km/h (9.0 mph), recreational pace"
+        },
+        {
+            "code": "15592",
+            "value": 9.8,
+            "description": "rollerblading, in-line skating, 17.7 km/h (11.0 mph), moderate pace, exercise training"
+        },
+        {
+            "code": "15593",
+            "value": 12.3,
+            "description": "rollerblading, in-line skating, 21.0 to 21.7 km/h (13.0 to 13.6 mph), fast pace, exercise training"
+        },
+        {
+            "code": "15594",
+            "value": 14.0,
+            "description": "rollerblading, in-line skating, 24.0 km/h (15.0 mph), maximal effort"
+        },
+        {
+            "code": "15600",
+            "value": 3.5,
+            "description": "skydiving, base jumping, bungee jumping"
+        },
+        {
+            "code": "15605",
+            "value": 10.0,
+            "description": "soccer, competitive"
+        },
+        {
+            "code": "15610",
+            "value": 7.0,
+            "description": "soccer, casual, general (Taylor Code 540)"
+        },
+        {
+            "code": "15620",
+            "value": 5.0,
+            "description": "softball or baseball, fast or slow pitch, general (Taylor Code 440)"
+        },
+        {
+            "code": "15625",
+            "value": 4.0,
+            "description": "softball, practice"
+        },
+        {
+            "code": "15630",
+            "value": 4.0,
+            "description": "softball, officiating"
+        },
+        {
+            "code": "15640",
+            "value": 6.0,
+            "description": "softball,pitching"
+        },
+        {
+            "code": "15645",
+            "value": 3.3,
+            "description": "sports spectator, very excited, emotional, physically moving"
+        },
+        {
+            "code": "15650",
+            "value": 12.0,
+            "description": "squash (Taylor Code 530)"
+        },
+        {
+            "code": "15652",
+            "value": 7.3,
+            "description": "squash, general"
+        },
+        {
+            "code": "15660",
+            "value": 4.0,
+            "description": "table tennis, ping pong (Taylor Code 410)"
+        },
+        {
+            "code": "15670",
+            "value": 3.0,
+            "description": "tai chi, qi gong, general"
+        },
+        {
+            "code": "15672",
+            "value": 1.5,
+            "description": "tai chi, qi gong, sitting, light effort"
+        },
+        {
+            "code": "15675",
+            "value": 7.3,
+            "description": "tennis, general"
+        },
+        {
+            "code": "15680",
+            "value": 6.0,
+            "description": "tennis, doubles (Taylor Code 430)"
+        },
+        {
+            "code": "15685",
+            "value": 4.5,
+            "description": "tennis, doubles"
+        },
+        {
+            "code": "15690",
+            "value": 8.0,
+            "description": "tennis, singles (Taylor Code 420)"
+        },
+        {
+            "code": "15695",
+            "value": 5.0,
+            "description": "tennis, hitting balls, non-game play, moderate effort"
+        },
+        {
+            "code": "15700",
+            "value": 3.5,
+            "description": "trampoline, recreational"
+        },
+        {
+            "code": "15702",
+            "value": 4.5,
+            "description": "trampoline, competitive"
+        },
+        {
+            "code": "15710",
+            "value": 4.0,
+            "description": "volleyball (Taylor Code 400)"
+        },
+        {
+            "code": "15711",
+            "value": 6.0,
+            "description": "volleyball, competitive, in gymnasium"
+        },
+        {
+            "code": "15720",
+            "value": 3.0,
+            "description": "volleyball, non-competitive, 6 - 9 member team, general"
+        },
+        {
+            "code": "15725",
+            "value": 8.0,
+            "description": "volleyball, beach, in sand"
+        },
+        {
+            "code": "15730",
+            "value": 6.0,
+            "description": "wrestling (one match = 5 minutes)"
+        },
+        {
+            "code": "15731",
+            "value": 7.0,
+            "description": "wallyball, general"
+        },
+        {
+            "code": "15732",
+            "value": 4.0,
+            "description": "track and field (e.g., shot, discus, hammer throw)"
+        },
+        {
+            "code": "15733",
+            "value": 6.0,
+            "description": "track and field (e.g., high jump, long jump, triple jump, javelin, pole vault)"
+        },
+        {
+            "code": "15734",
+            "value": 10.0,
+            "description": "track and field (e.g., steeplechase, hurdles)"
+        }
+    ],
+    "transportation": [
+        {
+            "code": "16010",
+            "value": 2.5,
+            "description": "automobile or light truck (not a semi) driving"
+        },
+        {
+            "code": "16015",
+            "value": 1.3,
+            "description": "riding in a car or truck"
+        },
+        {
+            "code": "16016",
+            "value": 1.3,
+            "description": "riding in a bus or train"
+        },
+        {
+            "code": "16020",
+            "value": 1.8,
+            "description": "flying airplane or helicopter"
+        },
+        {
+            "code": "16030",
+            "value": 3.5,
+            "description": "motor scooter, motorcycle"
+        },
+        {
+            "code": "16035",
+            "value": 6.3,
+            "description": "pulling rickshaw"
+        },
+        {
+            "code": "16040",
+            "value": 6.0,
+            "description": "pushing plane in and out of hangar"
+        },
+        {
+            "code": "16050",
+            "value": 2.5,
+            "description": "truck, semi, tractor, > 1 ton, or bus, driving"
+        },
+        {
+            "code": "16060",
+            "value": 3.5,
+            "description": "walking for transportation, 2.8-3.2 mph, level, moderate pace, firm surface"
+        }
+    ],
+    "walking": [
+        {
+            "code": "17010",
+            "value": 7.0,
+            "description": "backpacking (Taylor Code 050)"
+        },
+        {
+            "code": "17012",
+            "value": 7.8,
+            "description": "backpacking, hiking or organized walking with a daypack"
+        },
+        {
+            "code": "17020",
+            "value": 5.0,
+            "description": "carrying 15 pound load (e.g. suitcase), level ground or downstairs"
+        },
+        {
+            "code": "17021",
+            "value": 2.3,
+            "description": "carrying 15 lb child, slow walking"
+        },
+        {
+            "code": "17025",
+            "value": 8.3,
+            "description": "carrying load upstairs, general"
+        },
+        {
+            "code": "17026",
+            "value": 5.0,
+            "description": "carrying 1 to 15 lb load, upstairs"
+        },
+        {
+            "code": "17027",
+            "value": 6.0,
+            "description": "carrying 16 to 24 lb load, upstairs"
+        },
+        {
+            "code": "17028",
+            "value": 8.0,
+            "description": "carrying 25 to 49 lb load, upstairs"
+        },
+        {
+            "code": "17029",
+            "value": 10.0,
+            "description": "carrying 50 to 74 lb load, upstairs"
+        },
+        {
+            "code": "17030",
+            "value": 12.0,
+            "description": "carrying > 74 lb load, upstairs"
+        },
+        {
+            "code": "17031",
+            "value": 3.5,
+            "description": "loading /unloading a car, implied walking"
+        },
+        {
+            "code": "17033",
+            "value": 6.3,
+            "description": "climbing hills, no load"
+        },
+        {
+            "code": "17035",
+            "value": 6.5,
+            "description": "climbing hills with 0 to 9 lb load"
+        },
+        {
+            "code": "17040",
+            "value": 7.3,
+            "description": "climbing hills with 10 to 20 lb load"
+        },
+        {
+            "code": "17050",
+            "value": 8.3,
+            "description": "climbing hills with 21 to 42 lb load"
+        },
+        {
+            "code": "17060",
+            "value": 9.0,
+            "description": "climbing hills with 42+ lb load"
+        },
+        {
+            "code": "17070",
+            "value": 3.5,
+            "description": "descending stairs"
+        },
+        {
+            "code": "17080",
+            "value": 6.0,
+            "description": "hiking, cross country (Taylor Code 040)"
+        },
+        {
+            "code": "17082",
+            "value": 5.3,
+            "description": "hiking or walking at a normal pace through fields and hillsides"
+        },
+        {
+            "code": "17085",
+            "value": 2.5,
+            "description": "bird watching, slow walk"
+        },
+        {
+            "code": "17088",
+            "value": 4.5,
+            "description": "marching, moderate speed, military, no pack"
+        },
+        {
+            "code": "17090",
+            "value": 8.0,
+            "description": "marching rapidly, military, no pack"
+        },
+        {
+            "code": "17100",
+            "value": 4.0,
+            "description": "pushing or pulling stroller with child or walking with children, 2.5 to 3.1 mph"
+        },
+        {
+            "code": "17105",
+            "value": 3.8,
+            "description": "pushing a wheelchair, non-occupational"
+        },
+        {
+            "code": "17110",
+            "value": 6.5,
+            "description": "race walking"
+        },
+        {
+            "code": "17130",
+            "value": 8.0,
+            "description": "stair climbing, using or climbing up ladder (Taylor Code 030)"
+        },
+        {
+            "code": "17133",
+            "value": 4.0,
+            "description": "stair climbing, slow pace"
+        },
+        {
+            "code": "17134",
+            "value": 8.8,
+            "description": "stair climbing, fast pace"
+        },
+        {
+            "code": "17140",
+            "value": 5.0,
+            "description": "using crutches"
+        },
+        {
+            "code": "17150",
+            "value": 2.0,
+            "description": "walking, household"
+        },
+        {
+            "code": "17151",
+            "value": 2.0,
+            "description": "walking, less than 2.0 mph, level, strolling, very slow"
+        },
+        {
+            "code": "17152",
+            "value": 2.8,
+            "description": "walking, 2.0 mph, level, slow pace, firm surface"
+        },
+        {
+            "code": "17160",
+            "value": 3.5,
+            "description": "walking for pleasure (Taylor Code 010)"
+        },
+        {
+            "code": "17161",
+            "value": 2.5,
+            "description": "walking from house to car or bus, from car or bus to go places, from car or bus to and from the worksite"
+        },
+        {
+            "code": "17162",
+            "value": 2.5,
+            "description": "walking to neighbor\u2019s house or family\u2019s house for social reasons"
+        },
+        {
+            "code": "17165",
+            "value": 3.0,
+            "description": "walking the dog"
+        },
+        {
+            "code": "17170",
+            "value": 3.0,
+            "description": "walking, 2.5 mph, level, firm surface"
+        },
+        {
+            "code": "17180",
+            "value": 3.3,
+            "description": "walking, 2.5 mph, downhill"
+        },
+        {
+            "code": "17190",
+            "value": 3.5,
+            "description": "walking, 2.8 to 3.2 mph, level, moderate pace, firm surface"
+        },
+        {
+            "code": "17200",
+            "value": 4.3,
+            "description": "walking, 3.5 mph, level, brisk, firm surface, walking for exercise"
+        },
+        {
+            "code": "17210",
+            "value": 5.3,
+            "description": "walking, 2.9 to 3.5 mph, uphill, 1 to 5% grade"
+        },
+        {
+            "code": "17211",
+            "value": 8.0,
+            "description": "walking, 2.9 to 3.5 mph, uphill, 6% to 15% grade"
+        },
+        {
+            "code": "17220",
+            "value": 5.0,
+            "description": "walking, 4.0 mph, level, firm surface, very brisk pace"
+        },
+        {
+            "code": "17230",
+            "value": 7.0,
+            "description": "walking, 4.5 mph, level, firm surface, very, very brisk"
+        },
+        {
+            "code": "17231",
+            "value": 8.3,
+            "description": "walking, 5.0 mph, level, firm surface"
+        },
+        {
+            "code": "17235",
+            "value": 9.8,
+            "description": "walking, 5.0 mph, uphill, 3% grade"
+        },
+        {
+            "code": "17250",
+            "value": 3.5,
+            "description": "walking, for pleasure, work break"
+        },
+        {
+            "code": "17260",
+            "value": 4.8,
+            "description": "walking, grass track"
+        },
+        {
+            "code": "17262",
+            "value": 4.5,
+            "description": "walking, normal pace, plowed field or sand"
+        },
+        {
+            "code": "17270",
+            "value": 4.0,
+            "description": "walking, to work or class (Taylor Code 015)"
+        },
+        {
+            "code": "17280",
+            "value": 2.5,
+            "description": "walking, to and from an outhouse"
+        },
+        {
+            "code": "17302",
+            "value": 4.8,
+            "description": "walking, for exercise, 3.5 to 4 mph, with ski poles, Nordic walking, level, moderate pace"
+        },
+        {
+            "code": "17305",
+            "value": 9.5,
+            "description": "walking, for exercise, 5.0 mph, with ski poles, Nordic walking, level, fast pace"
+        },
+        {
+            "code": "17310",
+            "value": 6.8,
+            "description": "walking, for exercise, with ski poles, Nordic walking, uphill"
+        },
+        {
+            "code": "17320",
+            "value": 6.0,
+            "description": "walking, backwards, 3.5 mph, level"
+        },
+        {
+            "code": "17325",
+            "value": 8.0,
+            "description": "walking, backwards, 3.5 mph, uphill, 5% grade"
+        }
+    ],
+    "water": [
+        {
+            "code": "18010",
+            "value": 2.5,
+            "description": "activities boating, power, driving"
+        },
+        {
+            "code": "18012",
+            "value": 1.3,
+            "description": "activities boating, power, passenger, light"
+        },
+        {
+            "code": "18020",
+            "value": 4.0,
+            "description": "activities canoeing, on camping trip (Taylor Code 270)"
+        },
+        {
+            "code": "18025",
+            "value": 3.3,
+            "description": "activities canoeing, harvesting wild rice, knocking rice off the stalks"
+        },
+        {
+            "code": "18030",
+            "value": 7.0,
+            "description": "activities canoeing, portaging"
+        },
+        {
+            "code": "18040",
+            "value": 2.8,
+            "description": "activities canoeing, rowing, 2.0-3.9 mph, light effort"
+        },
+        {
+            "code": "18050",
+            "value": 5.8,
+            "description": "activities canoeing, rowing, 4.0-5.9 mph, moderate effort"
+        },
+        {
+            "code": "18060",
+            "value": 12.5,
+            "description": "activities canoeing, rowing, kayaking, competition, >6 mph, vigorous effort"
+        },
+        {
+            "code": "18070",
+            "value": 3.5,
+            "description": "activities canoeing, rowing, for pleasure, general (Taylor Code 250)"
+        },
+        {
+            "code": "18080",
+            "value": 12.0,
+            "description": "activities canoeing, rowing, in competition, or crew or sculling (Taylor Code 260)"
+        },
+        {
+            "code": "18090",
+            "value": 3.0,
+            "description": "activities diving, springboard or platform"
+        },
+        {
+            "code": "18100",
+            "value": 5.0,
+            "description": "activities kayaking, moderate effort"
+        },
+        {
+            "code": "18110",
+            "value": 4.0,
+            "description": "activities paddle boat"
+        },
+        {
+            "code": "18120",
+            "value": 3.0,
+            "description": "activities sailing, boat and board sailing, windsurfing, ice sailing, general (Taylor Code 235)"
+        },
+        {
+            "code": "18130",
+            "value": 4.5,
+            "description": "activities sailing, in competition"
+        },
+        {
+            "code": "18140",
+            "value": 3.3,
+            "description": "activities sailing, Sunfish/Laser/Hobby Cat, Keel boats, ocean sailing, yachting, leisure"
+        },
+        {
+            "code": "18150",
+            "value": 6.0,
+            "description": "activities skiing, water or wakeboarding (Taylor Code 220)"
+        },
+        {
+            "code": "18160",
+            "value": 7.0,
+            "description": "activities jet skiing, driving, in water"
+        },
+        {
+            "code": "18180",
+            "value": 15.8,
+            "description": "activities skindiving, fast"
+        },
+        {
+            "code": "18190",
+            "value": 11.8,
+            "description": "activities skindiving, moderate"
+        },
+        {
+            "code": "18200",
+            "value": 7.0,
+            "description": "activities skindiving, scuba diving, general (Taylor Code 310)"
+        },
+        {
+            "code": "18210",
+            "value": 5.0,
+            "description": "activities snorkeling (Taylor Code 310)"
+        },
+        {
+            "code": "18220",
+            "value": 3.0,
+            "description": "activities surfing, body or board, general"
+        },
+        {
+            "code": "18222",
+            "value": 5.0,
+            "description": "activities surfing, body or board, competitive"
+        },
+        {
+            "code": "18225",
+            "value": 6.0,
+            "description": "activities paddle boarding, standing"
+        },
+        {
+            "code": "18230",
+            "value": 9.8,
+            "description": "activities swimming laps, freestyle, fast, vigorous effort"
+        },
+        {
+            "code": "18240",
+            "value": 5.8,
+            "description": "activities swimming laps, freestyle, front crawl, slow, light or moderate effort"
+        },
+        {
+            "code": "18250",
+            "value": 9.5,
+            "description": "activities swimming, backstroke, general, training or competition"
+        },
+        {
+            "code": "18255",
+            "value": 4.8,
+            "description": "activities swimming, backstroke, recreational"
+        },
+        {
+            "code": "18260",
+            "value": 10.3,
+            "description": "activities swimming, breaststroke, general, training or competition"
+        },
+        {
+            "code": "18265",
+            "value": 5.3,
+            "description": "activities swimming, breaststroke, recreational"
+        },
+        {
+            "code": "18270",
+            "value": 13.8,
+            "description": "activities swimming, butterfly, general"
+        },
+        {
+            "code": "18280",
+            "value": 10.0,
+            "description": "activities swimming, crawl, fast speed, ~75 yards/minute, vigorous effort"
+        },
+        {
+            "code": "18290",
+            "value": 8.3,
+            "description": "activities swimming, crawl, medium speed, ~50 yards/minute, vigorous effort"
+        },
+        {
+            "code": "18300",
+            "value": 6.0,
+            "description": "activities swimming, lake, ocean, river (Taylor Codes 280, 295)"
+        },
+        {
+            "code": "18310",
+            "value": 6.0,
+            "description": "activities swimming, leisurely, not lap swimming, general"
+        },
+        {
+            "code": "18320",
+            "value": 7.0,
+            "description": "activities swimming, sidestroke, general"
+        },
+        {
+            "code": "18330",
+            "value": 8.0,
+            "description": "activities swimming, synchronized"
+        },
+        {
+            "code": "18340",
+            "value": 9.8,
+            "description": "activities swimming, treading water, fast, vigorous effort"
+        },
+        {
+            "code": "18350",
+            "value": 3.5,
+            "description": "activities swimming, treading water, moderate effort, general"
+        },
+        {
+            "code": "18352",
+            "value": 2.3,
+            "description": "activities tubing, floating on a river, general"
+        },
+        {
+            "code": "18355",
+            "value": 5.5,
+            "description": "activities water aerobics, water calisthenics"
+        },
+        {
+            "code": "18360",
+            "value": 10.0,
+            "description": "activities water polo"
+        },
+        {
+            "code": "18365",
+            "value": 3.0,
+            "description": "activities water volleyball"
+        },
+        {
+            "code": "18366",
+            "value": 9.8,
+            "description": "activities water jogging"
+        },
+        {
+            "code": "18367",
+            "value": 2.5,
+            "description": "activities water walking, light effort, slow pace"
+        },
+        {
+            "code": "18368",
+            "value": 4.5,
+            "description": "activities water walking, moderate effort, moderate pace"
+        },
+        {
+            "code": "18369",
+            "value": 6.8,
+            "description": "activities water walking, vigorous effort, brisk pace"
+        },
+        {
+            "code": "18370",
+            "value": 5.0,
+            "description": "activities whitewater rafting, kayaking, or canoeing"
+        },
+        {
+            "code": "18380",
+            "value": 5.0,
+            "description": "activities windsurfing, not pumping for speed"
+        },
+        {
+            "code": "18385",
+            "value": 11.0,
+            "description": "activities windsurfing or kitesurfing, crossing trial"
+        },
+        {
+            "code": "18390",
+            "value": 13.5,
+            "description": "activities windsurfing, competition, pumping for speed"
+        }
+    ],
+    "winter": [
+        {
+            "code": "19005",
+            "value": 7.5,
+            "description": "activities dog sledding, mushing"
+        },
+        {
+            "code": "19006",
+            "value": 2.5,
+            "description": "activities dog sledding, passenger"
+        },
+        {
+            "code": "19010",
+            "value": 6.0,
+            "description": "activities moving ice house, set up/drill holes"
+        },
+        {
+            "code": "19011",
+            "value": 2.0,
+            "description": "activities ice fishing, sitting"
+        },
+        {
+            "code": "19018",
+            "value": 14.0,
+            "description": "activities skating, ice dancing"
+        },
+        {
+            "code": "19020",
+            "value": 5.5,
+            "description": "activities skating, ice, 9 mph or less"
+        },
+        {
+            "code": "19030",
+            "value": 7.0,
+            "description": "activities skating, ice, general (Taylor Code 360)"
+        },
+        {
+            "code": "19040",
+            "value": 9.0,
+            "description": "activities skating, ice, rapidly, more than 9 mph, not competitive"
+        },
+        {
+            "code": "19050",
+            "value": 13.3,
+            "description": "activities skating, speed, competitive"
+        },
+        {
+            "code": "19060",
+            "value": 7.0,
+            "description": "activities ski jumping, climb up carrying skis"
+        },
+        {
+            "code": "19075",
+            "value": 7.0,
+            "description": "activities skiing, general"
+        },
+        {
+            "code": "19080",
+            "value": 6.8,
+            "description": "activities skiing, cross country, 2.5 mph, slow or light effort, ski walking"
+        },
+        {
+            "code": "19090",
+            "value": 9.0,
+            "description": "activities skiing, cross country, 4.0-4.9 mph, moderate speed and effort, general"
+        },
+        {
+            "code": "19100",
+            "value": 12.5,
+            "description": "activities skiing, cross country, 5.0-7.9 mph, brisk speed, vigorous effort"
+        },
+        {
+            "code": "19110",
+            "value": 15.0,
+            "description": "activities skiing, cross country, >8.0 mph, elite skier, racing"
+        },
+        {
+            "code": "19130",
+            "value": 15.5,
+            "description": "activities skiing, cross country, hard snow, uphill, maximum, snow mountaineering"
+        },
+        {
+            "code": "19135",
+            "value": 13.3,
+            "description": "activities skiing, cross-country, skating"
+        },
+        {
+            "code": "19140",
+            "value": 13.5,
+            "description": "activities skiing, cross-country, biathlon, skating technique"
+        },
+        {
+            "code": "19150",
+            "value": 4.3,
+            "description": "activities skiing, downhill, alpine or snowboarding, light effort, active time only"
+        },
+        {
+            "code": "19160",
+            "value": 5.3,
+            "description": "activities skiing, downhill, alpine or snowboarding, moderate effort, general, active time only"
+        },
+        {
+            "code": "19170",
+            "value": 8.0,
+            "description": "activities skiing, downhill, vigorous effort, racing"
+        },
+        {
+            "code": "19175",
+            "value": 12.5,
+            "description": "activities skiing, roller, elite racers"
+        },
+        {
+            "code": "19180",
+            "value": 7.0,
+            "description": "activities sledding, tobogganing, bobsledding, luge (Taylor Code 370)"
+        },
+        {
+            "code": "19190",
+            "value": 5.3,
+            "description": "activities snow shoeing, moderate effort"
+        },
+        {
+            "code": "19192",
+            "value": 10.0,
+            "description": "activities snow shoeing, vigorous effort"
+        },
+        {
+            "code": "19200",
+            "value": 3.5,
+            "description": "activities snowmobiling, driving, moderate"
+        },
+        {
+            "code": "19202",
+            "value": 2.0,
+            "description": "activities snowmobiling, passenger"
+        },
+        {
+            "code": "19252",
+            "value": 5.3,
+            "description": "activities snow shoveling, by hand, moderate effort"
+        },
+        {
+            "code": "19254",
+            "value": 7.5,
+            "description": "activities snow shoveling, by hand, vigorous effort"
+        },
+        {
+            "code": "19260",
+            "value": 2.5,
+            "description": "activities snow blower, walking and pushing"
+        }
+    ],
+    "religious": [
+        {
+            "code": "20000",
+            "value": 1.3,
+            "description": "activities sitting in church, in service, attending a ceremony, sitting quietly"
+        },
+        {
+            "code": "20001",
+            "value": 2.0,
+            "description": "activities sitting, playing an instrument at church"
+        },
+        {
+            "code": "20005",
+            "value": 1.8,
+            "description": "activities sitting in church, talking or singing, attending a ceremony, sitting, active participation"
+        },
+        {
+            "code": "20010",
+            "value": 1.3,
+            "description": "activities sitting, reading religious materials at home"
+        },
+        {
+            "code": "20015",
+            "value": 1.3,
+            "description": "activities standing quietly in church, attending a ceremony"
+        },
+        {
+            "code": "20020",
+            "value": 2.0,
+            "description": "activities standing, singing in church, attending a ceremony, standing, active participation"
+        },
+        {
+            "code": "20025",
+            "value": 1.3,
+            "description": "activities kneeling in church or at home, praying"
+        },
+        {
+            "code": "20030",
+            "value": 1.8,
+            "description": "activities standing, talking in church"
+        },
+        {
+            "code": "20035",
+            "value": 2.0,
+            "description": "activities walking in church"
+        },
+        {
+            "code": "20036",
+            "value": 2.0,
+            "description": "activities walking, less than 2.0 mph, very slow"
+        },
+        {
+            "code": "20037",
+            "value": 3.5,
+            "description": "activities walking, 3.0 mph, moderate speed, not carrying anything"
+        },
+        {
+            "code": "20038",
+            "value": 4.3,
+            "description": "activities walking, 3.5 mph, brisk speed, not carrying anything"
+        },
+        {
+            "code": "20039",
+            "value": 2.0,
+            "description": "activities walk/stand combination for religious purposes, usher"
+        },
+        {
+            "code": "20040",
+            "value": 5.0,
+            "description": "activities praise with dance or run, spiritual dancing in church"
+        },
+        {
+            "code": "20045",
+            "value": 2.5,
+            "description": "activities serving food at church"
+        },
+        {
+            "code": "20046",
+            "value": 2.0,
+            "description": "activities preparing food at church"
+        },
+        {
+            "code": "20047",
+            "value": 3.3,
+            "description": "activities washing dishes, cleaning kitchen at church"
+        },
+        {
+            "code": "20050",
+            "value": 1.5,
+            "description": "activities eating at church"
+        },
+        {
+            "code": "20055",
+            "value": 2.0,
+            "description": "activities eating/talking at church or standing eating, American Indian Feast days"
+        },
+        {
+            "code": "20060",
+            "value": 3.3,
+            "description": "activities cleaning church"
+        },
+        {
+            "code": "20061",
+            "value": 4.0,
+            "description": "activities general yard work at church"
+        },
+        {
+            "code": "20065",
+            "value": 3.5,
+            "description": "activities standing, moderate effort (e.g., lifting heavy objects, assembling at fast rate)"
+        },
+        {
+            "code": "20095",
+            "value": 4.5,
+            "description": "activities Standing, moderate-to-heavy effort, manual labor, lifting \u2265 50 lbs, heavy maintenance"
+        },
+        {
+            "code": "20100",
+            "value": 1.3,
+            "description": "activities typing, electric, manual, or computer"
+        }
+    ],
+    "volunteer": [
+        {
+            "code": "21000",
+            "value": 1.5,
+            "description": "activities sitting, meeting, general, and/or with talking involved"
+        },
+        {
+            "code": "21005",
+            "value": 1.5,
+            "description": "activities sitting, light office work, in general"
+        },
+        {
+            "code": "21010",
+            "value": 2.5,
+            "description": "activities sitting, moderate work"
+        },
+        {
+            "code": "21015",
+            "value": 2.3,
+            "description": "activities standing, light work (filing, talking, assembling)"
+        },
+        {
+            "code": "21016",
+            "value": 2.0,
+            "description": "activities sitting, child care, only active periods"
+        },
+        {
+            "code": "21017",
+            "value": 3.0,
+            "description": "activities standing, child care, only active periods"
+        },
+        {
+            "code": "21018",
+            "value": 3.5,
+            "description": "activities walk/run play with children, moderate, only active periods"
+        },
+        {
+            "code": "21019",
+            "value": 5.8,
+            "description": "activities walk/run play with children, vigorous, only active periods"
+        },
+        {
+            "code": "21020",
+            "value": 3.0,
+            "description": "activities standing, light/moderate work (e.g., pack boxes, assemble/repair, set up chairs/furniture)"
+        },
+        {
+            "code": "21025",
+            "value": 3.5,
+            "description": "activities standing, moderate (lifting 50 lbs., assembling at fast rate)"
+        },
+        {
+            "code": "21030",
+            "value": 4.5,
+            "description": "activities standing, moderate/heavy work"
+        },
+        {
+            "code": "21035",
+            "value": 1.3,
+            "description": "activities typing, electric, manual, or computer"
+        },
+        {
+            "code": "21040",
+            "value": 2.0,
+            "description": "activities walking, less than 2.0 mph, very slow"
+        },
+        {
+            "code": "21045",
+            "value": 3.5,
+            "description": "activities walking, 3.0 mph, moderate speed, not carrying anything"
+        },
+        {
+            "code": "21050",
+            "value": 4.3,
+            "description": "activities walking, 3.5 mph, brisk speed, not carrying anything"
+        },
+        {
+            "code": "21055",
+            "value": 3.5,
+            "description": "activities walking, 2.5 mph slowly and carrying objects less than 25 lbs"
+        },
+        {
+            "code": "21060",
+            "value": 4.5,
+            "description": "activities walking, 3.0 mph moderately and carrying objects less than 25 lbs, pushing something"
+        },
+        {
+            "code": "21065",
+            "value": 4.8,
+            "description": "activities walking, 3.5 mph, briskly and carrying objects less than 25 lbs"
+        },
+        {
+            "code": "21070",
+            "value": 3.0,
+            "description": "activities walk/stand combination, for volunteer purposes"
+        }
+    ]
+}
