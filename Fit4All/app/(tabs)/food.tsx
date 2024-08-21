@@ -1,16 +1,18 @@
-import { CaloriesCounter } from '@/components/CaloriesCounter'
+
+import FoodCalories from '@/components/FoodCalories'
 import FoodList from '@/components/FoodList'
 import NutritionWheel from '@/components/NutritionWheel'
+import { ThemedButton } from '@/components/ThemedButton'
 import { Link, router } from 'expo-router'
 import React from 'react'
 import { Button, StyleSheet, Text, View, ScrollView } from 'react-native'
 
 export default function food(){
   return (
-    <View style={{ flex: 1, padding: 10 }}>
-      <CaloriesCounter source='food' />
+    <View style={{ flex: 1, padding: 10, marginTop: 30 }}>
+      <FoodCalories/>
       <NutritionWheel />
-      <Button title='Search' onPress={() => {router.push(`/food/search`)}} />
+      <ThemedButton title='Add Food' onPress={() => {router.push(`/food/search`)}} />
       <FoodList />
     </View>
   )

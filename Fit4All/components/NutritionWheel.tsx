@@ -3,6 +3,9 @@ import { StyleSheet, Text, useWindowDimensions, View } from 'react-native';
 import { PieChart } from 'react-native-chart-kit';
 import AsyncStorage from '@react-native-async-storage/async-storage';
 import { useFocusEffect } from '@react-navigation/native';
+import { ThemedText } from './ThemedText';
+import { SurfaceView } from './SurfaceView';
+import { setStatusBarHidden } from 'expo-status-bar';
 
 interface Product {
   id: string;
@@ -21,19 +24,19 @@ const defaultData = [
     name: "Proteins",
     value: 0,
     color: "#F00",
-    legendFontColor: "#7f7f7f",
+    legendFontColor: "#e07a5f",
     legendFontSize: 15
   },{
     name: "Fat",
     value: 0,
     color: "#0F0",
-    legendFontColor: "#7f7f7f",
+    legendFontColor: "#81b29a",
     legendFontSize: 15
   },{
     name: "Carbohydrates",
     value: 0,
     color: "#00F",
-    legendFontColor: "#7f7f7f",
+    legendFontColor: "#3d405b",
     legendFontSize: 15
   }
 ];
@@ -70,21 +73,21 @@ export function NutritionWheel() {
           {
             name: "Proteins",
             value: nutrientTotals.proteins,
-            color: "#0033A0",
+            color: "#81b29a",
             legendFontColor: "#7f7f7f",
             legendFontSize: 15
           },
           {
             name: "Fat",
             value: nutrientTotals.fat,
-            color: "#FFD700",
+            color: "#e07a5f",
             legendFontColor: "#7f7f7f",
             legendFontSize: 15
           },
           {
             name: "Carbohydrates",
             value: nutrientTotals.carbohydrates,
-            color: "#4CAF50",
+            color: "#977390",
             legendFontColor: "#7f7f7f",
             legendFontSize: 15
           }
@@ -106,7 +109,7 @@ export function NutritionWheel() {
   const totalValue = sumDataValues(chartData);
 
   return (
-    <View style={styles.view}>
+    <SurfaceView style={styles.view} type='modal'>
       {totalValue > 0 ? (
         <PieChart
           data={chartData}
@@ -121,11 +124,11 @@ export function NutritionWheel() {
           paddingLeft={"0"}
         />
       ) : (
-        <View style={{ width: screenWidth, height: 300, justifyContent: 'center', alignItems: 'center' }}>
-          <Text style={{ textAlign: 'center' }}>No data to show.{"\n"}Add food to your daily log to display nutrients values</Text>
+        <View style={{ flexDirection: 'row', width: screenWidth, height: 300, justifyContent: 'center', alignItems: 'center' }}>
+          <ThemedText style={{ textAlign: 'center', flex: 1 }}>No data to show.{"\n"}Add food to your log to display nutrients values</ThemedText>
         </View>
       )}
-    </View>
+    </SurfaceView>
   );
 }
 
@@ -135,7 +138,7 @@ const styles = StyleSheet.create({
   view: {
     padding: 0,
     borderWidth: 1,
-    borderColor: '#00FF00',
+    // overflow: 'hidden'
   },
   text: {
     fontSize: 28,

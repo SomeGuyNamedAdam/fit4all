@@ -2,6 +2,8 @@ import React, { useEffect, useState } from 'react';
 import { View, Text, TextInput, Button, Alert } from 'react-native';
 import AsyncStorage from '@react-native-async-storage/async-storage';
 import { Stack, useRouter } from 'expo-router';
+import { ThemedText } from '@/components/ThemedText';
+import ThemedTextInput from '@/components/ThemedTextInput';
 
 interface Nutriments {
   energy_100g?: string;
@@ -75,18 +77,18 @@ const DetailScreen = () => {
   };
 
   if (!product) {
-    return <Text>Loading...</Text>;
+    return <ThemedText>Loading...</ThemedText>;
   }
 
   return (
     <View style={{ flex: 1, padding: 16 }}>
       <Stack.Screen options={{headerTitle: `Add`}} />
-      <Text style={{ fontSize: 18, fontWeight: 'bold' }}>{product.product_name}</Text>
-      <Text style={{ marginVertical: 8 }}>Calories: {product.nutriments.energy_100g} kJ</Text>
-      <Text style={{ marginVertical: 8 }}>Fat: {product.nutriments.fat_100g} g</Text>
-      <Text style={{ marginVertical: 8 }}>Proteins: {product.nutriments.proteins_100g} g</Text>
-      <Text style={{ marginVertical: 8 }}>Carbohydrates: {product.nutriments.carbohydrates_100g} g</Text>
-      <TextInput
+      <ThemedText style={{ fontSize: 18, fontWeight: 'bold' }}>{product.product_name}</ThemedText>
+      <ThemedText style={{ marginVertical: 8 }}>Calories: {product.nutriments.energy_100g} kJ</ThemedText>
+      <ThemedText style={{ marginVertical: 8 }}>Fat: {product.nutriments.fat_100g} g</ThemedText>
+      <ThemedText style={{ marginVertical: 8 }}>Proteins: {product.nutriments.proteins_100g} g</ThemedText>
+      <ThemedText style={{ marginVertical: 8 }}>Carbohydrates: {product.nutriments.carbohydrates_100g} g</ThemedText>
+      <ThemedTextInput
         value={amount}
         onChangeText={setAmount}
         placeholder="Enter amount"

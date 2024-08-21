@@ -1,15 +1,17 @@
-import React, { useEffect, useState } from 'react';
-import { Alert, Button, StyleSheet, Switch, Text, View } from 'react-native';
+import { ThemedText } from '@/components/ThemedText';
 import AsyncStorage from '@react-native-async-storage/async-storage';
+import { useTheme } from '@react-navigation/native';
 import { useRouter } from 'expo-router';
-import RNRestart from 'react-native-restart';
+import React, { useEffect, useState } from 'react';
+import { Alert, Button, StyleSheet, Switch, View } from 'react-native';
 
 // Constants for setting keys
 const THEME_KEY = 'theme';
 const WEIGHT_UNIT_KEY = 'weightUnit';
 const ENERGY_UNIT_KEY = 'energyUnit';
-
 const Settings = () => {
+  
+const {colors} = useTheme();
   const [isDarkMode, setIsDarkMode] = useState(false);
   const [isKg, setIsKg] = useState(false);
   const [isKcal, setIsKcal] = useState(false);
@@ -98,20 +100,20 @@ const Settings = () => {
 
   return (
     <View style={styles.container}>
-      <Text style={styles.title}>Settings</Text>
+      <ThemedText style={styles.title}>Settings</ThemedText>
       
       <View style={styles.option}>
-        <Text style={styles.label}>Dark Mode</Text>
+        <ThemedText style={styles.label}>Dark Mode</ThemedText>
         <Switch value={isDarkMode} onValueChange={handleThemeToggle} />
       </View>
 
       <View style={styles.option}>
-        <Text style={styles.label}>Weight Unit (kg/lbs)</Text>
+        <ThemedText style={styles.label}>Weight Unit (kg/lbs)</ThemedText>
         <Switch value={isKg} onValueChange={handleWeightUnitToggle} />
       </View>
 
       <View style={styles.option}>
-        <Text style={styles.label}>Energy Unit (kcal/kJ)</Text>
+        <ThemedText style={styles.label}>Energy Unit (kcal/kJ)</ThemedText>
         <Switch value={isKcal} onValueChange={handleEnergyUnitToggle} />
       </View>
 
@@ -132,7 +134,6 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     padding: 20,
-    backgroundColor: '#fff',
   },
   title: {
     fontSize: 24,

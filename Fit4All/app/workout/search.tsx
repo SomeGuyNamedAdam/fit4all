@@ -1,9 +1,11 @@
 import React, { useEffect, useState } from 'react';
-import { Button, StyleSheet, Text, TextInput, View } from 'react-native';
+import { Button, StyleSheet, TextInput, View } from 'react-native';
 import AsyncStorage from '@react-native-async-storage/async-storage';
 import { Stack } from 'expo-router';
 import workouts from '@/assets/datasets/workout.json'; // Adjust the path based on your directory structure
 import { Picker } from '@react-native-picker/picker';
+import { ThemedText } from '@/components/ThemedText';
+import ThemedTextInput from '@/components/ThemedTextInput';
 
 interface Activity {
   code: string;
@@ -69,25 +71,39 @@ const Search = () => {
         duration,
         weight,
         caloriesBurned,
-        date: new Date().toISOString(),
+        date: new Date().toISOString().split('T')[0], // Save today's date in ISO format
       };
 
       try {
+        // Save workout to AsyncStorage
         const existingWorkouts = await AsyncStorage.getItem('doneWorkouts');
         const workoutsArray = existingWorkouts ? JSON.parse(existingWorkouts) : [];
         workoutsArray.push(workout);
         await AsyncStorage.setItem('doneWorkouts', JSON.stringify(workoutsArray));
+
+        // Update weight tracker in AsyncStorage
+        const existingWeightsString = await AsyncStorage.getItem('weightTracker');
+        const weightTrackerArray = existingWeightsString ? JSON.parse(existingWeightsString) : [];
+        const weightEntry = {
+          weight: parseFloat(weight),
+          date: new Date().toISOString(), // Save today's date in ISO format
+        };
+        weightTrackerArray.push(weightEntry);
+        await AsyncStorage.setItem('weightTracker', JSON.stringify(weightTrackerArray));
+
         alert('Workout saved successfully!');
       } catch (error) {
         console.error('Failed to save workout', error);
       }
+    } else {
+      alert('Please fill out all fields.');
     }
   };
 
   return (
     <View style={styles.container}>
       <Stack.Screen options={{ headerTitle: 'Add Exercise' }} />
-      <Text style={styles.label}>Select Category:</Text>
+      <ThemedText style={styles.label}>Select Category:</ThemedText>
       <Picker
         selectedValue={selectedCategory}
         onValueChange={(itemValue) => setSelectedCategory(itemValue)}
@@ -100,7 +116,7 @@ const Search = () => {
 
       {selectedCategory ? (
         <>
-          <Text style={styles.label}>Select Activity:</Text>
+          <ThemedText style={styles.label}>Select Activity:</ThemedText>
           <Picker
             selectedValue={selectedActivity}
             onValueChange={(itemValue) => setSelectedActivity(itemValue)}
@@ -113,7 +129,7 @@ const Search = () => {
         </>
       ) : null}
 
-      <TextInput
+      <ThemedTextInput
         style={styles.input}
         placeholder="Duration (minutes)"
         keyboardType="numeric"
@@ -121,7 +137,7 @@ const Search = () => {
         onChangeText={setDuration}
       />
 
-      <TextInput
+      <ThemedTextInput
         style={styles.input}
         placeholder="Weight (kg)"
         keyboardType="numeric"
@@ -130,7 +146,7 @@ const Search = () => {
       />
 
       {caloriesBurned > 0 ? (
-        <Text style={styles.result}>Calories Burned: {caloriesBurned}</Text>
+        <ThemedText style={styles.result}>Calories Burned: {caloriesBurned}</ThemedText>
       ) : null}
 
       <Button title="Save Workout" onPress={saveWorkout} />
@@ -144,7 +160,6 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     padding: 20,
-    backgroundColor: '#fff',
   },
   label: {
     fontSize: 18,

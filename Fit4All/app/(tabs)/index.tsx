@@ -1,39 +1,40 @@
-import { StyleSheet, View, Text } from 'react-native';
-
-import { CaloriesCounter } from '@/components/CaloriesCounter';
+import { ScrollView, StyleSheet, View } from 'react-native';
+import FoodCalories from '@/components/FoodCalories';
 import NutritionWheel from '@/components/NutritionWheel';
-import WeightTracker from '@/components/WeightTracker';
+import WorkoutCalories from '@/components/WorkoutCalories';
+import WeightTrackerChart from '@/components/WeightTrackerChart';
+import { TextInput } from 'react-native-gesture-handler';
+import { ThemedText } from '@/components/ThemedText';
 
 export default function HomeScreen() {
   return (
-    <View style={styles.view}>
-      <Text>Home</Text>
-      <CaloriesCounter source='food'/>
-      <CaloriesCounter source='workout'/>
+    <ScrollView style={styles.container}>
+      <View style={styles.row}>
+        <View style={{marginRight: 5, flex: 1}}>
+          <FoodCalories />
+        </View>
+        <View style={{marginLeft: 5, flex: 1}}>
+          <WorkoutCalories />
+        </View>
+      </View>
       <NutritionWheel />
-      <WeightTracker />
-    </View>
+      <WeightTrackerChart />
+      <ThemedText></ThemedText>
+    </ScrollView>
   );
 }
 
 const styles = StyleSheet.create({
-  view: {
+  container: {
     padding: 10,
+    marginTop: 30,
   },
-  titleContainer: {
+  row: {
     flexDirection: 'row',
-    alignItems: 'center',
-    gap: 8,
+    justifyContent: 'space-between', // Adjusts space between items
   },
-  stepContainer: {
-    gap: 8,
-    marginBottom: 8,
-  },
-  reactLogo: {
-    height: 178,
-    width: 290,
-    bottom: 0,
-    left: 0,
-    position: 'absolute',
+  item: {
+    flex: 1, // Allows the components to expand and fill the available space
+    marginHorizontal: 5, // Adds space between the components
   },
 });

@@ -1,9 +1,11 @@
-import React, { useEffect, useState, useCallback } from 'react';
-import { View, Text, FlatList, TouchableOpacity, ActivityIndicator, Button, Alert, Platform } from 'react-native';
 import AsyncStorage from '@react-native-async-storage/async-storage';
-import { useRouter } from 'expo-router';
-import { useFocusEffect } from '@react-navigation/native';
 import DateTimePicker from '@react-native-community/datetimepicker';
+import { useFocusEffect } from '@react-navigation/native';
+import { useRouter } from 'expo-router';
+import React, { useCallback, useState } from 'react';
+import { ActivityIndicator, Alert, Button, FlatList, Platform, StyleSheet, TouchableOpacity, View } from 'react-native';
+import { ThemedButton } from './ThemedButton';
+import { ThemedText } from './ThemedText';
 
 interface Product {
   id: string;
@@ -115,6 +117,29 @@ const FoodList = () => {
     );
   };
 
+  const confirmClearDateSpecificItems = () => {
+    Alert.alert(
+      'Clear Items',
+      'Are you sure you want to clear all food items added on the selected date?',
+      [
+        { text: 'Cancel', style: 'cancel' },
+        { text: 'Yes', onPress: () => clearDateSpecificProducts() },
+      ],
+      { cancelable: true }
+    );
+  };
+  
+  const clearDateSpecificProducts = async () => {
+    try {
+      const dateString = selectedDate.toISOString().split('T')[0];
+      const remainingFoods = addedFoods.filter(food => food.dateAdded !== dateString);
+      await AsyncStorage.setItem('storedProducts', JSON.stringify(remainingFoods));
+      setAddedFoods(remainingFoods);
+    } catch (error) {
+      console.error('Failed to clear products for the selected date', error);
+    }
+  };
+
   if (loading) {
     return <ActivityIndicator size="large" color="#0000ff" />;
   }
@@ -123,9 +148,11 @@ const FoodList = () => {
 
   return (
     <View style={{ flex: 1, padding: 0 }}>
-      <Text style={{ fontSize: 18, fontWeight: 'bold' }}>Added Food Items</Text>
-      <Button title="Clear All Items" onPress={clearStoredProducts} color="#FF6347" />
-      <Button title="Select Date" onPress={() => setShowDatePicker(true)} />
+      <ThemedText type='subtitle' style={{  fontWeight: 'bold', textAlign : 'center', padding: 10}}>-- Added Food Items --</ThemedText>
+      <View style={styles.row}>
+      <ThemedButton title="Select Date" style={styles.item} onPress={() => setShowDatePicker(true)} type='primary' />
+      <ThemedButton title="Clear All Items" style={styles.item} onPress={confirmClearDateSpecificItems} type='danger' />
+        </View>
       {showDatePicker && (
         <DateTimePicker
           value={selectedDate}
@@ -135,7 +162,7 @@ const FoodList = () => {
         />
       )}
       {filteredFoods.length === 0 ? (
-        <Text>No food items added on this date.</Text>
+        <ThemedText>No food items added on this date.</ThemedText>
       ) : (
         <FlatList
           style={{ flex: 1 }}
@@ -144,11 +171,12 @@ const FoodList = () => {
           renderItem={({ item }) => (
             <View style={{ flexDirection: 'row', justifyContent: 'space-between', padding: 16, borderBottomWidth: 1 }}>
               <TouchableOpacity onPress={() => handlePress(item)}>
-                <Text>{item.product_name}</Text>
-                <Text>Energy: {calculateTotalEnergy(item)} {energyUnit === 1 ? 'kJ' : "kcal" }</Text>
+              <ThemedText>{item.product_name.charAt(0).toUpperCase() + item.product_name.slice(1)}</ThemedText>
+
+                <ThemedText>Energy: {calculateTotalEnergy(item)} {energyUnit === 1 ? 'kJ' : "kcal" }</ThemedText>
               </TouchableOpacity>
               <View style={{ flexDirection: 'row' }}>
-                <Button title="-" onPress={() => handleDelete(item)} color="#FF6347" />
+                <ThemedButton title="-" onPress={() => handleDelete(item)} type='danger'/>
               </View>
             </View>
           )}
@@ -159,3 +187,18 @@ const FoodList = () => {
 };
 
 export default FoodList;
+
+const styles = StyleSheet.create({
+  container: {
+    padding: 10,
+    marginTop: 30,
+  },
+  row: {
+    flexDirection: 'row',
+    justifyContent: 'space-between', // Adjusts space between items
+  },
+  item: {
+    flex: 1, // Allows the components to expand and fill the available space
+    marginHorizontal: 5, // Adds space between the components
+  },
+});
