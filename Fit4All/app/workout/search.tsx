@@ -1,16 +1,25 @@
-import React, { useEffect, useState } from 'react';
-import { Button, StyleSheet, TextInput, View } from 'react-native';
+import React, { useCallback, useEffect, useState } from 'react';
+import { ActivityIndicator, Button, StyleSheet, View } from 'react-native';
 import AsyncStorage from '@react-native-async-storage/async-storage';
-import { Stack } from 'expo-router';
-import workouts from '@/assets/datasets/workout.json'; // Adjust the path based on your directory structure
-import { Picker } from '@react-native-picker/picker';
+import { router, Stack } from 'expo-router';
+import workouts from '@/assets/datasets/workout.json';
 import { ThemedText } from '@/components/ThemedText';
 import ThemedTextInput from '@/components/ThemedTextInput';
+import { ThemedPicker } from '@/components/ThemedPicker';
+import { useThemeColor } from '@/hooks/useThemeColor';
+import { useFocusEffect } from '@react-navigation/native';
+import ThemedButton from '@/components/ThemedButton';
+import Screen from '@/components/Screen'
 
 interface Activity {
   code: string;
   value: number;
   description: string;
+}
+
+interface WeightData {
+  weight: number;
+  date: string; // Use ISO date string
 }
 
 interface Workouts {
@@ -28,13 +37,82 @@ const Search = () => {
   const [selectedCategory, setSelectedCategory] = useState<string>('');
   const [activities, setActivities] = useState<Activity[]>([]);
   const [selectedActivity, setSelectedActivity] = useState<string>('');
-  const [duration, setDuration] = useState<string>('');
+  const [minutes, setMinutes] = useState<string>('');
+  const [hours, setHours] = useState<string>('');
   const [weight, setWeight] = useState<string>('');
+  const [weightUnit, setWeightUnit] = useState(1)
   const [caloriesBurned, setCaloriesBurned] = useState<number>(0);
+  const [energyUnit, setEnergyUnit] = useState(4.184)
+  const [loading, setLoading] = useState(true);
+  const [isError, setIsError] = useState<{ category: boolean; activity: boolean; hours: boolean; minutes: boolean; weight: boolean }>({
+    category: false,
+    activity: false,
+    hours: false,
+    minutes: false,
+    weight: false,
+  });
+  const textColor = useThemeColor({}, 'text');
+
+  const getUnits = async () => {
+    try {
+      const energyUnitString = await AsyncStorage.getItem('energyUnit');
+      if (energyUnitString) {
+        const unit = energyUnitString === 'kj' ? 1 : 4.184;
+        setEnergyUnit(unit);
+      }
+  
+      const weightUnitString = await AsyncStorage.getItem('weightUnit');
+      if (weightUnitString) {
+        const unit = weightUnitString === 'kg' ? 1 : 2.205;
+        setWeightUnit(unit);
+      }
+  
+      
+    } catch (error) {
+      console.error('Failed to fetch data', error);
+    } 
+  };
+
+  const getWeight = async () => {
+    try {
+      const storedData = await AsyncStorage.getItem('weights');
+      if (storedData) {
+        const weights: WeightData[] = JSON.parse(storedData);
+        if (weights.length > 0) {
+          const latestWeightEntry = weights.sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime())[0];
+          
+          setWeight((latestWeightEntry.weight * weightUnit).toString());
+        }
+      }
+    } catch (error) {
+      console.error('Failed to fetch current weight', error)
+    }
+  }
+  
+
+  useFocusEffect(
+    useCallback(() => {
+      const fetchData = async () => {
+        try {
+          await getUnits();
+          await getWeight();
+        } catch (error) {
+          console.log(error)
+        } finally {
+          setLoading(false)
+        }
+      }
+      fetchData()
+    }, [])
+  );
 
   useEffect(() => {
     setCategories(Object.keys(workoutsData));
   }, []);
+
+  useEffect(() => {
+    getWeight()
+  }, [weightUnit])
 
   useEffect(() => {
     if (selectedCategory) {
@@ -44,16 +122,25 @@ const Search = () => {
 
   useEffect(() => {
     calculateCalories(); // Recalculate whenever duration, weight, or selected activity changes
-  }, [selectedActivity, duration, weight]);
+  }, [selectedActivity, hours, minutes, weight]);
 
   const calculateCalories = () => {
-    if (selectedActivity && duration && weight) {
-      const activity = activities.find(act => act.description === selectedActivity);
-      if (activity) {
-        const durationInHours = parseFloat(duration) / 60;
-        const weightInKg = parseFloat(weight);
-        const calories = activity.value * durationInHours * weightInKg;
-        setCaloriesBurned(parseFloat(calories.toFixed(0)));
+    if (selectedActivity && (hours || minutes) && weight) {
+      const hoursValue = parseFloat(hours) || 0;
+      const minutesValue = parseFloat(minutes) || 0;
+      const totalDurationInMinutes = hoursValue * 60 + minutesValue;
+
+      if (totalDurationInMinutes > 0) {
+        const activity = activities.find(act => act.description === selectedActivity);
+        if (activity) {
+          const durationInHours = totalDurationInMinutes / 60;
+          
+          const weightInKg = parseFloat((parseFloat(weight) / weightUnit).toFixed(2));
+          const calories = activity.value * durationInHours * weightInKg;
+          setCaloriesBurned(parseFloat(calories.toFixed(0)));
+        } else {
+          setCaloriesBurned(0);
+        }
       } else {
         setCaloriesBurned(0);
       }
@@ -62,36 +149,48 @@ const Search = () => {
     }
   };
 
+  const validateInputs = () => {
+    setIsError({
+      category: !selectedCategory,
+      activity: !selectedActivity,
+      hours: !hours && !minutes,
+      minutes: !minutes && !hours,
+      weight: !weight,
+    });
+  };
+
   const saveWorkout = async () => {
-    if (selectedActivity && duration && weight) {
+    validateInputs();
+    if (selectedActivity && (hours || minutes) && weight && selectedCategory) {
+      const hoursValue = parseFloat(hours) || 0;
+      const minutesValue = parseFloat(minutes) || 0;
+      const durationInMinutes = hoursValue * 60 + minutesValue;
       const workout = {
         key: generateUniqueKey(selectedActivity),
         category: selectedCategory,
         activity: selectedActivity,
-        duration,
-        weight,
+        duration: durationInMinutes.toString(),
+        weight : (parseFloat(weight) / weightUnit).toFixed(2),
         caloriesBurned,
-        date: new Date().toISOString().split('T')[0], // Save today's date in ISO format
+        date: new Date().toISOString().split('T')[0],
       };
-
       try {
-        // Save workout to AsyncStorage
         const existingWorkouts = await AsyncStorage.getItem('doneWorkouts');
         const workoutsArray = existingWorkouts ? JSON.parse(existingWorkouts) : [];
         workoutsArray.push(workout);
         await AsyncStorage.setItem('doneWorkouts', JSON.stringify(workoutsArray));
 
-        // Update weight tracker in AsyncStorage
-        const existingWeightsString = await AsyncStorage.getItem('weightTracker');
+        const existingWeightsString = await AsyncStorage.getItem('weights');
         const weightTrackerArray = existingWeightsString ? JSON.parse(existingWeightsString) : [];
         const weightEntry = {
-          weight: parseFloat(weight),
-          date: new Date().toISOString(), // Save today's date in ISO format
+          weight: parseFloat(weight) / weightUnit,
+          date: new Date().toISOString(),
         };
         weightTrackerArray.push(weightEntry);
-        await AsyncStorage.setItem('weightTracker', JSON.stringify(weightTrackerArray));
+        await AsyncStorage.setItem('weights', JSON.stringify(weightTrackerArray));
 
         alert('Workout saved successfully!');
+        router.navigate('/workout');
       } catch (error) {
         console.error('Failed to save workout', error);
       }
@@ -100,57 +199,80 @@ const Search = () => {
     }
   };
 
+  const handleTextChange = (setter: React.Dispatch<React.SetStateAction<string>>) => (text: string) => {
+    const numericValue = text.replace(/[^0-9.]/g, '');
+    setter(numericValue);
+  };
+
+  if(loading) {
+    return <ActivityIndicator size="large" color="#0000ff" />;
+  }
+
   return (
-    <View style={styles.container}>
-      <Stack.Screen options={{ headerTitle: 'Add Exercise' }} />
+    <Screen style={styles.container}>
+      <Stack.Screen
+        options={{
+          headerTitle: 'Add Exercise',
+          headerTintColor: textColor,
+          headerTitleStyle: {
+            color: textColor,
+          },
+        }}
+      />
       <ThemedText style={styles.label}>Select Category:</ThemedText>
-      <Picker
+      <ThemedPicker
         selectedValue={selectedCategory}
-        onValueChange={(itemValue) => setSelectedCategory(itemValue)}
-        style={styles.picker}
-      >
-        {categories.map((category) => (
-          <Picker.Item key={category} label={category} value={category} />
-        ))}
-      </Picker>
+        onValueChange={(itemValue) => setSelectedCategory(itemValue as string)}
+        items={categories.map(category => ({ label: category, value: category }))}
+        style={[styles.picker, isError.category ? styles.pickerError : null]}
+        placeholder='Choose a category'
+      />
 
       {selectedCategory ? (
         <>
           <ThemedText style={styles.label}>Select Activity:</ThemedText>
-          <Picker
+          <ThemedPicker
             selectedValue={selectedActivity}
-            onValueChange={(itemValue) => setSelectedActivity(itemValue)}
-            style={styles.picker}
-          >
-            {activities.map((activity) => (
-              <Picker.Item key={activity.code} label={activity.description} value={activity.description} />
-            ))}
-          </Picker>
+            onValueChange={(itemValue) => setSelectedActivity(itemValue as string)}
+            items={activities.map(activity => ({ label: activity.description, value: activity.description }))}
+            style={[styles.picker, isError.activity ? styles.pickerError : null]}
+            placeholder='Choose an activity'
+          />
         </>
       ) : null}
 
+      <ThemedText>Duration</ThemedText>
       <ThemedTextInput
-        style={styles.input}
-        placeholder="Duration (minutes)"
+        style={[styles.input, isError.hours ? styles.inputError : null]}
+        placeholder="Hours"
         keyboardType="numeric"
-        value={duration}
-        onChangeText={setDuration}
+        value={hours}
+        onChangeText={handleTextChange(setHours)}
       />
 
       <ThemedTextInput
-        style={styles.input}
+        style={[styles.input, isError.minutes ? styles.inputError : null]}
+        placeholder="Minutes"
+        keyboardType="numeric"
+        value={minutes}
+        onChangeText={handleTextChange(setMinutes)}
+      />
+
+      <ThemedText>Weight ({weightUnit === 1 ? 'kg' : 'lbs'})</ThemedText>
+      <ThemedTextInput
+        style={[styles.input, isError.weight ? styles.inputError : null]}
         placeholder="Weight (kg)"
         keyboardType="numeric"
         value={weight}
-        onChangeText={setWeight}
+        onChangeText={handleTextChange(setWeight)}
       />
 
       {caloriesBurned > 0 ? (
-        <ThemedText style={styles.result}>Calories Burned: {caloriesBurned}</ThemedText>
+        <ThemedText style={styles.result}>Burned: {(caloriesBurned / energyUnit).toFixed(0)} {energyUnit === 1 ? 'kj' : 'kcal'}</ThemedText>
       ) : null}
 
-      <Button title="Save Workout" onPress={saveWorkout} />
-    </View>
+      <ThemedButton title="Save Workout" onPress={saveWorkout} />
+    </Screen>
   );
 };
 
@@ -165,17 +287,20 @@ const styles = StyleSheet.create({
     fontSize: 18,
     marginBottom: 10,
   },
-  picker: {
-    height: 50,
-    width: '100%',
-    marginBottom: 20,
-  },
   input: {
     height: 40,
     borderColor: '#ccc',
     borderWidth: 1,
     marginBottom: 20,
     paddingHorizontal: 10,
+  },
+  inputError: {
+    borderColor: 'red',
+  },
+  picker: {
+  },
+  pickerError: {
+    borderColor: 'red',
   },
   result: {
     fontSize: 18,

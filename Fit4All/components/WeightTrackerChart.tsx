@@ -1,130 +1,137 @@
-import React, { useState, useEffect } from 'react';
-import { StyleSheet, View, Dimensions, Text, TextInput, TouchableOpacity } from 'react-native';
+import React, { useState, useEffect, useCallback } from 'react';
+import { StyleSheet, View, Dimensions, Text, TextInput, TouchableOpacity, Alert } from 'react-native';
 import { LineChart } from 'react-native-chart-kit';
 import { SurfaceView } from './SurfaceView';
 import AsyncStorage from '@react-native-async-storage/async-storage';
-import { ThemedButton } from './ThemedButton';
+import ThemedButton from './ThemedButton';
 import { ThemedText } from './ThemedText';
 import ThemedTextInput from './ThemedTextInput';
+import { useFocusEffect } from '@react-navigation/native';
+import { store } from 'expo-router/build/global-state/router-store';
+import { LineGraph } from 'react-native-graph';
 import { center } from '@shopify/react-native-skia';
 
 const screenWidth = Dimensions.get("window").width;
 
 interface WeightData {
-  weight: number;
-  date: string; // Use ISO date string
+  value: number;
+  date: Date; // Use ISO date string
 }
 
 const WeightTrackerChart = () => {
-  const [data, setData] = useState<{ labels: string[], datasets: any[], legend: string[] }>({
-    labels: [],
-    datasets: [],
-    legend: []
-  });
-  const [range, setRange] = useState<'week' | 'month' | 'year' | 'full'>('month');
+  const [data, setData] = useState<WeightData[]>([{ value: 0, date: new Date}]);
   const [loading, setLoading] = useState<boolean>(true);
   const [noData, setNoData] = useState<boolean>(false);
   const [newWeight, setNewWeight] = useState<string>(''); // State for the new weight input
-
-  useEffect(() => {
-    const fetchData = async () => {
-      try {
-        const storedData = await AsyncStorage.getItem('weights');
-        if (storedData) {
-          const weights: WeightData[] = JSON.parse(storedData);
-          const filteredData = filterDataByRange(weights, range);
-          if (filteredData.length > 0) {
-            setNoData(false);
-            const chartData = prepareChartData(filteredData);
-            setData(chartData);
+  const [inputError, setInputError] = useState<boolean>(false); // State to track input error
+  
+  useFocusEffect(
+    useCallback(() => {
+      const fetchData = async () => {
+        try {
+          const storedData = await AsyncStorage.getItem('weights');
+          if (storedData) {
+            const weights: WeightData[] = JSON.parse(storedData, (key, value) => {
+              // If the key is 'date', parse it as a Date object
+              if (key === 'date') {
+                return new Date(value);
+              }
+              return value; // otherwise, return the value as is
+            });
+            if (weights.length > 0) {
+              setNoData(false);
+              setData(weights);
+            } else {
+              setNoData(true);
+            }
           } else {
             setNoData(true);
           }
-        } else {
+        } catch (error) {
+          console.error('Failed to load weights', error);
           setNoData(true);
         }
-      } catch (error) {
-        console.error('Failed to load weights', error);
-        setNoData(true);
-      }
-      setLoading(false);
-    };
+        setLoading(false);
+      };
 
-    fetchData();
-  }, [range]);
+      //fetchData();
+      setData([
+        { value: 10, date: new Date('2024-01-01T00:40:19.057Z') },
+        { value: 15, date: new Date('2024-02-01T00:40:19.057Z') },
+        { value: 20, date: new Date('2024-03-01T00:40:19.057Z') },
+        { value: 25, date: new Date('2024-04-01T00:40:19.057Z') },
+        { value: 30, date: new Date('2024-05-39T00:40:19.057Z') },
+        { value: 35, date: new Date('2024-06-01T00:40:19.057Z') },
+        { value: 40, date: new Date('2024-07-01T00:40:19.057Z') },
+        { value: 45, date: new Date('2024-08-01T00:40:19.057Z') },
+        { value: 80, date: new Date('2024-08-21T00:40:19.057Z') },
+        { value: 50, date: new Date('2024-08-21T23:40:19.057') },
+        { value: 55, date: new Date('2024-10-01T00:40:19.057Z') },
+      ])
+      console.log(data)
+    }, [])
+  );
 
-  const filterDataByRange = (weights: WeightData[], range: 'week' | 'month' | 'year' | 'full') => {
-    const now = new Date();
-    const startDate = new Date();
+  useEffect(() => {
+    // const fetchData = async () => {
+    //   try {
+    //     const storedData = await AsyncStorage.getItem('weights');
+    //     if (storedData) {
+    //       // Parsing the stored data
+    //       const weights: WeightData[] = JSON.parse(storedData, (key, value) => {
+    //         // If the key is 'date', parse it as a Date object
+    //         if (key === 'date') {
+    //           return new Date(value);
+    //         }
+    //         return value; // otherwise, return the value as is
+    //       });
+    
+    //       if (weights.length > 0) {
+    //         setNoData(false);
+    //         const chartData = prepareChartData(weights);
+    //         setData(weights);
+    //         // weights.forEach((item, index) => {
+    //         //   console.log(`Item ${index}:`, {
+    //         //     weightType: typeof item.weight,
+    //         //     dateType: typeof item.date,
+    //         //   });
+    //         // });
+    //       } else {
+    //         setNoData(true);
+    //       }
+    //     } else {
+    //       setNoData(true);
+    //     }
+    //   } catch (error) {
+    //     console.error('Failed to load weights', error);
+    //     setNoData(true);
+    //   }
+    //   setLoading(false);
+    // };
+    
+    
+    setData([
+      { value: 10, date: new Date('2024-01-01T00:40:19.057Z') },
+      { value: 15, date: new Date('2024-02-01T00:40:19.057Z') },
+      { value: 20, date: new Date('2024-03-01T00:40:19.057Z') },
+      { value: 25, date: new Date('2024-04-01T00:40:19.057Z') },
+      { value: 30, date: new Date('2024-05-39T00:40:19.057Z') },
+      { value: 35, date: new Date('2024-06-01T00:40:19.057Z') },
+      { value: 40, date: new Date('2024-07-01T00:40:19.057Z') },
+      { value: 45, date: new Date('2024-08-01T00:40:19.057Z') },
+      { value: 80, date: new Date('2024-08-21T00:40:19.057Z') },
+      { value: 50, date: new Date('2024-08-21T23:40:19.057Z') },
+      { value: 55, date: new Date('2024-10-01T00:40:19.057Z') },
+    ])
+    console.log(data)
+    setLoading(false)
+  }, []);
 
-    switch (range) {
-      case 'week':
-        startDate.setDate(now.getDate() - 7);
-        break;
-      case 'month':
-        startDate.setMonth(now.getMonth() - 1);
-        break;
-      case 'year':
-        startDate.setFullYear(now.getFullYear() - 1);
-        break;
-      case 'full':
-      default:
-        return weights;
-    }
-
-    return weights.filter(weight => new Date(weight.date) >= startDate);
-  };
-
-  const prepareChartData = (weights: WeightData[]) => {
-    const dataset = weights.map(weight => weight.weight);
-    let labels: string[] = [];
-
-    const getMonthName = (date: Date) => date.toLocaleString('default', { month: 'short' });
-    const getYear = (date: Date) => date.getFullYear().toString();
-
-    switch (range) {
-      case 'week':
-        // No labels for the week range
-        break;
-      case 'month':
-        // Add labels for each week of the current month
-        const startOfMonth = new Date(new Date().setDate(1));
-        for (let week = 1; week <= 4; week++) {
-          labels.push(`Week ${week}`);
-        }
-        break;
-      case 'year':
-        // Add labels for every 3 months
-        const startOfYear = new Date(new Date().setMonth(0, 1)); // January 1st
-        for (let m = startOfYear; m <= new Date(); m.setMonth(m.getMonth() + 3)) {
-          labels.push(getMonthName(m) + ' ' + getYear(m));
-        }
-        break;
-      case 'full':
-        // Add labels for each year
-        const startOfDecade = new Date(new Date().setFullYear(Math.floor(new Date().getFullYear() / 10) * 10));
-        for (let y = startOfDecade; y <= new Date(); y.setFullYear(y.getFullYear() + 1)) {
-          labels.push(getYear(y));
-        }
-        break;
-      default:
-        break;
-    }
-
-    return {
-      labels,
-      datasets: [{
-        data: dataset,
-        color: (opacity = 1) => `rgba(134, 65, 244, ${opacity})`,
-        strokeWidth: 2
-      }],
-      legend: ['Weight Tracker']
-    };
-  };
 
   const handleAddWeight = async () => {
     if (!newWeight || isNaN(Number(newWeight))) {
-      alert('Please enter a valid weight.');
+      setInputError(true);
+      Alert.alert('Invalid Input', 'Please enter a valid weight.');
       return;
     }
 
@@ -132,48 +139,31 @@ const WeightTrackerChart = () => {
       const storedData = await AsyncStorage.getItem('weights');
       const weights: WeightData[] = storedData ? JSON.parse(storedData) : [];
       const newWeightEntry: WeightData = {
-        weight: parseFloat(newWeight),
-        date: new Date().toISOString()
+        value: parseFloat(newWeight),
+        date: new Date()
       };
 
       weights.push(newWeightEntry);
       await AsyncStorage.setItem('weights', JSON.stringify(weights));
 
-      // Clear input field
+      // Clear input field and reset error state
       setNewWeight('');
+      setInputError(false);
 
       // Refresh chart data
-      const filteredData = filterDataByRange(weights, range);
-      const chartData = prepareChartData(filteredData);
-      setData(chartData);
-      setNoData(filteredData.length === 0);
+      setData(weights);
+      setNoData(weights.length === 0);
     } catch (error) {
       console.error('Failed to save weight', error);
     }
   };
 
-  const populateSampleData = async () => {
-    const weights: WeightData[] = [
-      { weight: 60, date: new Date(new Date().setDate(new Date().getDate() - 3)).toISOString() },
-      { weight: 62, date: new Date(new Date().setDate(new Date().getDate() - 5)).toISOString() },
-      { weight: 65, date: new Date(new Date().setDate(new Date().getDate() - 14)).toISOString() },
-      { weight: 68, date: new Date(new Date().setDate(new Date().getDate() - 28)).toISOString() },
-      { weight: 70, date: new Date(new Date().setDate(new Date().getDate() - 180)).toISOString() },
-      { weight: 75, date: new Date(new Date().setDate(new Date().getDate() - 400)).toISOString() }
-    ];
-
-    await AsyncStorage.setItem('weights', JSON.stringify(weights));
-    // Refresh the chart with the new data
-    const filteredData = filterDataByRange(weights, range);
-    const chartData = prepareChartData(filteredData);
-    setData(chartData);
-    setNoData(filteredData.length === 0);
+  const handleWeightInputChange = (text: string) => {
+    // Remove non-numeric characters
+    const filteredText = text.replace(/[^0-9.]/g, '');
+    setNewWeight(filteredText);
+    setInputError(false); // Reset the error state when the user modifies the input
   };
-
-  useEffect(() => {
-    // Call this function to populate sample data if needed
-    // populateSampleData(); // Uncomment to populate data
-  }, []);
 
   if (loading) {
     return (
@@ -184,46 +174,84 @@ const WeightTrackerChart = () => {
     );
   }
 
+  const handleTitle = () => {
+    return <ThemedText>Title goes here</ThemedText>
+  }
+
   return (
-    <SurfaceView type='modal' style={styles.container}>
-      {noData ? (
-        <ThemedText>No weight history added</ThemedText>
-      ) : (
-        <>
-          <LineChart
-            data={data}
-            width={screenWidth - 40}
-            height={220}
-            chartConfig={{
-              color: (opacity = 0) => `rgba(255, 255, 255, ${opacity})`,
-              strokeWidth: 2,
-              barPercentage: 0.5,
-              useShadowColorFromDataset: false
-            }}
-            bezier
-          />
-          <View style={styles.rangeContainer}>
-            {['week', 'month', 'year', 'full'].map(rangeOption => (
-              <TouchableOpacity
-                key={rangeOption}
-                style={[styles.button, range === rangeOption && styles.buttonActive]}
-                onPress={() => setRange(rangeOption as 'week' | 'month' | 'year' | 'full')}
-              >
-                <Text style={styles.buttonText}>{rangeOption.charAt(0).toUpperCase() + rangeOption.slice(1)}</Text>
-              </TouchableOpacity>
-            ))}
-          </View>
-        </>
-      )}
+    // <SurfaceView type='modal' style={styles.container}>
+    //   {noData ? (
+    //     <ThemedText>No weight history added</ThemedText>
+    //   ) : (
+    //     // <>
+    //     //   <LineChart
+    //     //     data={data}
+    //     //     width={screenWidth - 40}
+    //     //     height={220}
+    //     //     chartConfig={{
+    //     //       color: (opacity = 0) => `rgba(255, 255, 255, ${opacity})`,
+    //     //       strokeWidth: 2,
+    //     //       barPercentage: 0.5,
+    //     //       useShadowColorFromDataset: false
+    //     //     }}
+    //     //     bezier
+    //     //   />
+    //     // </>
+    //     <SurfaceView style={styles.graphContainer}>
+    //     <LineGraph
+    //       points={ [
+    //         { value: 10, date: new Date('2024-01-01T00:40:19.057Z') },
+    //         { value: 15, date: new Date('2024-02-01T00:40:19.057Z') },
+    //         { value: 20, date: new Date('2024-03-01T00:40:19.057Z') },
+    //         { value: 25, date: new Date('2024-04-01T00:40:19.057Z') },
+    //         { value: 30, date: new Date('2024-05-39T00:40:19.057Z') },
+    //         { value: 35, date: new Date('2024-06-01T00:40:19.057Z') },
+    //         { value: 40, date: new Date('2024-07-01T00:40:19.057Z') },
+    //         { value: 45, date: new Date('2024-08-01T00:40:19.057Z') },
+    //         { value: 80, date: new Date('2024-08-21T00:40:19.057Z') },
+    //         { value: 50, date: new Date('2024-08-21T23:40:19.057') },
+    //         { value: 55, date: new Date('2024-10-01T00:40:19.057Z') },
+    //       ] }
+    //       animated={false}
+    //       color="#a86f6f"
+    //       style={styles.lineGraph}
+    //     />
+    //   </SurfaceView>
+    //   )}
+    //   <View style={styles.addWeightContainer}>
+    //     <ThemedTextInput
+    //       style={[styles.textInput, inputError && styles.inputError]}
+    //       placeholder="Enter weight"
+    //       keyboardType="numeric"
+    //       value={newWeight}
+    //       onChangeText={handleWeightInputChange}
+    //     />
+    //     <ThemedButton title="Add weight" type='primary' onPress={handleAddWeight} />
+    //   </View>
+    // </SurfaceView>
+    <SurfaceView type="modal">
+      {handleTitle()}
+      <SurfaceView style={styles.graphContainer}>
+        <LineGraph
+          points={data}
+          animated={false}
+          color="#a86f6f"
+          style={styles.lineGraph}
+        />
+      </SurfaceView>
       <View style={styles.addWeightContainer}>
         <ThemedTextInput
-          style={styles.textInput}
+          style={[styles.textInput, inputError && styles.inputError]}
           placeholder="Enter weight"
           keyboardType="numeric"
           value={newWeight}
-          onChangeText={setNewWeight}
+          onChangeText={handleWeightInputChange}
         />
-        <ThemedButton title="Add weight" type='primary' onPress={handleAddWeight} />
+        <ThemedButton
+          title="Add weight"
+          type="primary"
+          onPress={handleAddWeight}
+        />
       </View>
     </SurfaceView>
   );
@@ -232,28 +260,12 @@ const WeightTrackerChart = () => {
 const styles = StyleSheet.create({
   container: {
     padding: 20,
-    alignItems: 'center',
-  },
-  rangeContainer: {
-    flexDirection: 'row',
-    justifyContent: 'space-between',
-    width: '100%',
-    marginVertical: 10,
-  },
-  button: {
-    backgroundColor: '#ccc',
-    padding: 10,
-    borderRadius: 5,
-    marginHorizontal: 5,
-  },
-  buttonActive: {
-    backgroundColor: '#a3a3a3',
-  },
-  buttonText: {
-    color: '#fff',
+    // alignItems: 'center',
+    flex: 1
   },
   addWeightContainer: {
     flexDirection: 'row',
+    justifyContent: 'center',
     alignItems: 'center',
     marginTop: 20,
   },
@@ -264,6 +276,16 @@ const styles = StyleSheet.create({
     padding: 10,
     marginRight: 10,
     width: 150,
+  },
+  inputError: {
+    borderColor: 'red',
+  },
+  lineGraph: {
+    flex: 1, // Make the LineGraph fill its container
+  },
+  graphContainer: {
+    height: 250, // Set a height for the graph container
+    marginVertical: 0, // Add some vertical margin
   },
 });
 

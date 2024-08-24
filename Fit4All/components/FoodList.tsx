@@ -1,48 +1,50 @@
 import AsyncStorage from '@react-native-async-storage/async-storage';
-import DateTimePicker from '@react-native-community/datetimepicker';
 import { useFocusEffect } from '@react-navigation/native';
 import { useRouter } from 'expo-router';
 import React, { useCallback, useState } from 'react';
-import { ActivityIndicator, Alert, Button, FlatList, Platform, StyleSheet, TouchableOpacity, View } from 'react-native';
-import { ThemedButton } from './ThemedButton';
+import { ActivityIndicator, Alert, FlatList, Platform, StyleSheet, TouchableOpacity, View } from 'react-native';
+import ThemedButton from './ThemedButton';
 import { ThemedText } from './ThemedText';
+
+interface Nutriments {
+  energy_100g?: string;
+  fat_100g?: string;
+  proteins_100g?: string;
+  carbohydrates_100g?: string;
+}
 
 interface Product {
   id: string;
   key: string;
   product_name: string;
-  nutriments: {
-    energy_100g?: string;
-    fat_100g?: string;
-    proteins_100g?: string;
-    carbohydrates_100g?: string;
-  };
-  energy?: string;
+  nutriments: Nutriments;
   amount?: string;
   dateAdded?: string;
 }
 
+interface FoodListProps {
+  selectedDate: Date;
+  onDateChange: (event: any, date?: Date) => void;
+}
 
-
-const FoodList = () => {
+const FoodList: React.FC<FoodListProps> = ({ selectedDate, onDateChange }) => {
   const [addedFoods, setAddedFoods] = useState<Product[]>([]);
+  
   const [loading, setLoading] = useState(true);
-  const [selectedDate, setSelectedDate] = useState(new Date());
-  const [showDatePicker, setShowDatePicker] = useState(false);
   const router = useRouter();
-  const [energyUnit, setEnergyUnit] = useState(1)
+  const [energyUnit, setEnergyUnit] = useState(4.184);
 
   const fetchAddedFoods = async () => {
     try {
       const storedFoodsString = await AsyncStorage.getItem('storedProducts');
       const energyUnitString = await AsyncStorage.getItem('energyUnit');
       if (storedFoodsString) {
-        const storedFoods = JSON.parse(storedFoodsString);
+        const storedFoods: Product[] = JSON.parse(storedFoodsString);
         setAddedFoods(storedFoods);
       }
-      if (energyUnit){
-        const unit = energyUnitString === 'kj' ? 1 : 4.184
-        setEnergyUnit(unit)
+      if (energyUnitString) {
+        const unit = energyUnitString === 'kj' ? 1 : 4.184;
+        setEnergyUnit(unit);
       }
     } catch (error) {
       console.error('Failed to fetch added foods', error);
@@ -58,7 +60,7 @@ const FoodList = () => {
   );
 
   const handlePress = (item: Product) => {
-    router.push(`/food/detail?id=${item.id}`);
+    // router.push(`/food/detail?id=${item.id}`);
   };
 
   const clearStoredProducts = async () => {
@@ -75,14 +77,9 @@ const FoodList = () => {
     return foods.filter(food => food.dateAdded === dateString);
   };
 
-  const onDateChange = (event: any, selectedDate?: Date) => {
-    const currentDate = selectedDate || new Date();
-    setShowDatePicker(false);
-    setSelectedDate(currentDate);
-  };
-
   const calculateTotalEnergy = (item: Product) => {
     const amount = parseFloat(item.amount || '0');
+    
     const energyPer100g = parseFloat(item.nutriments.energy_100g || '0');
     return (amount * energyPer100g / 100 / energyUnit).toFixed(0);
   };
@@ -128,7 +125,7 @@ const FoodList = () => {
       { cancelable: true }
     );
   };
-  
+
   const clearDateSpecificProducts = async () => {
     try {
       const dateString = selectedDate.toISOString().split('T')[0];
@@ -148,34 +145,24 @@ const FoodList = () => {
 
   return (
     <View style={{ flex: 1, padding: 0 }}>
-      <ThemedText type='subtitle' style={{  fontWeight: 'bold', textAlign : 'center', padding: 10}}>-- Added Food Items --</ThemedText>
+      <ThemedText type='subtitle' style={styles.subtitle}>-- Added Food Items --</ThemedText>
       <View style={styles.row}>
-      <ThemedButton title="Select Date" style={styles.item} onPress={() => setShowDatePicker(true)} type='primary' />
-      <ThemedButton title="Clear All Items" style={styles.item} onPress={confirmClearDateSpecificItems} type='danger' />
-        </View>
-      {showDatePicker && (
-        <DateTimePicker
-          value={selectedDate}
-          mode="date"
-          display="default"
-          onChange={onDateChange}
-        />
-      )}
+        <ThemedButton title="Clear All Items" style={styles.clearButton} onPress={confirmClearDateSpecificItems} type='danger' />
+      </View>
       {filteredFoods.length === 0 ? (
         <ThemedText>No food items added on this date.</ThemedText>
       ) : (
         <FlatList
           style={{ flex: 1 }}
           data={filteredFoods}
-          keyExtractor={(item) => item.key}
+          keyExtractor={(_, index) => index.toString()}
           renderItem={({ item }) => (
-            <View style={{ flexDirection: 'row', justifyContent: 'space-between', padding: 16, borderBottomWidth: 1 }}>
-              <TouchableOpacity onPress={() => handlePress(item)}>
-              <ThemedText>{item.product_name.charAt(0).toUpperCase() + item.product_name.slice(1)}</ThemedText>
-
-                <ThemedText>Energy: {calculateTotalEnergy(item)} {energyUnit === 1 ? 'kJ' : "kcal" }</ThemedText>
+            <View style={styles.itemContainer}>
+              <TouchableOpacity onPress={() => handlePress(item)} style={styles.itemTouchable}>
+                <ThemedText style={styles.productName}>{item.product_name.charAt(0).toUpperCase() + item.product_name.slice(1)}</ThemedText>
+                <ThemedText style={styles.detailText}>Energy: {item.nutriments.energy_100g ? `${calculateTotalEnergy(item)} ${energyUnit === 1 ? 'kJ' : "kcal"}` : 'No data'}</ThemedText>
               </TouchableOpacity>
-              <View style={{ flexDirection: 'row' }}>
+              <View style={styles.deleteButtonContainer}>
                 <ThemedButton title="-" onPress={() => handleDelete(item)} type='danger'/>
               </View>
             </View>
@@ -186,19 +173,42 @@ const FoodList = () => {
   );
 };
 
-export default FoodList;
-
 const styles = StyleSheet.create({
-  container: {
+  subtitle: {
+    fontWeight: 'bold',
+    textAlign: 'center',
     padding: 10,
-    marginTop: 30,
   },
   row: {
     flexDirection: 'row',
-    justifyContent: 'space-between', // Adjusts space between items
+    justifyContent: 'flex-end', // Align the button to the end
+    padding: 10,
   },
-  item: {
-    flex: 1, // Allows the components to expand and fill the available space
-    marginHorizontal: 5, // Adds space between the components
+  clearButton: {
+    flex: 1,
+    marginHorizontal: 5,
+  },
+  itemContainer: {
+    flexDirection: 'row',
+    alignItems: 'flex-start',
+    padding: 16,
+    borderBottomWidth: 1,
+  },
+  itemTouchable: {
+    flex: 1,
+  },
+  productName: {
+    flexShrink: 1, // Allows text to shrink and wrap
+  },
+  deleteButtonContainer: {
+    justifyContent: 'center',
+    marginLeft: 10,
+  },
+  detailText: {
+    fontSize: 14,
+    color: 'gray',
+    marginRight: 10,
   },
 });
+
+export default FoodList;

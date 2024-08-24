@@ -1,21 +1,59 @@
+import FoodCalories from '@/components/FoodCalories';
+import FoodList from '@/components/FoodList';
+import NutritionWheel from '@/components/NutritionWheel';
+import Screen from '@/components/Screen';
+import ThemedButton from '@/components/ThemedButton';
+import { ThemedText } from '@/components/ThemedText';
+import DateTimePicker from '@react-native-community/datetimepicker';
+import { useFocusEffect } from '@react-navigation/native';
+import { router } from 'expo-router';
+import React, { useCallback, useState } from 'react';
+import { StyleSheet } from 'react-native';
 
-import FoodCalories from '@/components/FoodCalories'
-import FoodList from '@/components/FoodList'
-import NutritionWheel from '@/components/NutritionWheel'
-import { ThemedButton } from '@/components/ThemedButton'
-import { Link, router } from 'expo-router'
-import React from 'react'
-import { Button, StyleSheet, Text, View, ScrollView } from 'react-native'
+export default function FoodScreen() {
+  const [selectedDate, setSelectedDate] = useState(new Date());
+  const [showDatePicker, setShowDatePicker] = useState(false);
 
-export default function food(){
+  const handleDateChange = (event: any, date?: Date) => {
+    setShowDatePicker(false);
+    if (date) {
+      setSelectedDate(date);
+    }
+  };
+
+  const showDatePickerModal = () => {
+    setShowDatePicker(true);
+  };
+
+  useFocusEffect(
+    useCallback(() => {
+      // Set the selected date to today's date when the screen is focused
+      setSelectedDate(new Date());
+    }, [])
+  );
+
   return (
-    <View style={{ flex: 1, padding: 10, marginTop: 30 }}>
-      <FoodCalories/>
-      <NutritionWheel />
-      <ThemedButton title='Add Food' onPress={() => {router.push(`/food/search`)}} />
-      <FoodList />
-    </View>
-  )
+    <Screen>
+      <ThemedText type='title'>Food log</ThemedText>
+      <FoodCalories selectedDate={selectedDate} />
+      <NutritionWheel selectedDate={selectedDate} />
+      <ThemedButton title="Add Food" style={styles.button} onPress={() => {router.push('/food/search')}} type='primary' />
+      <ThemedButton title="Select Date" style={styles.button}onPress={showDatePickerModal} type='primary' />
+      {showDatePicker && (
+        <DateTimePicker
+          value={selectedDate}
+          mode="date"
+          display="default"
+          onChange={handleDateChange}
+        />
+      )}
+      <FoodList selectedDate={selectedDate} onDateChange={handleDateChange} />
+    </Screen>
+  );
 }
 
-const styles = StyleSheet.create({})
+const styles = StyleSheet.create({
+  button : {
+    marginVertical : 5
+  }
+});

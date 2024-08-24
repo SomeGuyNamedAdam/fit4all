@@ -8,7 +8,7 @@ export type ThemedButtonProps = TouchableOpacityProps & {
   title: string;
 };
 
-export function ThemedButton({
+export default function ThemedButton({
   style,
   lightColor,
   darkColor,

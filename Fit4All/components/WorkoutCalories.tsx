@@ -1,10 +1,10 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import AsyncStorage from '@react-native-async-storage/async-storage';
 import { useFocusEffect, useTheme } from '@react-navigation/native';
 import { ActivityIndicator, StyleSheet, View } from 'react-native';
 import { SurfaceView } from './SurfaceView';
 import { ThemedText } from './ThemedText';
-import { ThemedButton } from './ThemedButton';
+import ThemedButton from './ThemedButton';
 import { router } from 'expo-router';
 
 interface Workout {
@@ -16,12 +16,38 @@ interface Workout {
   date: string;
 }
 
-export function WorkoutCalories() {
+interface WorkoutCaloriesProps {
+  selectedDate?: Date; // Make selectedDate optional
+}
+
+export function WorkoutCalories({ selectedDate }: WorkoutCaloriesProps) {
   const { colors } = useTheme();
 
   const [calories, setCalories] = useState(0);
-  const [energyUnit, setEnergyUnit] = useState(1);
+  const [energyUnit, setEnergyUnit] = useState(4.184);
   const [loading, setLoading] = useState(true);
+  const [currentDate, setCurrentDate] = useState(new Date());
+
+  // Set default date to today if selectedDate is not provided
+  useEffect(() => {
+    setCurrentDate(selectedDate || new Date());
+  }, [selectedDate]);
+
+  useFocusEffect(
+    React.useCallback(() => {
+      const fetchData = async () => {
+        try {
+          await getCalories();
+          await getUnits();
+        } catch (error) {
+          console.log(error);
+        } finally {
+          setLoading(false);
+        }
+      };
+      fetchData();
+    }, [selectedDate])
+  );
 
   const getCalories = async () => {
     try {
@@ -29,8 +55,12 @@ export function WorkoutCalories() {
       if (storedDataString) {
         const doneWorkouts: Workout[] = JSON.parse(storedDataString);
         
+        const dateString = selectedDate ? selectedDate.toISOString().split('T')[0] : new Date().toISOString().split('T')[0];
+        
+        const filteredWorkouts = doneWorkouts.filter(workout => workout.date === dateString);
+        
         let totalCalories = 0;
-        doneWorkouts.forEach(workout => {
+        filteredWorkouts.forEach(workout => {
           totalCalories += workout.caloriesBurned;
         });
 
@@ -53,21 +83,7 @@ export function WorkoutCalories() {
     }
   };
 
-  useFocusEffect(
-    React.useCallback(() => {
-      const fetchData = async () => {
-        try {
-          await getCalories();
-          await getUnits();
-        } catch (error) {
-          console.log(error);
-        } finally {
-          setLoading(false);
-        }
-      };
-      fetchData();
-    }, [])
-  );
+  
 
   if (loading) {
     return <ActivityIndicator size="large" color="#0000ff" />;
@@ -80,13 +96,11 @@ export function WorkoutCalories() {
         <ThemedButton style={styles.button} title="+" type="primary" onPress={() => { router.push('/workout/search'); }} />
       </View>
       <ThemedText style={styles.text}>
-      🔥: {(Math.round(calories) / energyUnit).toFixed(0)} {energyUnit === 1 ? 'kJ' : 'kcal'}
+        🔥: {(Math.round(calories) / energyUnit).toFixed(0)} {energyUnit === 1 ? 'kJ' : 'kcal'}
       </ThemedText>
     </SurfaceView>
   );
 }
-
-export default WorkoutCalories;
 
 const styles = StyleSheet.create({
   view: {
@@ -115,10 +129,7 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
     alignItems: 'center',
     borderRadius: 50
-    
-  },
-  totalTime: {
-    fontSize: 20,
-    marginTop: 10,
   },
 });
+
+export default WorkoutCalories;

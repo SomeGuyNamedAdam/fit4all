@@ -1,0 +1,3213 @@
+[
+    {
+        "product_name": "Hummus, commercial",
+        "countries_tags": [
+            "en:world"
+        ],
+        "nutriments": {
+            "energy_100g": "960",
+            "fat_100g": "16.6",
+            "proteins_100g": "7.35",
+            "carbohydrates_100g": "14.4"
+        }
+    },
+    {
+        "product_name": "Tomatoes, grape, raw",
+        "countries_tags": [
+            "en:world"
+        ],
+        "nutriments": {
+            "energy_100g": "113",
+            "fat_100g": "0.63",
+            "proteins_100g": "0.83",
+            "carbohydrates_100g": "5.51"
+        }
+    },
+    {
+        "product_name": "Beans, snap, green, canned, regular pack, drained solids",
+        "countries_tags": [
+            "en:world"
+        ],
+        "nutriments": {
+            "energy_100g": "86",
+            "fat_100g": "0.39",
+            "proteins_100g": "1.04",
+            "carbohydrates_100g": "4.11"
+        }
+    },
+    {
+        "product_name": "Frankfurter, beef, unheated",
+        "countries_tags": [
+            "en:world"
+        ],
+        "nutriments": {
+            "energy_100g": "1310",
+            "fat_100g": "27.0",
+            "proteins_100g": "11.7",
+            "carbohydrates_100g": "2.89"
+        }
+    },
+    {
+        "product_name": "Nuts, almonds, dry roasted, with salt added",
+        "countries_tags": [
+            "en:world"
+        ],
+        "nutriments": {
+            "energy_100g": "2590",
+            "fat_100g": "55.6",
+            "proteins_100g": "20.4",
+            "carbohydrates_100g": "16.2"
+        }
+    },
+    {
+        "product_name": "Kale, raw",
+        "countries_tags": [
+            "en:world"
+        ],
+        "nutriments": {
+            "energy_100g": "148",
+            "fat_100g": "1.49",
+            "proteins_100g": "2.92",
+            "carbohydrates_100g": "4.42"
+        }
+    },
+    {
+        "product_name": "Egg, whole, raw, frozen, pasteurized",
+        "countries_tags": [
+            "en:world"
+        ],
+        "nutriments": {
+            "energy_100g": "627",
+            "fat_100g": "10.3",
+            "proteins_100g": "12.3",
+            "carbohydrates_100g": "0.91"
+        }
+    },
+    {
+        "product_name": "Egg, white, raw, frozen, pasteurized",
+        "countries_tags": [
+            "en:world"
+        ],
+        "nutriments": {
+            "energy_100g": "201",
+            "fat_100g": "0.16",
+            "proteins_100g": "10.1",
+            "carbohydrates_100g": "0.74"
+        }
+    },
+    {
+        "product_name": "Egg, white, dried",
+        "countries_tags": [
+            "en:world"
+        ],
+        "nutriments": {
+            "energy_100g": "1570",
+            "fat_100g": "0.65",
+            "proteins_100g": "79.9",
+            "carbohydrates_100g": "6.02"
+        }
+    },
+    {
+        "product_name": "Onion rings, breaded, par fried, frozen, prepared, heated in oven",
+        "countries_tags": [
+            "en:world"
+        ],
+        "nutriments": {
+            "energy_100g": "1210",
+            "fat_100g": "13.5",
+            "proteins_100g": "4.52",
+            "carbohydrates_100g": "35.15"
+        }
+    },
+    {
+        "product_name": "Pickles, cucumber, dill or kosher dill",
+        "countries_tags": [
+            "en:world"
+        ],
+        "nutriments": {
+            "energy_100g": "50",
+            "fat_100g": "0.43",
+            "proteins_100g": "0.48",
+            "carbohydrates_100g": "1.99"
+        }
+    },
+    {
+        "product_name": "Cheese, parmesan, grated",
+        "countries_tags": [
+            "en:world"
+        ],
+        "nutriments": {
+            "energy_100g": "1760",
+            "fat_100g": "26.0",
+            "proteins_100g": "29.6",
+            "carbohydrates_100g": "12.4"
+        }
+    },
+    {
+        "product_name": "Cheese, pasteurized process, American, vitamin D fortified",
+        "countries_tags": [
+            "en:world"
+        ],
+        "nutriments": {
+            "energy_100g": "1530",
+            "fat_100g": "29.1",
+            "proteins_100g": "18.0",
+            "carbohydrates_100g": "5.27"
+        }
+    },
+    {
+        "product_name": "Grapefruit juice, white, canned or bottled, unsweetened",
+        "countries_tags": [
+            "en:world"
+        ],
+        "nutriments": {
+            "energy_100g": "157",
+            "fat_100g": "0.7",
+            "proteins_100g": "0.55",
+            "carbohydrates_100g": "7.59"
+        }
+    },
+    {
+        "product_name": "Peaches, yellow, raw",
+        "countries_tags": [
+            "en:world"
+        ],
+        "nutriments": {
+            "energy_100g": "174",
+            "fat_100g": "0.27",
+            "proteins_100g": "0.91",
+            "carbohydrates_100g": "9.98"
+        }
+    },
+    {
+        "product_name": "Seeds, sunflower seed kernels, dry roasted, with salt added",
+        "countries_tags": [
+            "en:world"
+        ],
+        "nutriments": {
+            "energy_100g": "2560",
+            "fat_100g": "54.1",
+            "proteins_100g": "21.0",
+            "carbohydrates_100g": "16.0"
+        }
+    },
+    {
+        "product_name": "Bread, white, commercially prepared",
+        "countries_tags": [
+            "en:world"
+        ],
+        "nutriments": {
+            "energy_100g": "1130",
+            "fat_100g": "3.52",
+            "proteins_100g": "9.43",
+            "carbohydrates_100g": "47.0"
+        }
+    },
+    {
+        "product_name": "Kale, frozen, cooked, boiled, drained, without salt",
+        "countries_tags": [
+            "en:world"
+        ],
+        "nutriments": {
+            "energy_100g": "151",
+            "fat_100g": "1.21",
+            "proteins_100g": "2.94",
+            "carbohydrates_100g": "5.3"
+        }
+    },
+    {
+        "product_name": "Mustard, prepared, yellow",
+        "countries_tags": [
+            "en:world"
+        ],
+        "nutriments": {
+            "energy_100g": "254",
+            "fat_100g": "3.57",
+            "proteins_100g": "4.25",
+            "carbohydrates_100g": "5.84"
+        }
+    },
+    {
+        "product_name": "Kiwifruit, green, raw",
+        "countries_tags": [
+            "en:world"
+        ],
+        "nutriments": {
+            "energy_100g": "241",
+            "fat_100g": "0.44",
+            "proteins_100g": "1.06",
+            "carbohydrates_100g": "13.0"
+        }
+    },
+    {
+        "product_name": "Nectarines, raw",
+        "countries_tags": [
+            "en:world"
+        ],
+        "nutriments": {
+            "energy_100g": "163",
+            "fat_100g": "0.21",
+            "proteins_100g": "1.06",
+            "carbohydrates_100g": "9.3"
+        }
+    },
+    {
+        "product_name": "Cheese, cheddar",
+        "countries_tags": [
+            "en:world"
+        ],
+        "nutriments": {
+            "energy_100g": "1710",
+            "fat_100g": "31.5",
+            "proteins_100g": "23.3",
+            "carbohydrates_100g": "2.44"
+        }
+    },
+    {
+        "product_name": "Cheese, cottage, lowfat, 2% milkfat",
+        "countries_tags": [
+            "en:world"
+        ],
+        "nutriments": {
+            "energy_100g": "352",
+            "fat_100g": "2.08",
+            "proteins_100g": "11.0",
+            "carbohydrates_100g": "4.31"
+        }
+    },
+    {
+        "product_name": "Cheese, mozzarella, low moisture, part-skim",
+        "countries_tags": [
+            "en:world"
+        ],
+        "nutriments": {
+            "energy_100g": "1240",
+            "fat_100g": "19.1",
+            "proteins_100g": "23.7",
+            "carbohydrates_100g": "4.44"
+        }
+    },
+    {
+        "product_name": "Egg, whole, dried",
+        "countries_tags": [
+            "en:world"
+        ],
+        "nutriments": {
+            "energy_100g": "2410",
+            "fat_100g": "39.8",
+            "proteins_100g": "48.1",
+            "carbohydrates_100g": "1.87"
+        }
+    },
+    {
+        "product_name": "Egg, yolk, raw, frozen, pasteurized",
+        "countries_tags": [
+            "en:world"
+        ],
+        "nutriments": {
+            "energy_100g": "1240",
+            "fat_100g": "25.1",
+            "proteins_100g": "15.6",
+            "carbohydrates_100g": "0.59"
+        }
+    },
+    {
+        "product_name": "Egg, yolk, dried",
+        "countries_tags": [
+            "en:world"
+        ],
+        "nutriments": {
+            "energy_100g": "2740",
+            "fat_100g": "55.5",
+            "proteins_100g": "34.2",
+            "carbohydrates_100g": "1.07"
+        }
+    },
+    {
+        "product_name": "Yogurt, Greek, plain, nonfat",
+        "countries_tags": [
+            "en:world"
+        ],
+        "nutriments": {
+            "energy_100g": "256",
+            "fat_100g": "0.27",
+            "proteins_100g": "10.3",
+            "carbohydrates_100g": "3.64"
+        }
+    },
+    {
+        "product_name": "Yogurt, Greek, strawberry, nonfat",
+        "countries_tags": [
+            "en:world"
+        ],
+        "nutriments": {
+            "energy_100g": "347",
+            "fat_100g": "0.15",
+            "proteins_100g": "8.06",
+            "carbohydrates_100g": "12.1"
+        }
+    },
+    {
+        "product_name": "Oil, coconut",
+        "countries_tags": [
+            "en:world"
+        ],
+        "nutriments": {
+            "energy_100g": "3480",
+            "fat_100g": "94.8",
+            "proteins_100g": "0.0",
+            "carbohydrates_100g": "0.84"
+        }
+    },
+    {
+        "product_name": "Chicken, broilers or fryers, drumstick, meat only, cooked, braised",
+        "countries_tags": [
+            "en:world"
+        ],
+        "nutriments": {
+            "energy_100g": "652",
+            "fat_100g": "5.59",
+            "proteins_100g": "23.9",
+            "carbohydrates_100g": "0.0"
+        }
+    },
+    {
+        "product_name": "Chicken, broiler or fryers, breast, skinless, boneless, meat only, cooked, braised",
+        "countries_tags": [
+            "en:world"
+        ],
+        "nutriments": {
+            "energy_100g": "695",
+            "fat_100g": "3.15",
+            "proteins_100g": "32.1",
+            "carbohydrates_100g": "0.0"
+        }
+    },
+    {
+        "product_name": "Sauce, pasta, spaghetti/marinara, ready-to-serve",
+        "countries_tags": [
+            "en:world"
+        ],
+        "nutriments": {
+            "energy_100g": "186",
+            "fat_100g": "1.27",
+            "proteins_100g": "1.41",
+            "carbohydrates_100g": "7.68"
+        }
+    },
+    {
+        "product_name": "Ham, sliced, pre-packaged, deli meat (96%fat free, water added)",
+        "countries_tags": [
+            "en:world"
+        ],
+        "nutriments": {
+            "energy_100g": "443",
+            "fat_100g": "3.44",
+            "proteins_100g": "16.7",
+            "carbohydrates_100g": "0.27"
+        }
+    },
+    {
+        "product_name": "Olives, green, Manzanilla, stuffed with pimiento",
+        "countries_tags": [
+            "en:world"
+        ],
+        "nutriments": {
+            "energy_100g": "543",
+            "fat_100g": "12.35",
+            "proteins_100g": "1.15",
+            "carbohydrates_100g": "4.64"
+        }
+    },
+    {
+        "product_name": "Cookies, oatmeal, soft, with raisins",
+        "countries_tags": [
+            "en:world"
+        ],
+        "nutriments": {
+            "energy_100g": "1800",
+            "fat_100g": "14.0",
+            "proteins_100g": "5.79",
+            "carbohydrates_100g": "68.75"
+        }
+    },
+    {
+        "product_name": "Tomatoes, canned, red, ripe, diced",
+        "countries_tags": [
+            "en:world"
+        ],
+        "nutriments": {
+            "energy_100g": "76",
+            "fat_100g": "0.5",
+            "proteins_100g": "0.84",
+            "carbohydrates_100g": "3.32"
+        }
+    },
+    {
+        "product_name": "Fish, haddock, raw",
+        "countries_tags": [
+            "en:world"
+        ],
+        "nutriments": {
+            "energy_100g": "308",
+            "fat_100g": "0.39",
+            "proteins_100g": "16.3",
+            "carbohydrates_100g": "0.0"
+        }
+    },
+    {
+        "product_name": "Fish, pollock, raw",
+        "countries_tags": [
+            "en:world"
+        ],
+        "nutriments": {
+            "energy_100g": "235",
+            "fat_100g": "0.41",
+            "proteins_100g": "12.3",
+            "carbohydrates_100g": "0.0"
+        }
+    },
+    {
+        "product_name": "Fish, tuna, light, canned in water, drained solids",
+        "countries_tags": [
+            "en:world"
+        ],
+        "nutriments": {
+            "energy_100g": "376",
+            "fat_100g": "0.77",
+            "proteins_100g": "19.0",
+            "carbohydrates_100g": "0.08"
+        }
+    },
+    {
+        "product_name": "Restaurant, Chinese, fried rice, without meat",
+        "countries_tags": [
+            "en:world"
+        ],
+        "nutriments": {
+            "energy_100g": "729",
+            "fat_100g": "2.71",
+            "proteins_100g": "3.84",
+            "carbohydrates_100g": "32.5"
+        }
+    },
+    {
+        "product_name": "Restaurant, Latino, tamale, pork",
+        "countries_tags": [
+            "en:world"
+        ],
+        "nutriments": {
+            "energy_100g": "728",
+            "fat_100g": "8.51",
+            "proteins_100g": "7.38",
+            "carbohydrates_100g": "15.6"
+        }
+    },
+    {
+        "product_name": "Restaurant, Latino, pupusas con frijoles (pupusas, bean)",
+        "countries_tags": [
+            "en:world"
+        ],
+        "nutriments": {
+            "energy_100g": "959",
+            "fat_100g": "8.54",
+            "proteins_100g": "5.59",
+            "carbohydrates_100g": "31.1"
+        }
+    },
+    {
+        "product_name": "Bread, whole-wheat, commercially prepared",
+        "countries_tags": [
+            "en:world"
+        ],
+        "nutriments": {
+            "energy_100g": "1060",
+            "fat_100g": "3.26",
+            "proteins_100g": "12.3",
+            "carbohydrates_100g": "41.15"
+        }
+    },
+    {
+        "product_name": "Beef, loin, tenderloin roast, separable lean only, boneless, trimmed to 0\" fat, select, cooked, roasted",
+        "countries_tags": [
+            "en:world"
+        ],
+        "nutriments": {
+            "energy_100g": "735",
+            "fat_100g": "5.96",
+            "proteins_100g": "27.7",
+            "carbohydrates_100g": "0.0"
+        }
+    },
+    {
+        "product_name": "Beef, loin, top loin steak, boneless, lip-on, separable lean only, trimmed to 1/8\" fat, choice, raw",
+        "countries_tags": [
+            "en:world"
+        ],
+        "nutriments": {
+            "energy_100g": "648",
+            "fat_100g": "6.16",
+            "proteins_100g": "22.8",
+            "carbohydrates_100g": "0.0"
+        }
+    },
+    {
+        "product_name": "Beef, round, eye of round roast, boneless, separable lean only, trimmed to 0\" fat, select, raw",
+        "countries_tags": [
+            "en:world"
+        ],
+        "nutriments": {
+            "energy_100g": "512",
+            "fat_100g": "2.35",
+            "proteins_100g": "23.4",
+            "carbohydrates_100g": "0.0"
+        }
+    },
+    {
+        "product_name": "Beef, round, top round roast, boneless, separable lean only, trimmed to 0\" fat, select, raw",
+        "countries_tags": [
+            "en:world"
+        ],
+        "nutriments": {
+            "energy_100g": "514",
+            "fat_100g": "2.28",
+            "proteins_100g": "23.7",
+            "carbohydrates_100g": "0.0"
+        }
+    },
+    {
+        "product_name": "Beef, short loin, porterhouse steak, separable lean only, trimmed to 1/8\" fat, select, raw",
+        "countries_tags": [
+            "en:world"
+        ],
+        "nutriments": {
+            "energy_100g": "606",
+            "fat_100g": "4.91",
+            "proteins_100g": "22.7",
+            "carbohydrates_100g": "0.0"
+        }
+    },
+    {
+        "product_name": "Beef, short loin, t-bone steak, bone-in, separable lean only, trimmed to 1/8\" fat, choice, cooked, grilled",
+        "countries_tags": [
+            "en:world"
+        ],
+        "nutriments": {
+            "energy_100g": "918",
+            "fat_100g": "10.95",
+            "proteins_100g": "27.3",
+            "carbohydrates_100g": "0.0"
+        }
+    },
+    {
+        "product_name": "Carrots, frozen, unprepared",
+        "countries_tags": [
+            "en:world"
+        ],
+        "nutriments": {
+            "energy_100g": "153",
+            "fat_100g": "0.4",
+            "proteins_100g": "0.81",
+            "carbohydrates_100g": "7.86"
+        }
+    },
+    {
+        "product_name": "Cheese, dry white, queso seco",
+        "countries_tags": [
+            "en:world"
+        ],
+        "nutriments": {
+            "energy_100g": "1360",
+            "fat_100g": "22.85",
+            "proteins_100g": "24.5",
+            "carbohydrates_100g": "2.07"
+        }
+    },
+    {
+        "product_name": "Cheese, ricotta, whole milk",
+        "countries_tags": [
+            "en:world"
+        ],
+        "nutriments": {
+            "energy_100g": "657",
+            "fat_100g": "10.65",
+            "proteins_100g": "7.81",
+            "carbohydrates_100g": "6.86"
+        }
+    },
+    {
+        "product_name": "Cheese, swiss",
+        "countries_tags": [
+            "en:world"
+        ],
+        "nutriments": {
+            "energy_100g": "1640",
+            "fat_100g": "29.3",
+            "proteins_100g": "27.0",
+            "carbohydrates_100g": "1.44"
+        }
+    },
+    {
+        "product_name": "Figs, dried, uncooked",
+        "countries_tags": [
+            "en:world"
+        ],
+        "nutriments": {
+            "energy_100g": "1040",
+            "fat_100g": "0.92",
+            "proteins_100g": "3.3",
+            "carbohydrates_100g": "63.35"
+        }
+    },
+    {
+        "product_name": "Lettuce, cos or romaine, raw",
+        "countries_tags": [
+            "en:world"
+        ],
+        "nutriments": {
+            "energy_100g": "70",
+            "fat_100g": "0.26",
+            "proteins_100g": "1.24",
+            "carbohydrates_100g": "3.12"
+        }
+    },
+    {
+        "product_name": "Melons, cantaloupe, raw",
+        "countries_tags": [
+            "en:world"
+        ],
+        "nutriments": {
+            "energy_100g": "141",
+            "fat_100g": "0.18",
+            "proteins_100g": "0.82",
+            "carbohydrates_100g": "8.43"
+        }
+    },
+    {
+        "product_name": "Oranges, raw, navels",
+        "countries_tags": [
+            "en:world"
+        ],
+        "nutriments": {
+            "energy_100g": "196",
+            "fat_100g": "0.15",
+            "proteins_100g": "0.91",
+            "carbohydrates_100g": "11.2"
+        }
+    },
+    {
+        "product_name": "Milk, lowfat, fluid, 1% milkfat, with added vitamin A and vitamin D",
+        "countries_tags": [
+            "en:world"
+        ],
+        "nutriments": {
+            "energy_100g": "179",
+            "fat_100g": "0.9",
+            "proteins_100g": "3.38",
+            "carbohydrates_100g": "5.18"
+        }
+    },
+    {
+        "product_name": "Pears, raw, bartlett",
+        "countries_tags": [
+            "en:world"
+        ],
+        "nutriments": {
+            "energy_100g": "238",
+            "fat_100g": "0.16",
+            "proteins_100g": "0.38",
+            "carbohydrates_100g": "15.1"
+        }
+    },
+    {
+        "product_name": "Restaurant, Chinese, sweet and sour pork",
+        "countries_tags": [
+            "en:world"
+        ],
+        "nutriments": {
+            "energy_100g": "1090",
+            "fat_100g": "13.45",
+            "proteins_100g": "8.88",
+            "carbohydrates_100g": "24.25"
+        }
+    },
+    {
+        "product_name": "Salt, table, iodized",
+        "countries_tags": [
+            "en:world"
+        ],
+        "nutriments": {}
+    },
+    {
+        "product_name": "Milk, nonfat, fluid, with added vitamin A and vitamin D (fat free or skim)",
+        "countries_tags": [
+            "en:world"
+        ],
+        "nutriments": {
+            "energy_100g": "144",
+            "fat_100g": "0.08",
+            "proteins_100g": "3.43",
+            "carbohydrates_100g": "4.92"
+        }
+    },
+    {
+        "product_name": "Sauce, salsa, ready-to-serve",
+        "countries_tags": [
+            "en:world"
+        ],
+        "nutriments": {
+            "energy_100g": "122",
+            "fat_100g": "0.19",
+            "proteins_100g": "1.44",
+            "carbohydrates_100g": "6.2"
+        }
+    },
+    {
+        "product_name": "Milk, reduced fat, fluid, 2% milkfat, with added vitamin A and vitamin D",
+        "countries_tags": [
+            "en:world"
+        ],
+        "nutriments": {
+            "energy_100g": "209",
+            "fat_100g": "1.77",
+            "proteins_100g": "3.36",
+            "carbohydrates_100g": "4.9"
+        }
+    },
+    {
+        "product_name": "Sausage, breakfast sausage, beef, pre-cooked, unprepared",
+        "countries_tags": [
+            "en:world"
+        ],
+        "nutriments": {
+            "energy_100g": "1370",
+            "fat_100g": "27.9",
+            "proteins_100g": "13.3",
+            "carbohydrates_100g": "3.37"
+        }
+    },
+    {
+        "product_name": "Sausage, Italian, pork, mild, cooked, pan-fried",
+        "countries_tags": [
+            "en:world"
+        ],
+        "nutriments": {
+            "energy_100g": "1350",
+            "fat_100g": "26.0",
+            "proteins_100g": "18.2",
+            "carbohydrates_100g": "2.15"
+        }
+    },
+    {
+        "product_name": "Sausage, pork, chorizo, link or ground, cooked, pan-fried",
+        "countries_tags": [
+            "en:world"
+        ],
+        "nutriments": {
+            "energy_100g": "1450",
+            "fat_100g": "27.05",
+            "proteins_100g": "19.3",
+            "carbohydrates_100g": "2.63"
+        }
+    },
+    {
+        "product_name": "Milk, whole, 3.25% milkfat, with added vitamin D",
+        "countries_tags": [
+            "en:world"
+        ],
+        "nutriments": {
+            "energy_100g": "251",
+            "fat_100g": "2.99",
+            "proteins_100g": "3.27",
+            "carbohydrates_100g": "4.63"
+        }
+    },
+    {
+        "product_name": "Sausage, turkey, breakfast links, mild, raw",
+        "countries_tags": [
+            "en:world"
+        ],
+        "nutriments": {
+            "energy_100g": "706",
+            "fat_100g": "9.63",
+            "proteins_100g": "16.7",
+            "carbohydrates_100g": "0.93"
+        }
+    },
+    {
+        "product_name": "Sugars, granulated",
+        "countries_tags": [
+            "en:world"
+        ],
+        "nutriments": {
+            "energy_100g": "1610",
+            "fat_100g": "0.32",
+            "proteins_100g": "0.0",
+            "carbohydrates_100g": "99.6"
+        }
+    },
+    {
+        "product_name": "Turkey, ground, 93% lean, 7% fat, pan-broiled crumbles",
+        "countries_tags": [
+            "en:world"
+        ],
+        "nutriments": {
+            "energy_100g": "922",
+            "fat_100g": "11.0",
+            "proteins_100g": "27.1",
+            "carbohydrates_100g": "0.0"
+        }
+    },
+    {
+        "product_name": "Ham, sliced, restaurant",
+        "countries_tags": [
+            "en:world"
+        ],
+        "nutriments": {
+            "energy_100g": "507",
+            "fat_100g": "3.61",
+            "proteins_100g": "19.6",
+            "carbohydrates_100g": "2.36"
+        }
+    },
+    {
+        "product_name": "Cheese, American, restaurant",
+        "countries_tags": [
+            "en:world"
+        ],
+        "nutriments": {
+            "energy_100g": "1570",
+            "fat_100g": "28.85",
+            "proteins_100g": "17.5",
+            "carbohydrates_100g": "6.35"
+        }
+    },
+    {
+        "product_name": "Beans, Dry, Medium Red (0% moisture)",
+        "countries_tags": [
+            "en:world"
+        ],
+        "nutriments": {
+            "fat_100g": "1.04",
+            "proteins_100g": "25.5"
+        }
+    },
+    {
+        "product_name": "Beans, Dry, Red (0% moisture)",
+        "countries_tags": [
+            "en:world"
+        ],
+        "nutriments": {
+            "fat_100g": "1.16",
+            "proteins_100g": "21.3"
+        }
+    },
+    {
+        "product_name": "Beans, Dry, Flor de Mayo (0% moisture)",
+        "countries_tags": [
+            "en:world"
+        ],
+        "nutriments": {
+            "fat_100g": "0.86",
+            "proteins_100g": "23.3"
+        }
+    },
+    {
+        "product_name": "Beans, Dry, Brown (0% moisture)",
+        "countries_tags": [
+            "en:world"
+        ],
+        "nutriments": {
+            "fat_100g": "1.12",
+            "proteins_100g": "25.6"
+        }
+    },
+    {
+        "product_name": "Beans, Dry, Tan (0% moisture)",
+        "countries_tags": [
+            "en:world"
+        ],
+        "nutriments": {
+            "fat_100g": "1.14",
+            "proteins_100g": "26.8"
+        }
+    },
+    {
+        "product_name": "Beans, Dry, Light Tan (0% moisture)",
+        "countries_tags": [
+            "en:world"
+        ],
+        "nutriments": {
+            "fat_100g": "1.28",
+            "proteins_100g": "24.6"
+        }
+    },
+    {
+        "product_name": "Beans, Dry, Carioca (0% moisture)",
+        "countries_tags": [
+            "en:world"
+        ],
+        "nutriments": {
+            "fat_100g": "1.44",
+            "proteins_100g": "25.2"
+        }
+    },
+    {
+        "product_name": "Beans, Dry, Cranberry (0% moisture)",
+        "countries_tags": [
+            "en:world"
+        ],
+        "nutriments": {
+            "fat_100g": "1.23",
+            "proteins_100g": "24.4"
+        }
+    },
+    {
+        "product_name": "Beans, Dry, Light Red Kidney (0% moisture)",
+        "countries_tags": [
+            "en:world"
+        ],
+        "nutriments": {
+            "fat_100g": "1.03",
+            "proteins_100g": "25.0"
+        }
+    },
+    {
+        "product_name": "Beans, Dry, Pink (0% moisture)",
+        "countries_tags": [
+            "en:world"
+        ],
+        "nutriments": {
+            "fat_100g": "1.2",
+            "proteins_100g": "23.4"
+        }
+    },
+    {
+        "product_name": "Beans, Dry, Dark Red Kidney (0% moisture)",
+        "countries_tags": [
+            "en:world"
+        ],
+        "nutriments": {
+            "fat_100g": "1.31",
+            "proteins_100g": "25.9"
+        }
+    },
+    {
+        "product_name": "Beans, Dry, Navy (0% moisture)",
+        "countries_tags": [
+            "en:world"
+        ],
+        "nutriments": {
+            "fat_100g": "1.51",
+            "proteins_100g": "24.1"
+        }
+    },
+    {
+        "product_name": "Beans, Dry, Small White (0% moisture)",
+        "countries_tags": [
+            "en:world"
+        ],
+        "nutriments": {
+            "fat_100g": "1.32",
+            "proteins_100g": "24.5"
+        }
+    },
+    {
+        "product_name": "Beans, Dry, Small Red (0% moisture)",
+        "countries_tags": [
+            "en:world"
+        ],
+        "nutriments": {
+            "fat_100g": "1.28",
+            "proteins_100g": "23.5"
+        }
+    },
+    {
+        "product_name": "Beans, Dry, Black (0% moisture)",
+        "countries_tags": [
+            "en:world"
+        ],
+        "nutriments": {
+            "fat_100g": "1.45",
+            "proteins_100g": "24.4"
+        }
+    },
+    {
+        "product_name": "Beans, Dry, Pinto (0% moisture)",
+        "countries_tags": [
+            "en:world"
+        ],
+        "nutriments": {
+            "fat_100g": "1.24",
+            "proteins_100g": "23.7"
+        }
+    },
+    {
+        "product_name": "Beans, Dry, Great Northern (0% moisture)",
+        "countries_tags": [
+            "en:world"
+        ],
+        "nutriments": {
+            "fat_100g": "1.24",
+            "proteins_100g": "24.7"
+        }
+    },
+    {
+        "product_name": "Broccoli, raw",
+        "countries_tags": [
+            "en:world"
+        ],
+        "nutriments": {
+            "energy_100g": "132",
+            "fat_100g": "0.21",
+            "proteins_100g": "2.57",
+            "carbohydrates_100g": "5.04"
+        }
+    },
+    {
+        "product_name": "Ketchup, restaurant",
+        "countries_tags": [
+            "en:world"
+        ],
+        "nutriments": {
+            "energy_100g": "488",
+            "fat_100g": "0.55",
+            "proteins_100g": "1.11",
+            "carbohydrates_100g": "26.8"
+        }
+    },
+    {
+        "product_name": "Eggs, Grade A, Large, egg white",
+        "countries_tags": [
+            "en:world"
+        ],
+        "nutriments": {
+            "energy_100g": "231",
+            "fat_100g": "0.0",
+            "proteins_100g": "10.7",
+            "carbohydrates_100g": "2.36"
+        }
+    },
+    {
+        "product_name": "Eggs, Grade A, Large, egg yolk",
+        "countries_tags": [
+            "en:world"
+        ],
+        "nutriments": {
+            "energy_100g": "1400",
+            "fat_100g": "28.8",
+            "proteins_100g": "16.2",
+            "carbohydrates_100g": "1.02"
+        }
+    },
+    {
+        "product_name": "Oil, canola",
+        "countries_tags": [
+            "en:world"
+        ],
+        "nutriments": {
+            "fat_100g": "94.5"
+        }
+    },
+    {
+        "product_name": "Oil, corn",
+        "countries_tags": [
+            "en:world"
+        ],
+        "nutriments": {
+            "fat_100g": "94.0"
+        }
+    },
+    {
+        "product_name": "Oil, soybean",
+        "countries_tags": [
+            "en:world"
+        ],
+        "nutriments": {
+            "fat_100g": "94.6"
+        }
+    },
+    {
+        "product_name": "Oil, olive, extra virgin",
+        "countries_tags": [
+            "en:world"
+        ],
+        "nutriments": {
+            "fat_100g": "93.7"
+        }
+    },
+    {
+        "product_name": "Eggs, Grade A, Large, egg whole",
+        "countries_tags": [
+            "en:world"
+        ],
+        "nutriments": {
+            "energy_100g": "617",
+            "fat_100g": "9.3",
+            "proteins_100g": "12.4",
+            "carbohydrates_100g": "0.58"
+        }
+    },
+    {
+        "product_name": "Pork, cured, bacon, cooked, restaurant",
+        "countries_tags": [
+            "en:world"
+        ],
+        "nutriments": {
+            "energy_100g": "2090",
+            "fat_100g": "35.55",
+            "proteins_100g": "40.9",
+            "carbohydrates_100g": "2.1"
+        }
+    },
+    {
+        "product_name": "Butter, stick, unsalted",
+        "countries_tags": [
+            "en:world"
+        ],
+        "nutriments": {
+            "fat_100g": "81.5"
+        }
+    },
+    {
+        "product_name": "Flour, wheat, all-purpose, enriched, bleached",
+        "countries_tags": [
+            "en:world"
+        ],
+        "nutriments": {
+            "energy_100g": "1530",
+            "fat_100g": "1.48",
+            "proteins_100g": "10.9",
+            "carbohydrates_100g": "77.3"
+        }
+    },
+    {
+        "product_name": "Flour, wheat, all-purpose, enriched, unbleached",
+        "countries_tags": [
+            "en:world"
+        ],
+        "nutriments": {
+            "energy_100g": "1500",
+            "fat_100g": "1.48",
+            "proteins_100g": "13.1",
+            "carbohydrates_100g": "73.2"
+        }
+    },
+    {
+        "product_name": "Flour, wheat, all-purpose, unenriched, unbleached",
+        "countries_tags": [
+            "en:world"
+        ],
+        "nutriments": {
+            "energy_100g": "1510",
+            "fat_100g": "1.7",
+            "proteins_100g": "12.0",
+            "carbohydrates_100g": "74.6"
+        }
+    },
+    {
+        "product_name": "Flour, whole wheat, unenriched",
+        "countries_tags": [
+            "en:world"
+        ],
+        "nutriments": {
+            "energy_100g": "1550",
+            "fat_100g": "2.73",
+            "proteins_100g": "15.1",
+            "carbohydrates_100g": "71.2"
+        }
+    },
+    {
+        "product_name": "Flour, bread, white, enriched, unbleached",
+        "countries_tags": [
+            "en:world"
+        ],
+        "nutriments": {
+            "energy_100g": "1520",
+            "fat_100g": "1.65",
+            "proteins_100g": "14.3",
+            "carbohydrates_100g": "72.8"
+        }
+    },
+    {
+        "product_name": "Flour, rice, white, unenriched",
+        "countries_tags": [
+            "en:world"
+        ],
+        "nutriments": {
+            "energy_100g": "1500",
+            "fat_100g": "1.3",
+            "proteins_100g": "6.94",
+            "carbohydrates_100g": "79.8"
+        }
+    },
+    {
+        "product_name": "Flour, corn, yellow, fine meal, enriched",
+        "countries_tags": [
+            "en:world"
+        ],
+        "nutriments": {
+            "energy_100g": "1520",
+            "fat_100g": "1.74",
+            "proteins_100g": "6.2",
+            "carbohydrates_100g": "80.8"
+        }
+    },
+    {
+        "product_name": "Butter, stick, salted",
+        "countries_tags": [
+            "en:world"
+        ],
+        "nutriments": {
+            "fat_100g": "73.6"
+        }
+    },
+    {
+        "product_name": "Onions, red, raw",
+        "countries_tags": [
+            "en:world"
+        ],
+        "nutriments": {
+            "energy_100g": "186",
+            "fat_100g": "0.1",
+            "proteins_100g": "0.94",
+            "carbohydrates_100g": "9.93"
+        }
+    },
+    {
+        "product_name": "Onions, yellow, raw",
+        "countries_tags": [
+            "en:world"
+        ],
+        "nutriments": {
+            "energy_100g": "160",
+            "fat_100g": "0.05",
+            "proteins_100g": "0.83",
+            "carbohydrates_100g": "8.61"
+        }
+    },
+    {
+        "product_name": "Garlic, raw",
+        "countries_tags": [
+            "en:world"
+        ],
+        "nutriments": {
+            "energy_100g": "597",
+            "fat_100g": "0.38",
+            "proteins_100g": "6.62",
+            "carbohydrates_100g": "28.2"
+        }
+    },
+    {
+        "product_name": "Flour, soy, defatted",
+        "countries_tags": [
+            "en:world"
+        ],
+        "nutriments": {
+            "energy_100g": "1530",
+            "fat_100g": "3.33",
+            "proteins_100g": "51.1",
+            "carbohydrates_100g": "32.9"
+        }
+    },
+    {
+        "product_name": "Flour, soy, full-fat",
+        "countries_tags": [
+            "en:world"
+        ],
+        "nutriments": {
+            "energy_100g": "1890",
+            "fat_100g": "20.7",
+            "proteins_100g": "38.6",
+            "carbohydrates_100g": "27.9"
+        }
+    },
+    {
+        "product_name": "Flour, rice, brown",
+        "countries_tags": [
+            "en:world"
+        ],
+        "nutriments": {
+            "energy_100g": "1580",
+            "fat_100g": "3.85",
+            "proteins_100g": "7.19",
+            "carbohydrates_100g": "75.5"
+        }
+    },
+    {
+        "product_name": "Flour, rice, glutinous",
+        "countries_tags": [
+            "en:world"
+        ],
+        "nutriments": {
+            "energy_100g": "1500",
+            "fat_100g": "1.16",
+            "proteins_100g": "6.69",
+            "carbohydrates_100g": "80.1"
+        }
+    },
+    {
+        "product_name": "Flour, pastry, unenriched, unbleached",
+        "countries_tags": [
+            "en:world"
+        ],
+        "nutriments": {
+            "energy_100g": "1500",
+            "fat_100g": "1.64",
+            "proteins_100g": "8.75",
+            "carbohydrates_100g": "77.2"
+        }
+    },
+    {
+        "product_name": "Onions, white, raw",
+        "countries_tags": [
+            "en:world"
+        ],
+        "nutriments": {
+            "energy_100g": "148",
+            "fat_100g": "0.13",
+            "proteins_100g": "0.89",
+            "carbohydrates_100g": "7.68"
+        }
+    },
+    {
+        "product_name": "Bananas, overripe, raw",
+        "countries_tags": [
+            "en:world"
+        ],
+        "nutriments": {
+            "energy_100g": "357",
+            "fat_100g": "0.22",
+            "proteins_100g": "0.73",
+            "carbohydrates_100g": "19.05"
+        }
+    },
+    {
+        "product_name": "Bananas, ripe and slightly ripe, raw",
+        "countries_tags": [
+            "en:world"
+        ],
+        "nutriments": {
+            "energy_100g": "408",
+            "fat_100g": "0.29",
+            "proteins_100g": "0.74",
+            "carbohydrates_100g": "22.1"
+        }
+    },
+    {
+        "product_name": "Apples, red delicious, with skin, raw",
+        "countries_tags": [
+            "en:world"
+        ],
+        "nutriments": {
+            "fat_100g": "0.21",
+            "proteins_100g": "0.188",
+            "carbohydrates_100g": "14.55"
+        }
+    },
+    {
+        "product_name": "Apples, fuji, with skin, raw",
+        "countries_tags": [
+            "en:world"
+        ],
+        "nutriments": {
+            "fat_100g": "0.16",
+            "proteins_100g": "0.148",
+            "carbohydrates_100g": "15.55"
+        }
+    },
+    {
+        "product_name": "Apples, gala, with skin, raw",
+        "countries_tags": [
+            "en:world"
+        ],
+        "nutriments": {
+            "fat_100g": "0.15",
+            "proteins_100g": "0.133",
+            "carbohydrates_100g": "14.35"
+        }
+    },
+    {
+        "product_name": "Apples, granny smith, with skin, raw",
+        "countries_tags": [
+            "en:world"
+        ],
+        "nutriments": {
+            "fat_100g": "0.14",
+            "proteins_100g": "0.266",
+            "carbohydrates_100g": "13.65"
+        }
+    },
+    {
+        "product_name": "Apples, honeycrisp, with skin, raw",
+        "countries_tags": [
+            "en:world"
+        ],
+        "nutriments": {
+            "fat_100g": "0.1",
+            "proteins_100g": "0.102",
+            "carbohydrates_100g": "14.4"
+        }
+    },
+    {
+        "product_name": "Oil, peanut",
+        "countries_tags": [
+            "en:world"
+        ],
+        "nutriments": {
+            "fat_100g": "93.4"
+        }
+    },
+    {
+        "product_name": "Oil, sunflower",
+        "countries_tags": [
+            "en:world"
+        ],
+        "nutriments": {
+            "fat_100g": "93.2"
+        }
+    },
+    {
+        "product_name": "Oil, safflower",
+        "countries_tags": [
+            "en:world"
+        ],
+        "nutriments": {
+            "fat_100g": "93.2"
+        }
+    },
+    {
+        "product_name": "Oil, olive, extra light",
+        "countries_tags": [
+            "en:world"
+        ],
+        "nutriments": {
+            "fat_100g": "92.9"
+        }
+    },
+    {
+        "product_name": "Mushroom, lion's mane",
+        "countries_tags": [
+            "en:world"
+        ],
+        "nutriments": {
+            "fat_100g": "0.26",
+            "proteins_100g": "2.5",
+            "carbohydrates_100g": "7.59"
+        }
+    },
+    {
+        "product_name": "Mushroom, oyster",
+        "countries_tags": [
+            "en:world"
+        ],
+        "nutriments": {
+            "fat_100g": "0.19",
+            "proteins_100g": "2.9",
+            "carbohydrates_100g": "6.94"
+        }
+    },
+    {
+        "product_name": "Mushrooms, shiitake",
+        "countries_tags": [
+            "en:world"
+        ],
+        "nutriments": {
+            "fat_100g": "0.2",
+            "proteins_100g": "2.41",
+            "carbohydrates_100g": "8.17"
+        }
+    },
+    {
+        "product_name": "Mushrooms, white button",
+        "countries_tags": [
+            "en:world"
+        ],
+        "nutriments": {
+            "fat_100g": "0.37",
+            "proteins_100g": "2.89",
+            "carbohydrates_100g": "4.08"
+        }
+    },
+    {
+        "product_name": "Soy milk, unsweetened, plain, shelf stable",
+        "countries_tags": [
+            "en:world"
+        ],
+        "nutriments": {
+            "fat_100g": "2.0",
+            "proteins_100g": "3.55",
+            "carbohydrates_100g": "1.29"
+        }
+    },
+    {
+        "product_name": "Almond milk, unsweetened, plain, shelf stable",
+        "countries_tags": [
+            "en:world"
+        ],
+        "nutriments": {
+            "fat_100g": "1.17",
+            "proteins_100g": "0.555",
+            "carbohydrates_100g": "0.34"
+        }
+    },
+    {
+        "product_name": "Spinach, baby",
+        "countries_tags": [
+            "en:world"
+        ],
+        "nutriments": {
+            "fat_100g": "0.62",
+            "proteins_100g": "2.85",
+            "carbohydrates_100g": "1.99"
+        }
+    },
+    {
+        "product_name": "Spinach, mature",
+        "countries_tags": [
+            "en:world"
+        ],
+        "nutriments": {
+            "fat_100g": "0.6",
+            "proteins_100g": "2.91",
+            "carbohydrates_100g": "2.64"
+        }
+    },
+    {
+        "product_name": "Tomato, roma",
+        "countries_tags": [
+            "en:world"
+        ],
+        "nutriments": {
+            "fat_100g": "0.42",
+            "proteins_100g": "0.696",
+            "carbohydrates_100g": "3.84"
+        }
+    },
+    {
+        "product_name": "Flour, 00",
+        "countries_tags": [
+            "en:world"
+        ],
+        "nutriments": {
+            "fat_100g": "1.52",
+            "proteins_100g": "11.4",
+            "carbohydrates_100g": "74.4"
+        }
+    },
+    {
+        "product_name": "Flour, spelt, whole grain",
+        "countries_tags": [
+            "en:world"
+        ],
+        "nutriments": {
+            "fat_100g": "2.54",
+            "proteins_100g": "14.5",
+            "carbohydrates_100g": "70.7"
+        }
+    },
+    {
+        "product_name": "Flour, semolina, coarse and semi-coarse",
+        "countries_tags": [
+            "en:world"
+        ],
+        "nutriments": {
+            "fat_100g": "1.6",
+            "proteins_100g": "11.7",
+            "carbohydrates_100g": "73.8"
+        }
+    },
+    {
+        "product_name": "Flour, semolina, fine",
+        "countries_tags": [
+            "en:world"
+        ],
+        "nutriments": {
+            "fat_100g": "1.84",
+            "proteins_100g": "13.3",
+            "carbohydrates_100g": "72.0"
+        }
+    },
+    {
+        "product_name": "Apple juice, with added vitamin C, from concentrate, shelf stable",
+        "countries_tags": [
+            "en:world"
+        ],
+        "nutriments": {
+            "fat_100g": "0.29",
+            "proteins_100g": "0.086",
+            "carbohydrates_100g": "11.4"
+        }
+    },
+    {
+        "product_name": "Orange juice, no pulp, not fortified, from concentrate, refrigerated",
+        "countries_tags": [
+            "en:world"
+        ],
+        "nutriments": {
+            "fat_100g": "0.33",
+            "proteins_100g": "0.734",
+            "carbohydrates_100g": "10.3"
+        }
+    },
+    {
+        "product_name": "Grape juice, purple, with added vitamin C, from concentrate, shelf stable",
+        "countries_tags": [
+            "en:world"
+        ],
+        "nutriments": {
+            "fat_100g": "0.29",
+            "proteins_100g": "0.258",
+            "carbohydrates_100g": "15.6"
+        }
+    },
+    {
+        "product_name": "Grape juice, white, with added vitamin C, from concentrate, shelf stable",
+        "countries_tags": [
+            "en:world"
+        ],
+        "nutriments": {
+            "fat_100g": "0.27",
+            "proteins_100g": "0.094",
+            "carbohydrates_100g": "15.8"
+        }
+    },
+    {
+        "product_name": "Cranberry juice, not fortified, from concentrate, shelf stable",
+        "countries_tags": [
+            "en:world"
+        ],
+        "nutriments": {
+            "fat_100g": "0.34",
+            "proteins_100g": "0.0",
+            "carbohydrates_100g": "7.26"
+        }
+    },
+    {
+        "product_name": "Grapefruit juice, red, not fortified, not from concentrate, refrigerated",
+        "countries_tags": [
+            "en:world"
+        ],
+        "nutriments": {
+            "fat_100g": "0.27",
+            "proteins_100g": "0.57",
+            "carbohydrates_100g": "9.1"
+        }
+    },
+    {
+        "product_name": "Tomato juice, with added ingredients, from concentrate, shelf stable",
+        "countries_tags": [
+            "en:world"
+        ],
+        "nutriments": {
+            "fat_100g": "0.29",
+            "proteins_100g": "0.859",
+            "carbohydrates_100g": "4.32"
+        }
+    },
+    {
+        "product_name": "Orange juice, no pulp, not fortified, not from concentrate, refrigerated",
+        "countries_tags": [
+            "en:world"
+        ],
+        "nutriments": {
+            "fat_100g": "0.36",
+            "proteins_100g": "0.812",
+            "carbohydrates_100g": "10.0"
+        }
+    },
+    {
+        "product_name": "Mushroom, portabella",
+        "countries_tags": [
+            "en:world"
+        ],
+        "nutriments": {
+            "fat_100g": "0.31",
+            "proteins_100g": "2.75",
+            "carbohydrates_100g": "4.66"
+        }
+    },
+    {
+        "product_name": "Mushroom, king oyster",
+        "countries_tags": [
+            "en:world"
+        ],
+        "nutriments": {
+            "fat_100g": "0.31",
+            "proteins_100g": "2.41",
+            "carbohydrates_100g": "8.5"
+        }
+    },
+    {
+        "product_name": "Mushroom, enoki",
+        "countries_tags": [
+            "en:world"
+        ],
+        "nutriments": {
+            "fat_100g": "0.24",
+            "proteins_100g": "2.42",
+            "carbohydrates_100g": "8.14"
+        }
+    },
+    {
+        "product_name": "Mushroom, crimini",
+        "countries_tags": [
+            "en:world"
+        ],
+        "nutriments": {
+            "fat_100g": "0.2",
+            "proteins_100g": "3.09",
+            "carbohydrates_100g": "4.01"
+        }
+    },
+    {
+        "product_name": "Mushroom, maitake",
+        "countries_tags": [
+            "en:world"
+        ],
+        "nutriments": {
+            "fat_100g": "0.27",
+            "proteins_100g": "2.2",
+            "carbohydrates_100g": "6.6"
+        }
+    },
+    {
+        "product_name": "Mushroom, beech",
+        "countries_tags": [
+            "en:world"
+        ],
+        "nutriments": {
+            "fat_100g": "0.45",
+            "proteins_100g": "2.18",
+            "carbohydrates_100g": "6.76"
+        }
+    },
+    {
+        "product_name": "Mushroom, pioppini",
+        "countries_tags": [
+            "en:world"
+        ],
+        "nutriments": {
+            "fat_100g": "0.24",
+            "proteins_100g": "3.5",
+            "carbohydrates_100g": "5.76"
+        }
+    },
+    {
+        "product_name": "Soy milk, sweetened, plain, refrigerated",
+        "countries_tags": [
+            "en:world"
+        ],
+        "nutriments": {
+            "fat_100g": "1.96",
+            "proteins_100g": "2.78",
+            "carbohydrates_100g": "3.0"
+        }
+    },
+    {
+        "product_name": "Almond milk, unsweetened, plain, refrigerated",
+        "countries_tags": [
+            "en:world"
+        ],
+        "nutriments": {
+            "fat_100g": "1.56",
+            "proteins_100g": "0.656",
+            "carbohydrates_100g": "0.67"
+        }
+    },
+    {
+        "product_name": "Oat milk, unsweetened, plain, refrigerated",
+        "countries_tags": [
+            "en:world"
+        ],
+        "nutriments": {
+            "fat_100g": "2.75",
+            "proteins_100g": "0.797",
+            "carbohydrates_100g": "5.1"
+        }
+    },
+    {
+        "product_name": "Carrots, mature, raw",
+        "countries_tags": [
+            "en:world"
+        ],
+        "nutriments": {
+            "fat_100g": "0.35",
+            "proteins_100g": "0.941",
+            "carbohydrates_100g": "10.3"
+        }
+    },
+    {
+        "product_name": "Carrots, baby, raw",
+        "countries_tags": [
+            "en:world"
+        ],
+        "nutriments": {
+            "fat_100g": "0.14",
+            "proteins_100g": "0.805",
+            "carbohydrates_100g": "9.08"
+        }
+    },
+    {
+        "product_name": "Peppers, bell, green, raw",
+        "countries_tags": [
+            "en:world"
+        ],
+        "nutriments": {
+            "fat_100g": "0.11",
+            "proteins_100g": "0.715",
+            "carbohydrates_100g": "4.78"
+        }
+    },
+    {
+        "product_name": "Peppers, bell, yellow, raw",
+        "countries_tags": [
+            "en:world"
+        ],
+        "nutriments": {
+            "fat_100g": "0.12",
+            "proteins_100g": "0.819",
+            "carbohydrates_100g": "6.6"
+        }
+    },
+    {
+        "product_name": "Peppers, bell, red, raw",
+        "countries_tags": [
+            "en:world"
+        ],
+        "nutriments": {
+            "fat_100g": "0.13",
+            "proteins_100g": "0.896",
+            "carbohydrates_100g": "6.65"
+        }
+    },
+    {
+        "product_name": "Peppers, bell, orange, raw",
+        "countries_tags": [
+            "en:world"
+        ],
+        "nutriments": {
+            "fat_100g": "0.16",
+            "proteins_100g": "0.882",
+            "carbohydrates_100g": "6.7"
+        }
+    },
+    {
+        "product_name": "Buttermilk, low fat",
+        "countries_tags": [
+            "en:world"
+        ],
+        "nutriments": {
+            "fat_100g": "1.08",
+            "proteins_100g": "3.46",
+            "carbohydrates_100g": "4.81"
+        }
+    },
+    {
+        "product_name": "Yogurt, plain, whole milk",
+        "countries_tags": [
+            "en:world"
+        ],
+        "nutriments": {
+            "fat_100g": "4.48",
+            "proteins_100g": "3.82",
+            "carbohydrates_100g": "5.57"
+        }
+    },
+    {
+        "product_name": "Yogurt, Greek, plain, whole milk",
+        "countries_tags": [
+            "en:world"
+        ],
+        "nutriments": {
+            "fat_100g": "4.39",
+            "proteins_100g": "8.78",
+            "carbohydrates_100g": "4.75"
+        }
+    },
+    {
+        "product_name": "Cheese, parmesan, grated, refrigerated",
+        "countries_tags": [
+            "en:world"
+        ],
+        "nutriments": {
+            "fat_100g": "29.5",
+            "proteins_100g": "30.1",
+            "carbohydrates_100g": "4.33"
+        }
+    },
+    {
+        "product_name": "Cheese, feta, whole milk, crumbled",
+        "countries_tags": [
+            "en:world"
+        ],
+        "nutriments": {
+            "fat_100g": "19.1",
+            "proteins_100g": "19.7",
+            "carbohydrates_100g": "5.58"
+        }
+    },
+    {
+        "product_name": "Flour, almond",
+        "countries_tags": [
+            "en:world"
+        ],
+        "nutriments": {
+            "fat_100g": "50.2",
+            "proteins_100g": "26.2",
+            "carbohydrates_100g": "16.2"
+        }
+    },
+    {
+        "product_name": "Flour, oat, whole grain",
+        "countries_tags": [
+            "en:world"
+        ],
+        "nutriments": {
+            "fat_100g": "6.31",
+            "proteins_100g": "13.2",
+            "carbohydrates_100g": "69.9"
+        }
+    },
+    {
+        "product_name": "Flour, potato",
+        "countries_tags": [
+            "en:world"
+        ],
+        "nutriments": {
+            "fat_100g": "0.95",
+            "proteins_100g": "8.11",
+            "carbohydrates_100g": "79.9"
+        }
+    },
+    {
+        "product_name": "Peanut butter, creamy",
+        "countries_tags": [
+            "en:world"
+        ],
+        "nutriments": {
+            "fat_100g": "49.4",
+            "proteins_100g": "24.0",
+            "carbohydrates_100g": "22.7"
+        }
+    },
+    {
+        "product_name": "Sesame butter, creamy",
+        "countries_tags": [
+            "en:world"
+        ],
+        "nutriments": {
+            "fat_100g": "62.4",
+            "proteins_100g": "19.7",
+            "carbohydrates_100g": "14.2"
+        }
+    },
+    {
+        "product_name": "Almond butter, creamy",
+        "countries_tags": [
+            "en:world"
+        ],
+        "nutriments": {
+            "fat_100g": "53.0",
+            "proteins_100g": "20.8",
+            "carbohydrates_100g": "21.2"
+        }
+    },
+    {
+        "product_name": "Flaxseed, ground",
+        "countries_tags": [
+            "en:world"
+        ],
+        "nutriments": {
+            "fat_100g": "37.3",
+            "proteins_100g": "18.0",
+            "carbohydrates_100g": "34.4"
+        }
+    },
+    {
+        "product_name": "Cottage cheese, full fat, large or small curd",
+        "countries_tags": [
+            "en:world"
+        ],
+        "nutriments": {
+            "fat_100g": "4.22",
+            "proteins_100g": "11.6",
+            "carbohydrates_100g": "4.6"
+        }
+    },
+    {
+        "product_name": "Cream cheese, full fat, block",
+        "countries_tags": [
+            "en:world"
+        ],
+        "nutriments": {
+            "fat_100g": "33.5",
+            "proteins_100g": "5.79",
+            "carbohydrates_100g": "4.56"
+        }
+    },
+    {
+        "product_name": "Cream, heavy",
+        "countries_tags": [
+            "en:world"
+        ],
+        "nutriments": {
+            "fat_100g": "35.6",
+            "proteins_100g": "2.02",
+            "carbohydrates_100g": "3.8"
+        }
+    },
+    {
+        "product_name": "Cream, sour, full fat",
+        "countries_tags": [
+            "en:world"
+        ],
+        "nutriments": {
+            "fat_100g": "18.0",
+            "proteins_100g": "3.07",
+            "carbohydrates_100g": "5.56"
+        }
+    },
+    {
+        "product_name": "Lettuce, iceberg, raw",
+        "countries_tags": [
+            "en:world"
+        ],
+        "nutriments": {
+            "fat_100g": "0.07",
+            "proteins_100g": "0.742",
+            "carbohydrates_100g": "3.37"
+        }
+    },
+    {
+        "product_name": "Lettuce, romaine, green, raw",
+        "countries_tags": [
+            "en:world"
+        ],
+        "nutriments": {
+            "fat_100g": "0.07",
+            "proteins_100g": "0.977",
+            "carbohydrates_100g": "4.06"
+        }
+    },
+    {
+        "product_name": "Lettuce, leaf, red, raw",
+        "countries_tags": [
+            "en:world"
+        ],
+        "nutriments": {
+            "fat_100g": "0.11",
+            "proteins_100g": "0.883",
+            "carbohydrates_100g": "3.26"
+        }
+    },
+    {
+        "product_name": "Lettuce, leaf, green, raw",
+        "countries_tags": [
+            "en:world"
+        ],
+        "nutriments": {
+            "fat_100g": "0.16",
+            "proteins_100g": "1.09",
+            "carbohydrates_100g": "4.07"
+        }
+    },
+    {
+        "product_name": "Nuts, pine nuts, raw",
+        "countries_tags": [
+            "en:world"
+        ],
+        "nutriments": {
+            "fat_100g": "61.3",
+            "proteins_100g": "15.7",
+            "carbohydrates_100g": "18.6"
+        }
+    },
+    {
+        "product_name": "Nuts, almonds, whole, raw",
+        "countries_tags": [
+            "en:world"
+        ],
+        "nutriments": {
+            "fat_100g": "51.1",
+            "proteins_100g": "21.5",
+            "carbohydrates_100g": "20.0"
+        }
+    },
+    {
+        "product_name": "Nuts, walnuts, English, halves, raw",
+        "countries_tags": [
+            "en:world"
+        ],
+        "nutriments": {
+            "fat_100g": "69.7",
+            "proteins_100g": "14.6",
+            "carbohydrates_100g": "10.9"
+        }
+    },
+    {
+        "product_name": "Nuts, pecans, halves, raw",
+        "countries_tags": [
+            "en:world"
+        ],
+        "nutriments": {
+            "fat_100g": "73.3",
+            "proteins_100g": "9.96",
+            "carbohydrates_100g": "12.7"
+        }
+    },
+    {
+        "product_name": "Oats, whole grain, rolled, old fashioned",
+        "countries_tags": [
+            "en:world"
+        ],
+        "nutriments": {
+            "fat_100g": "5.89",
+            "proteins_100g": "13.5",
+            "carbohydrates_100g": "68.7"
+        }
+    },
+    {
+        "product_name": "Oats, whole grain, steel cut",
+        "countries_tags": [
+            "en:world"
+        ],
+        "nutriments": {
+            "fat_100g": "5.8",
+            "proteins_100g": "12.5",
+            "carbohydrates_100g": "69.8"
+        }
+    },
+    {
+        "product_name": "Pineapple, raw",
+        "countries_tags": [
+            "en:world"
+        ],
+        "nutriments": {
+            "fat_100g": "0.21",
+            "proteins_100g": "0.461",
+            "carbohydrates_100g": "14.1"
+        }
+    },
+    {
+        "product_name": "Cherries, sweet, dark red, raw",
+        "countries_tags": [
+            "en:world"
+        ],
+        "nutriments": {
+            "fat_100g": "0.19",
+            "proteins_100g": "1.04",
+            "carbohydrates_100g": "16.2"
+        }
+    },
+    {
+        "product_name": "Beans, snap, green, raw",
+        "countries_tags": [
+            "en:world"
+        ],
+        "nutriments": {
+            "fat_100g": "0.28",
+            "proteins_100g": "1.97",
+            "carbohydrates_100g": "7.41"
+        }
+    },
+    {
+        "product_name": "Potatoes, russet, without skin, raw",
+        "countries_tags": [
+            "en:world"
+        ],
+        "nutriments": {
+            "fat_100g": "0.36",
+            "proteins_100g": "2.27",
+            "carbohydrates_100g": "17.8"
+        }
+    },
+    {
+        "product_name": "Potatoes, red, without skin, raw",
+        "countries_tags": [
+            "en:world"
+        ],
+        "nutriments": {
+            "fat_100g": "0.25",
+            "proteins_100g": "2.06",
+            "carbohydrates_100g": "16.3"
+        }
+    },
+    {
+        "product_name": "Potatoes, gold, without skin, raw",
+        "countries_tags": [
+            "en:world"
+        ],
+        "nutriments": {
+            "fat_100g": "0.26",
+            "proteins_100g": "1.81",
+            "carbohydrates_100g": "16.0"
+        }
+    },
+    {
+        "product_name": "Sweet potatoes, orange flesh, without skin, raw",
+        "countries_tags": [
+            "en:world"
+        ],
+        "nutriments": {
+            "fat_100g": "0.38",
+            "proteins_100g": "1.58",
+            "carbohydrates_100g": "17.3"
+        }
+    },
+    {
+        "product_name": "Celery, raw",
+        "countries_tags": [
+            "en:world"
+        ],
+        "nutriments": {
+            "fat_100g": "0.16",
+            "proteins_100g": "0.492",
+            "carbohydrates_100g": "3.32"
+        }
+    },
+    {
+        "product_name": "Cucumber, with peel, raw",
+        "countries_tags": [
+            "en:world"
+        ],
+        "nutriments": {
+            "fat_100g": "0.18",
+            "proteins_100g": "0.625",
+            "carbohydrates_100g": "2.95"
+        }
+    },
+    {
+        "product_name": "Cabbage, green, raw",
+        "countries_tags": [
+            "en:world"
+        ],
+        "nutriments": {
+            "fat_100g": "0.23",
+            "proteins_100g": "0.961",
+            "carbohydrates_100g": "6.38"
+        }
+    },
+    {
+        "product_name": "Cabbage, red, raw",
+        "countries_tags": [
+            "en:world"
+        ],
+        "nutriments": {
+            "fat_100g": "0.21",
+            "proteins_100g": "1.24",
+            "carbohydrates_100g": "6.79"
+        }
+    },
+    {
+        "product_name": "Strawberries, raw",
+        "countries_tags": [
+            "en:world"
+        ],
+        "nutriments": {
+            "fat_100g": "0.22",
+            "proteins_100g": "0.641",
+            "carbohydrates_100g": "7.96"
+        }
+    },
+    {
+        "product_name": "Raspberries, raw",
+        "countries_tags": [
+            "en:world"
+        ],
+        "nutriments": {
+            "fat_100g": "0.19",
+            "proteins_100g": "1.01",
+            "carbohydrates_100g": "12.9"
+        }
+    },
+    {
+        "product_name": "Blueberries, raw",
+        "countries_tags": [
+            "en:world"
+        ],
+        "nutriments": {
+            "fat_100g": "0.31",
+            "proteins_100g": "0.703",
+            "carbohydrates_100g": "14.6"
+        }
+    },
+    {
+        "product_name": "Grapes, red, seedless, raw",
+        "countries_tags": [
+            "en:world"
+        ],
+        "nutriments": {
+            "fat_100g": "0.16",
+            "proteins_100g": "0.914",
+            "carbohydrates_100g": "20.2"
+        }
+    },
+    {
+        "product_name": "Grapes, green, seedless, raw",
+        "countries_tags": [
+            "en:world"
+        ],
+        "nutriments": {
+            "fat_100g": "0.23",
+            "proteins_100g": "0.899",
+            "carbohydrates_100g": "18.6"
+        }
+    },
+    {
+        "product_name": "Applesauce, unsweetened, with added vitamin C",
+        "countries_tags": [
+            "en:world"
+        ],
+        "nutriments": {
+            "fat_100g": "0.16",
+            "proteins_100g": "0.273",
+            "carbohydrates_100g": "12.3"
+        }
+    },
+    {
+        "product_name": "Flour, amaranth",
+        "countries_tags": [
+            "en:world"
+        ],
+        "nutriments": {
+            "fat_100g": "6.24",
+            "proteins_100g": "13.2",
+            "carbohydrates_100g": "68.8"
+        }
+    },
+    {
+        "product_name": "Flour, quinoa",
+        "countries_tags": [
+            "en:world"
+        ],
+        "nutriments": {
+            "fat_100g": "6.6",
+            "proteins_100g": "11.9",
+            "carbohydrates_100g": "69.5"
+        }
+    },
+    {
+        "product_name": "Flour, sorghum",
+        "countries_tags": [
+            "en:world"
+        ],
+        "nutriments": {
+            "fat_100g": "3.59",
+            "proteins_100g": "8.27",
+            "carbohydrates_100g": "77.4"
+        }
+    },
+    {
+        "product_name": "Flour, buckwheat",
+        "countries_tags": [
+            "en:world"
+        ],
+        "nutriments": {
+            "fat_100g": "2.48",
+            "proteins_100g": "8.88",
+            "carbohydrates_100g": "75.0"
+        }
+    },
+    {
+        "product_name": "Flour, rye",
+        "countries_tags": [
+            "en:world"
+        ],
+        "nutriments": {
+            "fat_100g": "1.91",
+            "proteins_100g": "8.4",
+            "carbohydrates_100g": "77.2"
+        }
+    },
+    {
+        "product_name": "Flour, barley",
+        "countries_tags": [
+            "en:world"
+        ],
+        "nutriments": {
+            "fat_100g": "2.45",
+            "proteins_100g": "8.72",
+            "carbohydrates_100g": "77.4"
+        }
+    },
+    {
+        "product_name": "Flour, cassava",
+        "countries_tags": [
+            "en:world"
+        ],
+        "nutriments": {
+            "fat_100g": "0.49",
+            "proteins_100g": "0.918",
+            "carbohydrates_100g": "87.3"
+        }
+    },
+    {
+        "product_name": "Buckwheat, whole grain",
+        "countries_tags": [
+            "en:world"
+        ],
+        "nutriments": {
+            "fat_100g": "3.04",
+            "proteins_100g": "11.1",
+            "carbohydrates_100g": "71.1"
+        }
+    },
+    {
+        "product_name": "Millet, whole grain",
+        "countries_tags": [
+            "en:world"
+        ],
+        "nutriments": {
+            "fat_100g": "4.19",
+            "proteins_100g": "10.0",
+            "carbohydrates_100g": "74.4"
+        }
+    },
+    {
+        "product_name": "Rice, brown, long grain, unenriched, raw",
+        "countries_tags": [
+            "en:world"
+        ],
+        "nutriments": {
+            "fat_100g": "3.31",
+            "proteins_100g": "7.25",
+            "carbohydrates_100g": "76.7"
+        }
+    },
+    {
+        "product_name": "Rice, white, long grain, unenriched, raw",
+        "countries_tags": [
+            "en:world"
+        ],
+        "nutriments": {
+            "fat_100g": "1.03",
+            "proteins_100g": "7.04",
+            "carbohydrates_100g": "80.3"
+        }
+    },
+    {
+        "product_name": "Beef, ground, 90% lean meat / 10% fat, raw",
+        "countries_tags": [
+            "en:world"
+        ],
+        "nutriments": {
+            "fat_100g": "12.8",
+            "proteins_100g": "18.2",
+            "carbohydrates_100g": "0.0"
+        }
+    },
+    {
+        "product_name": "Beef, ground, 80% lean meat / 20% fat, raw",
+        "countries_tags": [
+            "en:world"
+        ],
+        "nutriments": {
+            "fat_100g": "19.4",
+            "proteins_100g": "17.5",
+            "carbohydrates_100g": "0.0"
+        }
+    },
+    {
+        "product_name": "Pork, ground, raw",
+        "countries_tags": [
+            "en:world"
+        ],
+        "nutriments": {
+            "fat_100g": "17.5",
+            "proteins_100g": "17.8",
+            "carbohydrates_100g": "0.0"
+        }
+    },
+    {
+        "product_name": "Chicken, ground, with additives, raw",
+        "countries_tags": [
+            "en:world"
+        ],
+        "nutriments": {
+            "fat_100g": "7.16",
+            "proteins_100g": "17.9",
+            "carbohydrates_100g": "0.0"
+        }
+    },
+    {
+        "product_name": "Turkey, ground, 93% lean/ 7% fat, raw",
+        "countries_tags": [
+            "en:world"
+        ],
+        "nutriments": {
+            "fat_100g": "9.59",
+            "proteins_100g": "17.3",
+            "carbohydrates_100g": "0.0"
+        }
+    },
+    {
+        "product_name": "Nuts, brazilnuts, raw",
+        "countries_tags": [
+            "en:world"
+        ],
+        "nutriments": {
+            "fat_100g": "57.4",
+            "proteins_100g": "15.0",
+            "carbohydrates_100g": "21.6"
+        }
+    },
+    {
+        "product_name": "Nuts, cashew nuts, raw",
+        "countries_tags": [
+            "en:world"
+        ],
+        "nutriments": {
+            "fat_100g": "38.9",
+            "proteins_100g": "17.4",
+            "carbohydrates_100g": "36.3"
+        }
+    },
+    {
+        "product_name": "Nuts, hazelnuts or filberts, raw",
+        "countries_tags": [
+            "en:world"
+        ],
+        "nutriments": {
+            "fat_100g": "53.5",
+            "proteins_100g": "13.5",
+            "carbohydrates_100g": "26.5"
+        }
+    },
+    {
+        "product_name": "Peanuts, raw",
+        "countries_tags": [
+            "en:world"
+        ],
+        "nutriments": {
+            "fat_100g": "43.3",
+            "proteins_100g": "23.2",
+            "carbohydrates_100g": "26.5"
+        }
+    },
+    {
+        "product_name": "Flour, chestnut",
+        "countries_tags": [
+            "en:world"
+        ],
+        "nutriments": {
+            "fat_100g": "4.64",
+            "proteins_100g": "5.29",
+            "carbohydrates_100g": "80.5"
+        }
+    },
+    {
+        "product_name": "Nuts, macadamia nuts, raw",
+        "countries_tags": [
+            "en:world"
+        ],
+        "nutriments": {
+            "fat_100g": "64.9",
+            "proteins_100g": "7.79",
+            "carbohydrates_100g": "24.1"
+        }
+    },
+    {
+        "product_name": "Nuts, pistachio nuts, raw",
+        "countries_tags": [
+            "en:world"
+        ],
+        "nutriments": {
+            "fat_100g": "45.0",
+            "proteins_100g": "20.5",
+            "carbohydrates_100g": "27.7"
+        }
+    },
+    {
+        "product_name": "Seeds, pumpkin seeds (pepitas), raw",
+        "countries_tags": [
+            "en:world"
+        ],
+        "nutriments": {
+            "fat_100g": "40.0",
+            "proteins_100g": "29.9",
+            "carbohydrates_100g": "18.7"
+        }
+    },
+    {
+        "product_name": "Seeds, sunflower seed, kernel, raw",
+        "countries_tags": [
+            "en:world"
+        ],
+        "nutriments": {
+            "fat_100g": "48.4",
+            "proteins_100g": "18.9",
+            "carbohydrates_100g": "24.5"
+        }
+    },
+    {
+        "product_name": "Flour, coconut",
+        "countries_tags": [
+            "en:world"
+        ],
+        "nutriments": {
+            "fat_100g": "15.3",
+            "proteins_100g": "16.1",
+            "carbohydrates_100g": "58.9"
+        }
+    },
+    {
+        "product_name": "Beans, cannellini, dry",
+        "countries_tags": [
+            "en:world"
+        ],
+        "nutriments": {
+            "fat_100g": "2.2",
+            "proteins_100g": "21.6",
+            "carbohydrates_100g": "59.8"
+        }
+    },
+    {
+        "product_name": "Chickpeas, (garbanzo beans, bengal gram), dry",
+        "countries_tags": [
+            "en:world"
+        ],
+        "nutriments": {
+            "fat_100g": "6.27",
+            "proteins_100g": "21.3",
+            "carbohydrates_100g": "60.4"
+        }
+    },
+    {
+        "product_name": "Lentils, dry",
+        "countries_tags": [
+            "en:world"
+        ],
+        "nutriments": {
+            "fat_100g": "1.92",
+            "proteins_100g": "23.6",
+            "carbohydrates_100g": "62.2"
+        }
+    },
+    {
+        "product_name": "Blackeye pea, dry",
+        "countries_tags": [
+            "en:world"
+        ],
+        "nutriments": {
+            "fat_100g": "2.42",
+            "proteins_100g": "21.2",
+            "carbohydrates_100g": "61.8"
+        }
+    },
+    {
+        "product_name": "Beans, black, canned, sodium added, drained and rinsed",
+        "countries_tags": [
+            "en:world"
+        ],
+        "nutriments": {
+            "fat_100g": "1.27",
+            "proteins_100g": "6.91",
+            "carbohydrates_100g": "19.8"
+        }
+    },
+    {
+        "product_name": "Beans, navy, canned, sodium added, drained and rinsed",
+        "countries_tags": [
+            "en:world"
+        ],
+        "nutriments": {
+            "fat_100g": "1.4",
+            "proteins_100g": "6.57",
+            "carbohydrates_100g": "20.0"
+        }
+    },
+    {
+        "product_name": "Beans, cannellini, canned, sodium added, drained and rinsed",
+        "countries_tags": [
+            "en:world"
+        ],
+        "nutriments": {
+            "fat_100g": "1.17",
+            "proteins_100g": "7.41",
+            "carbohydrates_100g": "18.8"
+        }
+    },
+    {
+        "product_name": "Chickpeas (garbanzo beans, bengal gram), canned, sodium added, drained and rinsed",
+        "countries_tags": [
+            "en:world"
+        ],
+        "nutriments": {
+            "fat_100g": "3.1",
+            "proteins_100g": "7.02",
+            "carbohydrates_100g": "20.3"
+        }
+    },
+    {
+        "product_name": "Beans, kidney, dark red, canned, sodium added, sugar added, drained and rinsed",
+        "countries_tags": [
+            "en:world"
+        ],
+        "nutriments": {
+            "fat_100g": "1.26",
+            "proteins_100g": "7.8",
+            "carbohydrates_100g": "21.0"
+        }
+    },
+    {
+        "product_name": "Beans, kidney, light red, canned, sodium added, sugar added, drained and rinsed",
+        "countries_tags": [
+            "en:world"
+        ],
+        "nutriments": {
+            "fat_100g": "1.3",
+            "proteins_100g": "7.31",
+            "carbohydrates_100g": "21.4"
+        }
+    },
+    {
+        "product_name": "Peas, green, sweet, canned, sodium added, sugar added, drained and rinsed",
+        "countries_tags": [
+            "en:world"
+        ],
+        "nutriments": {
+            "fat_100g": "1.15",
+            "proteins_100g": "4.73",
+            "carbohydrates_100g": "12.7"
+        }
+    },
+    {
+        "product_name": "Beans, pinto, canned, sodium added, drained and rinsed",
+        "countries_tags": [
+            "en:world"
+        ],
+        "nutriments": {
+            "fat_100g": "1.27",
+            "proteins_100g": "6.69",
+            "carbohydrates_100g": "19.6"
+        }
+    },
+    {
+        "product_name": "Blackeye pea, canned, sodium added, drained and rinsed",
+        "countries_tags": [
+            "en:world"
+        ],
+        "nutriments": {
+            "fat_100g": "1.3",
+            "proteins_100g": "6.92",
+            "carbohydrates_100g": "19.2"
+        }
+    },
+    {
+        "product_name": "Beans, great northern, canned, sodium added, drained and rinsed",
+        "countries_tags": [
+            "en:world"
+        ],
+        "nutriments": {
+            "fat_100g": "1.27",
+            "proteins_100g": "7.03",
+            "carbohydrates_100g": "19.3"
+        }
+    },
+    {
+        "product_name": "Pork, loin, boneless, raw",
+        "countries_tags": [
+            "en:world"
+        ],
+        "nutriments": {
+            "fat_100g": "9.47",
+            "proteins_100g": "21.1",
+            "carbohydrates_100g": "-0.48"
+        }
+    },
+    {
+        "product_name": "Pork, loin, tenderloin, boneless, raw",
+        "countries_tags": [
+            "en:world"
+        ],
+        "nutriments": {
+            "fat_100g": "3.9",
+            "proteins_100g": "21.6",
+            "carbohydrates_100g": "-0.59"
+        }
+    },
+    {
+        "product_name": "Chicken, breast, boneless, skinless, raw",
+        "countries_tags": [
+            "en:world"
+        ],
+        "nutriments": {
+            "fat_100g": "1.93",
+            "proteins_100g": "22.5",
+            "carbohydrates_100g": "-0.37"
+        }
+    },
+    {
+        "product_name": "Chicken, thigh, boneless, skinless, raw",
+        "countries_tags": [
+            "en:world"
+        ],
+        "nutriments": {
+            "fat_100g": "7.92",
+            "proteins_100g": "18.6",
+            "carbohydrates_100g": "-0.41"
+        }
+    },
+    {
+        "product_name": "Beef, ribeye, steak, boneless, choice, raw",
+        "countries_tags": [
+            "en:world"
+        ],
+        "nutriments": {
+            "fat_100g": "20.0",
+            "proteins_100g": "18.7",
+            "carbohydrates_100g": "-0.31"
+        }
+    },
+    {
+        "product_name": "Beef, round, top round, boneless, choice, raw",
+        "countries_tags": [
+            "en:world"
+        ],
+        "nutriments": {
+            "fat_100g": "5.7",
+            "proteins_100g": "21.5",
+            "carbohydrates_100g": "0.85"
+        }
+    },
+    {
+        "product_name": "Beef, chuck, roast, boneless, choice, raw",
+        "countries_tags": [
+            "en:world"
+        ],
+        "nutriments": {
+            "fat_100g": "17.8",
+            "proteins_100g": "18.4",
+            "carbohydrates_100g": "-0.52"
+        }
+    },
+    {
+        "product_name": "Beef, flank, steak, boneless, choice, raw",
+        "countries_tags": [
+            "en:world"
+        ],
+        "nutriments": {
+            "fat_100g": "9.4",
+            "proteins_100g": "20.1",
+            "carbohydrates_100g": "-0.3"
+        }
+    },
+    {
+        "product_name": "Yogurt, plain, nonfat",
+        "countries_tags": [
+            "en:world"
+        ],
+        "nutriments": {
+            "fat_100g": "0.09",
+            "proteins_100g": "4.23",
+            "carbohydrates_100g": "8.08"
+        }
+    },
+    {
+        "product_name": "Cheese, monterey jack, solid",
+        "countries_tags": [
+            "en:world"
+        ],
+        "nutriments": {
+            "fat_100g": "32.6",
+            "proteins_100g": "22.6",
+            "carbohydrates_100g": "1.9"
+        }
+    },
+    {
+        "product_name": "Cheese, pasteurized process cheese food or product, American, singles",
+        "countries_tags": [
+            "en:world"
+        ],
+        "nutriments": {
+            "fat_100g": "23.9",
+            "proteins_100g": "15.6",
+            "carbohydrates_100g": "8.19"
+        }
+    },
+    {
+        "product_name": "Cheese, provolone, sliced",
+        "countries_tags": [
+            "en:world"
+        ],
+        "nutriments": {
+            "fat_100g": "28.1",
+            "proteins_100g": "23.5",
+            "carbohydrates_100g": "2.45"
+        }
+    },
+    {
+        "product_name": "Cheese, oaxaca, solid",
+        "countries_tags": [
+            "en:world"
+        ],
+        "nutriments": {
+            "fat_100g": "22.1",
+            "proteins_100g": "22.1",
+            "carbohydrates_100g": "2.4"
+        }
+    },
+    {
+        "product_name": "Cheese, queso fresco, solid",
+        "countries_tags": [
+            "en:world"
+        ],
+        "nutriments": {
+            "fat_100g": "23.4",
+            "proteins_100g": "18.9",
+            "carbohydrates_100g": "2.96"
+        }
+    },
+    {
+        "product_name": "Cheese, cotija, solid",
+        "countries_tags": [
+            "en:world"
+        ],
+        "nutriments": {
+            "fat_100g": "27.2",
+            "proteins_100g": "23.8",
+            "carbohydrates_100g": "2.72"
+        }
+    },
+    {
+        "product_name": "Fish, salmon, sockeye, wild caught, raw",
+        "countries_tags": [
+            "en:world"
+        ],
+        "nutriments": {
+            "fat_100g": "4.94",
+            "proteins_100g": "22.3",
+            "carbohydrates_100g": "-0.91"
+        }
+    },
+    {
+        "product_name": "Fish, salmon, Atlantic, farm raised, raw",
+        "countries_tags": [
+            "en:world"
+        ],
+        "nutriments": {
+            "fat_100g": "13.1",
+            "proteins_100g": "20.3",
+            "carbohydrates_100g": "-0.49"
+        }
+    },
+    {
+        "product_name": "Fish, tilapia, farm raised, raw",
+        "countries_tags": [
+            "en:world"
+        ],
+        "nutriments": {
+            "fat_100g": "2.48",
+            "proteins_100g": "19.0",
+            "carbohydrates_100g": "-0.91"
+        }
+    },
+    {
+        "product_name": "Crustaceans, shrimp, farm raised, raw",
+        "countries_tags": [
+            "en:world"
+        ],
+        "nutriments": {
+            "fat_100g": "0.8",
+            "proteins_100g": "15.6",
+            "carbohydrates_100g": "0.48"
+        }
+    },
+    {
+        "product_name": "Fish, cod, Atlantic, wild caught, raw",
+        "countries_tags": [
+            "en:world"
+        ],
+        "nutriments": {
+            "fat_100g": "0.67",
+            "proteins_100g": "16.1",
+            "carbohydrates_100g": "-1.07"
+        }
+    },
+    {
+        "product_name": "Fish, catfish, farm raised, raw",
+        "countries_tags": [
+            "en:world"
+        ],
+        "nutriments": {
+            "fat_100g": "7.31",
+            "proteins_100g": "16.5",
+            "carbohydrates_100g": "-0.63"
+        }
+    },
+    {
+        "product_name": "Crustaceans, crab, blue swimming, lump, pasteurized, refrigerated",
+        "countries_tags": [
+            "en:world"
+        ],
+        "nutriments": {
+            "fat_100g": "0.81",
+            "proteins_100g": "18.6",
+            "carbohydrates_100g": "-0.22"
+        }
+    },
+    {
+        "product_name": "Squash, summer, green, zucchini, includes skin, raw",
+        "countries_tags": [
+            "en:world"
+        ],
+        "nutriments": {
+            "fat_100g": "0.2",
+            "proteins_100g": "0.984"
+        }
+    },
+    {
+        "product_name": "Squash, summer, yellow, includes skin, raw",
+        "countries_tags": [
+            "en:world"
+        ],
+        "nutriments": {
+            "fat_100g": "0.14",
+            "proteins_100g": "0.891"
+        }
+    },
+    {
+        "product_name": "Squash, winter, butternut, raw",
+        "countries_tags": [
+            "en:world"
+        ],
+        "nutriments": {
+            "fat_100g": "0.17",
+            "proteins_100g": "1.15",
+            "carbohydrates_100g": "10.5"
+        }
+    },
+    {
+        "product_name": "Squash, winter, acorn, raw",
+        "countries_tags": [
+            "en:world"
+        ],
+        "nutriments": {
+            "fat_100g": "0.18",
+            "proteins_100g": "1.25",
+            "carbohydrates_100g": "10.5"
+        }
+    },
+    {
+        "product_name": "Cabbage, bok choy, raw",
+        "countries_tags": [
+            "en:world"
+        ],
+        "nutriments": {
+            "fat_100g": "0.23",
+            "proteins_100g": "1.02",
+            "carbohydrates_100g": "3.51"
+        }
+    },
+    {
+        "product_name": "Cauliflower, raw",
+        "countries_tags": [
+            "en:world"
+        ],
+        "nutriments": {
+            "fat_100g": "0.24",
+            "proteins_100g": "1.64",
+            "carbohydrates_100g": "4.72"
+        }
+    },
+    {
+        "product_name": "Collards, raw",
+        "countries_tags": [
+            "en:world"
+        ],
+        "nutriments": {
+            "fat_100g": "0.77",
+            "proteins_100g": "2.97",
+            "carbohydrates_100g": "7.02"
+        }
+    },
+    {
+        "product_name": "Brussels sprouts, raw",
+        "countries_tags": [
+            "en:world"
+        ],
+        "nutriments": {
+            "fat_100g": "0.56",
+            "proteins_100g": "3.98",
+            "carbohydrates_100g": "9.62"
+        }
+    },
+    {
+        "product_name": "Beets, raw",
+        "countries_tags": [
+            "en:world"
+        ],
+        "nutriments": {
+            "fat_100g": "0.3",
+            "proteins_100g": "1.69",
+            "carbohydrates_100g": "8.79"
+        }
+    },
+    {
+        "product_name": "Eggplant, raw",
+        "countries_tags": [
+            "en:world"
+        ],
+        "nutriments": {
+            "fat_100g": "0.12",
+            "proteins_100g": "0.852",
+            "carbohydrates_100g": "5.4"
+        }
+    },
+    {
+        "product_name": "Tomatoes, whole, canned, solids and liquids, with salt added",
+        "countries_tags": [
+            "en:world"
+        ],
+        "nutriments": {
+            "fat_100g": "0.21",
+            "proteins_100g": "0.868",
+            "carbohydrates_100g": "4.29"
+        }
+    },
+    {
+        "product_name": "Tomato, sauce, canned, with salt added",
+        "countries_tags": [
+            "en:world"
+        ],
+        "nutriments": {
+            "fat_100g": "0.38",
+            "proteins_100g": "1.35",
+            "carbohydrates_100g": "6.33"
+        }
+    },
+    {
+        "product_name": "Tomato, paste, canned, without salt added",
+        "countries_tags": [
+            "en:world"
+        ],
+        "nutriments": {
+            "fat_100g": "0.73",
+            "proteins_100g": "4.23",
+            "carbohydrates_100g": "20.2"
+        }
+    },
+    {
+        "product_name": "Tomatoes, crushed, canned",
+        "countries_tags": [
+            "en:world"
+        ],
+        "nutriments": {
+            "fat_100g": "0.4",
+            "proteins_100g": "1.44",
+            "carbohydrates_100g": "7.14"
+        }
+    },
+    {
+        "product_name": "Tomato, puree, canned",
+        "countries_tags": [
+            "en:world"
+        ],
+        "nutriments": {
+            "fat_100g": "0.27",
+            "proteins_100g": "1.58",
+            "carbohydrates_100g": "8.04"
+        }
+    }
+]

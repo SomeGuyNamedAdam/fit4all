@@ -3,18 +3,21 @@ import AsyncStorage from '@react-native-async-storage/async-storage';
 import { useTheme } from '@react-navigation/native';
 import { useRouter } from 'expo-router';
 import React, { useEffect, useState } from 'react';
-import { Alert, Button, StyleSheet, Switch, View } from 'react-native';
+import { Alert, Button, StyleSheet, View } from 'react-native';
+import { ThemedPicker } from '@/components/ThemedPicker';
+import ThemedButton from '@/components/ThemedButton';
+import Screen from '@/components/Screen';
+import { Appearance } from 'react-native';
 
 // Constants for setting keys
 const THEME_KEY = 'theme';
 const WEIGHT_UNIT_KEY = 'weightUnit';
 const ENERGY_UNIT_KEY = 'energyUnit';
+
 const Settings = () => {
-  
-const {colors} = useTheme();
   const [isDarkMode, setIsDarkMode] = useState(false);
-  const [isKg, setIsKg] = useState(false);
-  const [isKcal, setIsKcal] = useState(false);
+  const [weightUnit, setWeightUnit] = useState('kg');
+  const [energyUnit, setEnergyUnit] = useState('kcal');
   const router = useRouter();
 
   // Load settings from AsyncStorage on component mount
@@ -30,11 +33,11 @@ const {colors} = useTheme();
         }
 
         if (weightUnit !== null) {
-          setIsKg(weightUnit === 'kg');
+          setWeightUnit(weightUnit);
         }
 
         if (energyUnit !== null) {
-          setIsKcal(energyUnit === 'kcal');
+          setEnergyUnit(energyUnit);
         }
       } catch (error) {
         console.error('Failed to load settings', error);
@@ -47,33 +50,35 @@ const {colors} = useTheme();
   // Save settings to AsyncStorage whenever they change
   useEffect(() => {
     const saveSettings = async () => {
-      
       try {
         await AsyncStorage.setItem(THEME_KEY, isDarkMode ? 'dark' : 'light');
-        await AsyncStorage.setItem(WEIGHT_UNIT_KEY, isKg ? 'kg' : 'lbs');
-        await AsyncStorage.setItem(ENERGY_UNIT_KEY, isKcal ? 'kj' : 'kcal');
+        await AsyncStorage.setItem(WEIGHT_UNIT_KEY, weightUnit);
+        await AsyncStorage.setItem(ENERGY_UNIT_KEY, energyUnit);
       } catch (error) {
         console.error('Failed to save settings', error);
       }
     };
 
     saveSettings();
-  }, [isDarkMode, isKg, isKcal]);
+  }, [isDarkMode, weightUnit, energyUnit]);
 
   // Handle theme toggle
   const handleThemeToggle = () => {
-    setIsDarkMode(prevMode => !prevMode);
+    const theme = Appearance.getColorScheme()
+    if (theme == 'light') {
+      Appearance.setColorScheme('dark') 
+      setIsDarkMode(true)
+    } else {
+      Appearance.setColorScheme('light') 
+      setIsDarkMode(false)
+    }
+    // () => {Appearance.setColorScheme('light')}
   };
 
-  // Handle weight unit toggle
-  const handleWeightUnitToggle = () => {
-    setIsKg(prevUnit => !prevUnit);
-  };
-
-  // Handle energy unit toggle
-  const handleEnergyUnitToggle = () => {
-    setIsKcal(prevUnit => !prevUnit);
-  };
+  const getTheme = () => {
+    const theme = Appearance.getColorScheme()
+    return isDarkMode ? 'Enable light mode' :'Enable dark mode'
+  }
 
   // Confirm and erase all data
   const handleEraseData = () => {
@@ -88,8 +93,9 @@ const {colors} = useTheme();
             try {
               await AsyncStorage.clear();
               alert('All data has been erased. Restarting the app...');
+              router.navigate('/')
             } catch (error) {
-              console.error('Failed to clear AsyncStorage', error);
+              console.error('Failed to clear Storage', error);
             }
           },
         },
@@ -99,36 +105,52 @@ const {colors} = useTheme();
   };
 
   return (
-    <View style={styles.container}>
-      <ThemedText style={styles.title}>Settings</ThemedText>
+    <Screen type='scroll'>
+      <ThemedText type='title'>Settings</ThemedText>
       
       <View style={styles.option}>
-        <ThemedText style={styles.label}>Dark Mode</ThemedText>
-        <Switch value={isDarkMode} onValueChange={handleThemeToggle} />
+        <ThemedText style={styles.label}>App Theme</ThemedText>
+        <ThemedButton type='primary' title={getTheme()} onPress={handleThemeToggle} />
       </View>
 
       <View style={styles.option}>
-        <ThemedText style={styles.label}>Weight Unit (kg/lbs)</ThemedText>
-        <Switch value={isKg} onValueChange={handleWeightUnitToggle} />
+        <ThemedText style={styles.label}>Weight Unit</ThemedText>
+        <ThemedPicker
+          selectedValue={weightUnit}
+          style={styles.picker}
+          onValueChange={(itemValue) => setWeightUnit(itemValue as string)} // Cast to string
+          items ={[
+            { label: 'Kilograms (kg)', value: 'kg'},
+            { label: 'Pounds (lbs)', value: 'lbs'},
+          ]}
+        />
       </View>
 
       <View style={styles.option}>
-        <ThemedText style={styles.label}>Energy Unit (kcal/kJ)</ThemedText>
-        <Switch value={isKcal} onValueChange={handleEnergyUnitToggle} />
+        <ThemedText style={styles.label}>Energy Unit</ThemedText>
+        <ThemedPicker
+          
+          selectedValue={energyUnit}
+          style={styles.picker}
+          onValueChange={(itemValue) => setEnergyUnit(itemValue as string)} // Cast to string
+          items ={[
+            { label: 'Kilocalories (kcal)', value: 'kcal'},
+            { label: 'Kilojoules (kJ)', value: 'kj'},
+          ]}
+        />
       </View>
 
-      <Button title="Erase All Data" onPress={handleEraseData} color="#FF6347" />
+      <ThemedButton type='danger' title="Erase All Data" onPress={handleEraseData}/>
 
-      <Button
+      <ThemedButton
         title="About"
+        type='primary'
         onPress={() => router.push('/about')}
-        color="#4682B4"
+        
       />
-    </View>
+    </Screen>
   );
 };
-
-export default Settings;
 
 const styles = StyleSheet.create({
   container: {
@@ -141,12 +163,16 @@ const styles = StyleSheet.create({
     marginBottom: 20,
   },
   option: {
-    flexDirection: 'row',
-    justifyContent: 'space-between',
-    alignItems: 'center',
     marginBottom: 20,
   },
   label: {
     fontSize: 18,
+    marginBottom: 10,
+  },
+  picker: {
+    height: 50,
+    width: '100%',
   },
 });
+
+export default Settings;

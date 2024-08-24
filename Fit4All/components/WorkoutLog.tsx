@@ -1,10 +1,9 @@
 import AsyncStorage from '@react-native-async-storage/async-storage';
 import { useFocusEffect } from '@react-navigation/native';
 import { useRouter } from 'expo-router';
-import React, { useCallback, useState } from 'react';
+import React, { useCallback, useState, useEffect } from 'react';
 import { ActivityIndicator, StyleSheet, Alert, FlatList, Platform, TouchableOpacity, View } from 'react-native';
-import DateTimePicker from '@react-native-community/datetimepicker';  // Add this import
-import { ThemedButton } from './ThemedButton';
+import ThemedButton from './ThemedButton';
 import { ThemedText } from './ThemedText';
 
 interface Workout {
@@ -18,14 +17,22 @@ interface Workout {
   date: string;
 }
 
-const WorkoutLog = () => {
+interface WorkoutLogProps {
+  selectedDate?: Date; // Make selectedDate optional
+}
+
+const WorkoutLog: React.FC<WorkoutLogProps> = ({ selectedDate }) => {
   const [workoutLogs, setWorkoutLogs] = useState<Workout[]>([]);
   const [loading, setLoading] = useState(true);
-  const [selectedDate, setSelectedDate] = useState(new Date());
-  const [showDatePicker, setShowDatePicker] = useState(false);
-  const router = useRouter();
-  const [energyUnit, setEnergyUnit] = useState(1);
+  const [energyUnit, setEnergyUnit] = useState(4.184);
   const [weightUnit, setWeightUnit] = useState(1);
+  const [currentDate, setCurrentDate] = useState(new Date());
+  const router = useRouter();
+
+  // Use effect to set the default date if selectedDate is not provided
+  useEffect(() => {
+    setCurrentDate(selectedDate || new Date());
+  }, [selectedDate]);
 
   const fetchWorkoutLogs = async () => {
     try {
@@ -36,11 +43,11 @@ const WorkoutLog = () => {
         const storedWorkouts = JSON.parse(storedWorkoutsString);
         setWorkoutLogs(storedWorkouts);
       }
-      if (energyUnit) {
+      if (energyUnitString) {
         const unit = energyUnitString === 'kj' ? 1 : 4.184;
         setEnergyUnit(unit);
       }
-      if (weightUnit) {
+      if (weightUnitString) {
         const unit = weightUnitString === 'lbs' ? 1 : 2.205;
         setWeightUnit(unit);
       }
@@ -66,12 +73,6 @@ const WorkoutLog = () => {
     return workouts.filter(workout => workout.date === dateString);
   };
 
-  const onDateChange = (event: any, selectedDate?: Date) => {
-    const currentDate = selectedDate || new Date();
-    setShowDatePicker(false);
-    setSelectedDate(currentDate);
-  };
-
   const confirmClearDateSpecificItems = () => {
     Alert.alert(
       'Clear Workouts',
@@ -86,7 +87,7 @@ const WorkoutLog = () => {
 
   const clearDateSpecificWorkouts = async () => {
     try {
-      const dateString = selectedDate.toISOString().split('T')[0];
+      const dateString = currentDate.toISOString().split('T')[0];
       const remainingWorkouts = workoutLogs.filter(workout => workout.date !== dateString);
       await AsyncStorage.setItem('doneWorkouts', JSON.stringify(remainingWorkouts));
       setWorkoutLogs(remainingWorkouts);
@@ -129,39 +130,33 @@ const WorkoutLog = () => {
     return <ActivityIndicator size="large" color="#0000ff" />;
   }
 
-  const filteredWorkouts = filterWorkoutsByDate(workoutLogs, selectedDate)
+  // Reverse the filtered workouts array before passing it to the FlatList
+  const filteredWorkouts = filterWorkoutsByDate(workoutLogs, currentDate).reverse();
 
   return (
     <View style={{ flex: 1, padding: 0 }}>
-      <ThemedText type='subtitle' style={{ fontWeight: 'bold', textAlign: 'center', padding: 10 }}>-- Workout Log --</ThemedText>
-      <View style={{ flexDirection: 'row', justifyContent: 'space-between', padding: 10 }}>
-        <ThemedButton title="Select Date" onPress={() => setShowDatePicker(true)} type="primary" />
-        <ThemedButton title="Clear Logs for Selected Date" onPress={confirmClearDateSpecificItems} type="danger" />
-      </View>
-      {showDatePicker && (
-        <DateTimePicker
-          value={selectedDate}
-          mode="date"
-          display="default"
-          onChange={onDateChange}
-        />
-      )}
+      <ThemedText type='subtitle' style={styles.subtitle}>-- Workout Log --</ThemedText>
+      
+      <ThemedButton title="Clear Logs for Selected Date" onPress={confirmClearDateSpecificItems} type="danger" />
+      
       {filteredWorkouts.length === 0 ? (
         <ThemedText>No workout logs available for the selected date.</ThemedText>
+        
       ) : (
         <FlatList
           style={{ flex: 1 }}
           data={filteredWorkouts}
-          keyExtractor={(item) => item.key}
+          keyExtractor={(_, index) => index.toString()}
           renderItem={({ item }) => (
-            <View style={{ flexDirection: 'row', justifyContent: 'space-between', padding: 16, borderBottomWidth: 1 }}>
-              <TouchableOpacity onPress={() => handlePress(item)}>
-                <ThemedText>{item.activity.charAt(0).toUpperCase() + item.activity.slice(1)}</ThemedText>
-                <ThemedText>Duration: {item.duration} minutes</ThemedText>
-                <ThemedText>Burned: {(item.caloriesBurned / energyUnit).toFixed(0)} {energyUnit === 1 ? "kJ" : "kcal"}</ThemedText>
-                
-              </TouchableOpacity>
-              <View style={{ flexDirection: 'row' }}>
+            <View style={styles.itemContainer}>
+              <View style={styles.itemContent}>
+                <TouchableOpacity onPress={() => handlePress(item)} style={styles.itemTouchable}>
+                  <ThemedText style={styles.activityText}>{item.activity.charAt(0).toUpperCase() + item.activity.slice(1)}</ThemedText>
+                  <ThemedText style={styles.detailText}>Duration: {item.duration} minutes</ThemedText>
+                  <ThemedText style={styles.detailText}>Burned: {(item.caloriesBurned / energyUnit).toFixed(0)} {energyUnit === 1 ? "kJ" : "kcal"}</ThemedText>
+                </TouchableOpacity>
+              </View>
+              <View style={styles.deleteButtonContainer}>
                 <ThemedButton title="-" type="danger" onPress={() => handleDelete(item)} />
               </View>
             </View>
@@ -172,20 +167,36 @@ const WorkoutLog = () => {
   );
 };
 
-export default WorkoutLog;
-
-
 const styles = StyleSheet.create({
-  container: {
+  subtitle: {
+    fontWeight: 'bold',
+    textAlign: 'center',
     padding: 10,
-    marginTop: 30,
   },
-  row: {
+  itemContainer: {
     flexDirection: 'row',
-    justifyContent: 'space-between', // Adjusts space between items
+    alignItems: 'flex-start',
+    padding: 16,
+    borderBottomWidth: 1,
   },
-  item: {
-    flex: 1, // Allows the components to expand and fill the available space
-    marginHorizontal: 5, // Adds space between the components
+  itemContent: {
+    flex: 1,
+  },
+  itemTouchable: {
+    flex: 1,
+  },
+  activityText: {
+    flexShrink: 1, // Allow text to shrink and wrap
+  },
+  deleteButtonContainer: {
+    justifyContent: 'center',
+    marginLeft: 10,
+  },
+  detailText: {
+    fontSize: 14,
+    color: 'gray',
+    marginRight: 10,
   },
 });
+
+export default WorkoutLog;

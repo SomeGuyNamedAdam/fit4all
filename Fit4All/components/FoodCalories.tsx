@@ -4,23 +4,33 @@ import { useFocusEffect, useTheme } from '@react-navigation/native';
 import { ActivityIndicator, StyleSheet, View } from 'react-native';
 import { SurfaceView } from './SurfaceView';
 import { ThemedText } from './ThemedText';
-import { ThemedButton } from './ThemedButton';
+import ThemedButton from './ThemedButton';
 import { router } from 'expo-router';
+
+interface Nutriments {
+  energy_100g?: string;
+  fat_100g?: string;
+  proteins_100g?: string;
+  carbohydrates_100g?: string;
+}
 
 interface Product {
   id: string;
+  key?: string;
   product_name: string;
-  nutriments: {
-    energy_100g?: string;
-  };
+  nutriments: Nutriments;
   amount?: string;
+  dateAdded?: string; // Ensure the dateAdded field is available
 }
 
-export function FoodCalories() {
-  const { colors } = useTheme();
+interface FoodCaloriesProps {
+  selectedDate?: Date; // Optional prop
+}
 
+export default function FoodCalories({ selectedDate }: FoodCaloriesProps) {
+  const { colors } = useTheme();
   const [calories, setCalories] = useState(0);
-  const [energyUnit, setEnergyUnit] = useState(1);
+  const [energyUnit, setEnergyUnit] = useState(4.184);
   const [loading, setLoading] = useState(true);
 
   const getCalories = async () => {
@@ -28,12 +38,18 @@ export function FoodCalories() {
       const storedDataString = await AsyncStorage.getItem('storedProducts');
       if (storedDataString) {
         const storedFoods: Product[] = JSON.parse(storedDataString);
-        
+
+        // Use selectedDate if provided, otherwise default to today
+        const dateToUse = selectedDate ? selectedDate.toISOString().split('T')[0] : new Date().toISOString().split('T')[0];
+
         let totalCalories = 0;
         storedFoods.forEach(product => {
-          const amount = parseFloat(product.amount || '0');
-          const energyPer100g = parseFloat(product.nutriments?.energy_100g || '0');
-          totalCalories += (energyPer100g * amount * 0.01);
+          // Filter by the specified date
+          if (product.dateAdded === dateToUse) {
+            const amount = parseFloat(product.amount || '0');
+            const energyPer100g = parseFloat(product.nutriments.energy_100g || '0');
+            totalCalories += (energyPer100g * amount * 0.01);
+          }
         });
 
         setCalories(Math.round(totalCalories));
@@ -68,7 +84,7 @@ export function FoodCalories() {
         }
       };
       fetchData();
-    }, [])
+    }, [selectedDate]) // Depend on selectedDate to refetch when it changes
   );
 
   if (loading) {
@@ -82,13 +98,11 @@ export function FoodCalories() {
         <ThemedButton style={styles.button} title="+" type="primary" onPress={() => { router.push('/food/search'); }} />
       </View>
       <ThemedText style={styles.text}>
-      🍏: {(Math.round(calories) / energyUnit).toFixed(0)} {energyUnit === 1 ? 'kJ' : 'kcal'}
+        🍏: {(Math.round(calories) / energyUnit).toFixed(0)} {energyUnit === 1 ? 'kJ' : 'kcal'}
       </ThemedText>
     </SurfaceView>
   );
 }
-
-export default FoodCalories;
 
 const styles = StyleSheet.create({
   view: {

@@ -1,22 +1,29 @@
-import React, { useCallback, useEffect, useState } from 'react';
-import { StyleSheet, Text, useWindowDimensions, View } from 'react-native';
+import React, { useCallback, useState } from 'react';
+import { StyleSheet, useWindowDimensions, View } from 'react-native';
 import { PieChart } from 'react-native-chart-kit';
 import AsyncStorage from '@react-native-async-storage/async-storage';
 import { useFocusEffect } from '@react-navigation/native';
 import { ThemedText } from './ThemedText';
 import { SurfaceView } from './SurfaceView';
-import { setStatusBarHidden } from 'expo-status-bar';
+import ThemedButton from './ThemedButton';
+import { router } from 'expo-router';
+
+interface Nutriments {
+  energy_100g?: string;
+  fat_100g?: string;
+  proteins_100g?: string;
+  carbohydrates_100g?: string;
+}
 
 interface Product {
   id: string;
   product_name: string;
-  nutriments: {
-    energy_100g?: string;
-    fat_100g?: string;
-    proteins_100g?: string;
-    carbohydrates_100g?: string;
-  };
-  energy?: string;
+  nutriments: Nutriments;
+  dateAdded?: string; // Ensure the dateAdded field is available
+}
+
+interface NutritionWheelProps {
+  selectedDate?: Date; // Make selectedDate optional and of type Date
 }
 
 const defaultData = [
@@ -26,14 +33,16 @@ const defaultData = [
     color: "#F00",
     legendFontColor: "#e07a5f",
     legendFontSize: 15
-  },{
+  },
+  {
     name: "Fat",
     value: 0,
     color: "#0F0",
     legendFontColor: "#81b29a",
     legendFontSize: 15
-  },{
-    name: "Carbohydrates",
+  },
+  {
+    name: "Carbos",
     value: 0,
     color: "#00F",
     legendFontColor: "#3d405b",
@@ -45,7 +54,7 @@ function sumDataValues(data: any[]) {
   return data.reduce((sum, item) => sum + item.value, 0);
 }
 
-export function NutritionWheel() {
+export function NutritionWheel({ selectedDate }: NutritionWheelProps) {
   const { width: screenWidth } = useWindowDimensions();
   const [chartData, setChartData] = useState(defaultData);
 
@@ -55,6 +64,9 @@ export function NutritionWheel() {
       if (storedFoodsString) {
         const storedFoods: Product[] = JSON.parse(storedFoodsString);
 
+        // Use provided selectedDate or default to today's date
+        const dateToUse = selectedDate ? selectedDate.toISOString().split('T')[0] : new Date().toISOString().split('T')[0];
+
         const nutrientTotals = {
           proteins: 0,
           fat: 0,
@@ -62,7 +74,8 @@ export function NutritionWheel() {
         };
 
         storedFoods.forEach(product => {
-          if (product.nutriments) {
+          // Filter by the selected or default date
+          if (product.dateAdded === dateToUse && product.nutriments) {
             nutrientTotals.proteins += parseFloat(product.nutriments.proteins_100g || '0');
             nutrientTotals.fat += parseFloat(product.nutriments.fat_100g || '0');
             nutrientTotals.carbohydrates += parseFloat(product.nutriments.carbohydrates_100g || '0');
@@ -85,7 +98,7 @@ export function NutritionWheel() {
             legendFontSize: 15
           },
           {
-            name: "Carbohydrates",
+            name: "Carbos",
             value: nutrientTotals.carbohydrates,
             color: "#977390",
             legendFontColor: "#7f7f7f",
@@ -103,7 +116,7 @@ export function NutritionWheel() {
   useFocusEffect(
     useCallback(() => {
       fetchNutrientData();
-    }, [])
+    }, [selectedDate]) // Depend on selectedDate to refetch when it changes
   );
 
   const totalValue = sumDataValues(chartData);
@@ -122,25 +135,37 @@ export function NutritionWheel() {
           accessor={"value"}
           backgroundColor={"transparent"}
           paddingLeft={"0"}
+          absolute
         />
       ) : (
-        <View style={{ flexDirection: 'row', width: screenWidth, height: 300, justifyContent: 'center', alignItems: 'center' }}>
-          <ThemedText style={{ textAlign: 'center', flex: 1 }}>No data to show.{"\n"}Add food to your log to display nutrients values</ThemedText>
+        <View style={styles.noDataContainer}>
+          <ThemedText style={styles.noDataText}>
+            No data to show.{"\n"}Add food to your log to display nutrients values
+          </ThemedText>
+          <ThemedButton title='Add Food' style={styles.noDataButton} onPress={() => {router.navigate('/food/search')}}/>
         </View>
       )}
     </SurfaceView>
   );
 }
 
-export default NutritionWheel;
-
 const styles = StyleSheet.create({
   view: {
     padding: 0,
     borderWidth: 1,
-    // overflow: 'hidden'
   },
-  text: {
-    fontSize: 28,
+  noDataContainer: {
+    
+    justifyContent: 'center',
+    alignItems: 'center',
+    height: 300,
+  },
+  noDataText: {
+    textAlign: 'center',
+  },
+  noDataButton: {
+    marginTop: 20
   }
 });
+
+export default NutritionWheel;
