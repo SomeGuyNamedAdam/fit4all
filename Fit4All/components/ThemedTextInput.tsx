@@ -1,39 +1,52 @@
 import React from 'react';
-import { TextInput, type TextInputProps, StyleSheet } from 'react-native';
+import { TextInput, type TextInputProps, StyleSheet, View, Text } from 'react-native';
 import { useThemeColor } from '@/hooks/useThemeColor';
+import { ThemedText } from './ThemedText';
 
 export type ThemedTextInputProps = TextInputProps & {
   lightColor?: string;
   darkColor?: string;
   type?: 'default' | 'outlined' | 'rounded' | 'underline';
+  label?: string;
 };
 
 export function ThemedTextInput({
   style,
   lightColor,
   darkColor,
+  label,
   type = 'default',
   ...rest
 }: ThemedTextInputProps) {
   const color = useThemeColor({ light: lightColor, dark: darkColor }, 'text');
 
   return (
-    <TextInput
-      style={[
-        { color },
-        type === 'default' ? styles.default : undefined,
-        type === 'outlined' ? styles.outlined : undefined,
-        type === 'rounded' ? styles.rounded : undefined,
-        type === 'underline' ? styles.underline : undefined,
-        style,
-      ]}
-      placeholderTextColor={color} // Ensures placeholder text is also themed
-      {...rest}
-    />
+    <View style={styles.container}>
+      {label && <ThemedText style={styles.label}>{label}</ThemedText>}
+      <TextInput
+        style={[
+          { color },
+          type === 'default' ? styles.default : undefined,
+          type === 'outlined' ? styles.outlined : undefined,
+          type === 'rounded' ? styles.rounded : undefined,
+          type === 'underline' ? styles.underline : undefined,
+          style,
+        ]}
+        placeholderTextColor={color} // Ensures placeholder text is also themed
+        {...rest}
+      />
+    </View>
   );
 }
 
 const styles = StyleSheet.create({
+  container: {
+    marginVertical: 8, // Add vertical margin to separate label and input
+  },
+  label: {
+    fontSize: 14,
+    marginBottom: 4, // Space between label and input
+  },
   default: {
     fontSize: 16,
     lineHeight: 24,

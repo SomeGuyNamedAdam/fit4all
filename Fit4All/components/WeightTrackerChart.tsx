@@ -1,30 +1,46 @@
-import React, { useState, useEffect, useCallback } from 'react';
-import { StyleSheet, View, Dimensions, Text, TextInput, TouchableOpacity, Alert } from 'react-native';
-import { LineChart } from 'react-native-chart-kit';
-import { SurfaceView } from './SurfaceView';
 import AsyncStorage from '@react-native-async-storage/async-storage';
+import { useFocusEffect } from '@react-navigation/native';
+import { useFont } from '@shopify/react-native-skia';
+import React, { useCallback, useState } from 'react';
+import { Alert, Dimensions, StyleSheet, useColorScheme, View } from 'react-native';
+import { CartesianChart, Line } from 'victory-native';
+import { SurfaceView } from './SurfaceView';
 import ThemedButton from './ThemedButton';
 import { ThemedText } from './ThemedText';
 import ThemedTextInput from './ThemedTextInput';
-import { useFocusEffect } from '@react-navigation/native';
-import { store } from 'expo-router/build/global-state/router-store';
-import { LineGraph } from 'react-native-graph';
-import { center } from '@shopify/react-native-skia';
+import { format, subMonths } from 'date-fns'; // Import subMonths function
+import { useThemeColor } from '@/hooks/useThemeColor';
 
 const screenWidth = Dimensions.get("window").width;
 
 interface WeightData {
   value: number;
-  date: Date; // Use ISO date string
+  date: Date;
 }
+export type WeightTrackerChartProps = {
+  lightColor? : string;
+  darkColor?: string
+};
 
-const WeightTrackerChart = () => {
-  const [data, setData] = useState<WeightData[]>([{ value: 0, date: new Date}]);
+const WeightTrackerChart: React.FC = ({
+  lightColor,
+  darkColor,
+}: WeightTrackerChartProps) => {
+  const [data, setData] = useState<WeightData[]>([
+    { value: -10, date: new Date('2024-01-25T00:40:19.057Z') },
+    { value: 10, date: new Date('2024-06-25T00:40:19.057Z') },
+    { value: 25, date: new Date('2024-07-25T00:40:19.057Z') },
+    { value: 20, date: new Date('2024-08-25T00:40:19.057Z') },
+  ]);
+
+  const color = useThemeColor({light: lightColor, dark: darkColor}, 'text')
   const [loading, setLoading] = useState<boolean>(true);
-  const [noData, setNoData] = useState<boolean>(false);
-  const [newWeight, setNewWeight] = useState<string>(''); // State for the new weight input
-  const [inputError, setInputError] = useState<boolean>(false); // State to track input error
-  
+  const [noData, setNoData] = useState<boolean>(true);
+  const [newWeight, setNewWeight] = useState<string>('');
+  const [inputError, setInputError] = useState<boolean>(false);
+
+  const font = useFont(require('../assets/fonts/Roboto-Medium.ttf'), 12);
+
   useFocusEffect(
     useCallback(() => {
       const fetchData = async () => {
@@ -32,15 +48,30 @@ const WeightTrackerChart = () => {
           const storedData = await AsyncStorage.getItem('weights');
           if (storedData) {
             const weights: WeightData[] = JSON.parse(storedData, (key, value) => {
-              // If the key is 'date', parse it as a Date object
               if (key === 'date') {
                 return new Date(value);
               }
-              return value; // otherwise, return the value as is
+              if (key === 'value' || key === 'weight') {
+                return Number(value);
+              }
+              return value;
             });
+
             if (weights.length > 0) {
+              // Determine the oldest date in the data
+              const oldestDate = weights.reduce((earliest, current) => {
+                return current.date < earliest ? current.date : earliest;
+              }, weights[0].date);
+
+              // Add an item that's 3 months older than the oldest item
+              const olderEntry: WeightData = {
+                value: weights[0].value, // You can set this to whatever value you prefer
+                date: subMonths(oldestDate, 3),
+              };
+
+              const updatedWeights = [olderEntry, ...weights];
+              setData(updatedWeights);
               setNoData(false);
-              setData(weights);
             } else {
               setNoData(true);
             }
@@ -51,82 +82,11 @@ const WeightTrackerChart = () => {
           console.error('Failed to load weights', error);
           setNoData(true);
         }
-        setLoading(false);
       };
 
-      //fetchData();
-      setData([
-        { value: 10, date: new Date('2024-01-01T00:40:19.057Z') },
-        { value: 15, date: new Date('2024-02-01T00:40:19.057Z') },
-        { value: 20, date: new Date('2024-03-01T00:40:19.057Z') },
-        { value: 25, date: new Date('2024-04-01T00:40:19.057Z') },
-        { value: 30, date: new Date('2024-05-39T00:40:19.057Z') },
-        { value: 35, date: new Date('2024-06-01T00:40:19.057Z') },
-        { value: 40, date: new Date('2024-07-01T00:40:19.057Z') },
-        { value: 45, date: new Date('2024-08-01T00:40:19.057Z') },
-        { value: 80, date: new Date('2024-08-21T00:40:19.057Z') },
-        { value: 50, date: new Date('2024-08-21T23:40:19.057') },
-        { value: 55, date: new Date('2024-10-01T00:40:19.057Z') },
-      ])
-      console.log(data)
+      fetchData().finally(() => setLoading(false));
     }, [])
   );
-
-  useEffect(() => {
-    // const fetchData = async () => {
-    //   try {
-    //     const storedData = await AsyncStorage.getItem('weights');
-    //     if (storedData) {
-    //       // Parsing the stored data
-    //       const weights: WeightData[] = JSON.parse(storedData, (key, value) => {
-    //         // If the key is 'date', parse it as a Date object
-    //         if (key === 'date') {
-    //           return new Date(value);
-    //         }
-    //         return value; // otherwise, return the value as is
-    //       });
-    
-    //       if (weights.length > 0) {
-    //         setNoData(false);
-    //         const chartData = prepareChartData(weights);
-    //         setData(weights);
-    //         // weights.forEach((item, index) => {
-    //         //   console.log(`Item ${index}:`, {
-    //         //     weightType: typeof item.weight,
-    //         //     dateType: typeof item.date,
-    //         //   });
-    //         // });
-    //       } else {
-    //         setNoData(true);
-    //       }
-    //     } else {
-    //       setNoData(true);
-    //     }
-    //   } catch (error) {
-    //     console.error('Failed to load weights', error);
-    //     setNoData(true);
-    //   }
-    //   setLoading(false);
-    // };
-    
-    
-    setData([
-      { value: 10, date: new Date('2024-01-01T00:40:19.057Z') },
-      { value: 15, date: new Date('2024-02-01T00:40:19.057Z') },
-      { value: 20, date: new Date('2024-03-01T00:40:19.057Z') },
-      { value: 25, date: new Date('2024-04-01T00:40:19.057Z') },
-      { value: 30, date: new Date('2024-05-39T00:40:19.057Z') },
-      { value: 35, date: new Date('2024-06-01T00:40:19.057Z') },
-      { value: 40, date: new Date('2024-07-01T00:40:19.057Z') },
-      { value: 45, date: new Date('2024-08-01T00:40:19.057Z') },
-      { value: 80, date: new Date('2024-08-21T00:40:19.057Z') },
-      { value: 50, date: new Date('2024-08-21T23:40:19.057Z') },
-      { value: 55, date: new Date('2024-10-01T00:40:19.057Z') },
-    ])
-    console.log(data)
-    setLoading(false)
-  }, []);
-
 
   const handleAddWeight = async () => {
     if (!newWeight || isNaN(Number(newWeight))) {
@@ -136,33 +96,53 @@ const WeightTrackerChart = () => {
     }
 
     try {
-      const storedData = await AsyncStorage.getItem('weights');
-      const weights: WeightData[] = storedData ? JSON.parse(storedData) : [];
       const newWeightEntry: WeightData = {
         value: parseFloat(newWeight),
         date: new Date()
       };
+      const updatedWeights = noData ? [newWeightEntry] : [...data, newWeightEntry];
+      await AsyncStorage.setItem('weights', JSON.stringify(updatedWeights));
 
-      weights.push(newWeightEntry);
-      await AsyncStorage.setItem('weights', JSON.stringify(weights));
-
-      // Clear input field and reset error state
       setNewWeight('');
       setInputError(false);
 
-      // Refresh chart data
-      setData(weights);
-      setNoData(weights.length === 0);
+      setData(updatedWeights);
+      setNoData(updatedWeights.length === 0);
     } catch (error) {
       console.error('Failed to save weight', error);
     }
   };
 
   const handleWeightInputChange = (text: string) => {
-    // Remove non-numeric characters
-    const filteredText = text.replace(/[^0-9.]/g, '');
+    const filteredText = text.replace(/[^0-9.,]/g, '');
     setNewWeight(filteredText);
-    setInputError(false); // Reset the error state when the user modifies the input
+    setInputError(false);
+  };
+
+  // Transform data for chart
+  const chartData = data.map(entry => ({
+    x: new Date(entry.date).getTime(), // Convert date to timestamp
+    y: entry.value
+  }));
+
+  // Calculate xDomain from today to 3 months back
+  const today = new Date();
+  const threeMonthsAgo = subMonths(today, 3);
+
+  const xDomain: [number, number] = [
+    threeMonthsAgo.getTime(),
+    today.getTime()
+  ];
+
+  // Calculate yDomain with default values
+  const yDomain: [number, number] = [
+    Math.min(...chartData.map(d => d.y)),
+    Math.max(...chartData.map(d => d.y))
+  ];
+
+  // Format date for x-axis labels
+  const formatXLabel = (timestamp: number) => {
+    return format(new Date(timestamp), 'dd/MM'); // Format as "dd/MM"
   };
 
   if (loading) {
@@ -174,71 +154,36 @@ const WeightTrackerChart = () => {
     );
   }
 
-  const handleTitle = () => {
-    return <ThemedText>Title goes here</ThemedText>
-  }
-
   return (
-    // <SurfaceView type='modal' style={styles.container}>
-    //   {noData ? (
-    //     <ThemedText>No weight history added</ThemedText>
-    //   ) : (
-    //     // <>
-    //     //   <LineChart
-    //     //     data={data}
-    //     //     width={screenWidth - 40}
-    //     //     height={220}
-    //     //     chartConfig={{
-    //     //       color: (opacity = 0) => `rgba(255, 255, 255, ${opacity})`,
-    //     //       strokeWidth: 2,
-    //     //       barPercentage: 0.5,
-    //     //       useShadowColorFromDataset: false
-    //     //     }}
-    //     //     bezier
-    //     //   />
-    //     // </>
-    //     <SurfaceView style={styles.graphContainer}>
-    //     <LineGraph
-    //       points={ [
-    //         { value: 10, date: new Date('2024-01-01T00:40:19.057Z') },
-    //         { value: 15, date: new Date('2024-02-01T00:40:19.057Z') },
-    //         { value: 20, date: new Date('2024-03-01T00:40:19.057Z') },
-    //         { value: 25, date: new Date('2024-04-01T00:40:19.057Z') },
-    //         { value: 30, date: new Date('2024-05-39T00:40:19.057Z') },
-    //         { value: 35, date: new Date('2024-06-01T00:40:19.057Z') },
-    //         { value: 40, date: new Date('2024-07-01T00:40:19.057Z') },
-    //         { value: 45, date: new Date('2024-08-01T00:40:19.057Z') },
-    //         { value: 80, date: new Date('2024-08-21T00:40:19.057Z') },
-    //         { value: 50, date: new Date('2024-08-21T23:40:19.057') },
-    //         { value: 55, date: new Date('2024-10-01T00:40:19.057Z') },
-    //       ] }
-    //       animated={false}
-    //       color="#a86f6f"
-    //       style={styles.lineGraph}
-    //     />
-    //   </SurfaceView>
-    //   )}
-    //   <View style={styles.addWeightContainer}>
-    //     <ThemedTextInput
-    //       style={[styles.textInput, inputError && styles.inputError]}
-    //       placeholder="Enter weight"
-    //       keyboardType="numeric"
-    //       value={newWeight}
-    //       onChangeText={handleWeightInputChange}
-    //     />
-    //     <ThemedButton title="Add weight" type='primary' onPress={handleAddWeight} />
-    //   </View>
-    // </SurfaceView>
     <SurfaceView type="modal">
-      {handleTitle()}
-      <SurfaceView style={styles.graphContainer}>
-        <LineGraph
-          points={data}
-          animated={false}
-          color="#a86f6f"
-          style={styles.lineGraph}
-        />
-      </SurfaceView>
+      <View style={{ height: 300 }}>
+        <CartesianChart
+          data={chartData}
+          xKey="x"
+          yKeys={["y"]}
+          axisOptions={{
+            font,
+            formatXLabel,
+            tickCount: { x: 3, y: 5 }, // Set tick count for x-axis to 3
+            labelOffset: { x: 10, y: 10 }, // Adjust label offset
+            lineColor : {
+              grid : {
+                x : color,
+                y : color,
+              },
+              frame: color
+            },
+            labelColor : color
+          }}
+          domain={{ x: xDomain, y: yDomain }}
+          domainPadding={{ left: 20, right: 20 }}
+        >
+          {({ points }) => (
+            <Line points={points.y} color="#04dac6" strokeWidth={3} />
+          )}
+        </CartesianChart>
+      </View>
+
       <View style={styles.addWeightContainer}>
         <ThemedTextInput
           style={[styles.textInput, inputError && styles.inputError]}
@@ -260,7 +205,6 @@ const WeightTrackerChart = () => {
 const styles = StyleSheet.create({
   container: {
     padding: 20,
-    // alignItems: 'center',
     flex: 1
   },
   addWeightContainer: {
@@ -279,14 +223,7 @@ const styles = StyleSheet.create({
   },
   inputError: {
     borderColor: 'red',
-  },
-  lineGraph: {
-    flex: 1, // Make the LineGraph fill its container
-  },
-  graphContainer: {
-    height: 250, // Set a height for the graph container
-    marginVertical: 0, // Add some vertical margin
-  },
+  }
 });
 
 export default WeightTrackerChart;

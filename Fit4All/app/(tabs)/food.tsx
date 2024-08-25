@@ -36,7 +36,7 @@ export default function FoodScreen() {
     <Screen>
       <ThemedText type='title'>Food log</ThemedText>
       <FoodCalories selectedDate={selectedDate} />
-      <NutritionWheel selectedDate={selectedDate} />
+      {/* <NutritionWheel selectedDate={selectedDate} /> */}
       <ThemedButton title="Add Food" style={styles.button} onPress={() => {router.push('/food/search')}} type='primary' />
       <ThemedButton title="Select Date" style={styles.button}onPress={showDatePickerModal} type='primary' />
       {showDatePicker && (

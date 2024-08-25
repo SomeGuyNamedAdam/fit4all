@@ -98,8 +98,12 @@ const SearchScreen = () => {
           },
         }));
 
+      
+        const userProductsString = await AsyncStorage.getItem('userProducts')
+        const userProducts = userProductsString ? JSON.parse(userProductsString) : []
+      
       // Combine API and Local Data
-      const combinedProducts = [...filteredApiProducts, ...localProducts];
+      const combinedProducts = [...filteredApiProducts, ...localProducts, ...userProducts];
 
       // Calculate relevance score based on several factors
       const scoredProducts = combinedProducts.map((product: Product) => {
@@ -271,9 +275,6 @@ const SearchScreen = () => {
                     </ThemedText>
                   )}
                 </View>
-                <ThemedText style={styles.relevanceScore}>
-                  Relevance Score: {item.relevanceScore?.toFixed(2)}
-                </ThemedText>
               </View>
             </TouchableOpacity>
           )}

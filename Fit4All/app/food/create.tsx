@@ -55,10 +55,11 @@ const CreateScreen = () => {
     if (!isError.name && !isError.amount && productName && amount) {
       try {
         const storedItemsString = await AsyncStorage.getItem("storedProducts");
+        const userProductsString = await AsyncStorage.getItem("userProducts")
         const storedItems = storedItemsString
           ? JSON.parse(storedItemsString)
           : [];
-
+        const userProducts = userProductsString ? JSON.parse(userProductsString) : []
         // Generate a unique key for the product
         const uniqueKey = generateUniqueKey();
 
@@ -77,10 +78,12 @@ const CreateScreen = () => {
         };
         // Add the product to storage
         storedItems.push(newProduct);
+        userProducts.push(newProduct)
         await AsyncStorage.setItem(
           "storedProducts",
           JSON.stringify(storedItems)
         );
+        await AsyncStorage.setItem('userProducts', JSON.stringify(userProducts))
 
         Alert.alert("Product saved!");
         router.navigate("/food");

@@ -27,13 +27,13 @@ const about = () => {
       <ThemedText style={styles.text}>{'\u00A0'.repeat(4)}Our app collects and stores the following types of personal information, which you input yourself:</ThemedText>
       <View style={styles.listContainer}>
         <View style={styles.listItem}>
-          <ThemedText style={styles.text}>{'\u00A0'.repeat(4)}{`\u2022 Weight Data: Information related to your body weight.`}</ThemedText>
+          <ThemedText style={styles.text}>{'\u00A0'.repeat(4)}{'\u2022'} Weight Data: Information related to your body weight.</ThemedText>
         </View>
         <View style={styles.listItem}>
-          <ThemedText style={styles.text}>{'\u00A0'.repeat(4)}{`\u2022 Meal Data: Information about your meals, including food items and nutritional details.`}</ThemedText>
+          <ThemedText style={styles.text}>{'\u00A0'.repeat(4)}{'\u2022'} Meal Data: Information about your meals, including food items and nutritional details.</ThemedText>
         </View>
         <View style={styles.listItem}>
-          <ThemedText style={styles.text}>{'\u00A0'.repeat(4)}{`\u2022 Exercise Data: Information about your physical activities and exercises.`}</ThemedText>
+          <ThemedText style={styles.text}>{'\u00A0'.repeat(4)}{'\u2022'} Exercise Data: Information about your physical activities and exercises.</ThemedText>
         </View>
       </View>
       <ThemedText type='subtitle' style={styles.subtitle}>3. Data Storage</ThemedText>
