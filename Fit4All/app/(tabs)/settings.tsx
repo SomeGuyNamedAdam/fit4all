@@ -92,8 +92,8 @@ const Settings = () => {
           onPress: async () => {
             try {
               await AsyncStorage.clear();
-              alert('All data has been erased. Restarting the app...');
-              router.navigate('/')
+              alert('All data has been erased.');
+              router.replace('/')
             } catch (error) {
               console.error('Failed to clear Storage', error);
             }

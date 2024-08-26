@@ -1,19 +1,30 @@
 import FoodCalories from '@/components/FoodCalories';
+import HelpButton from '@/components/HelpButton';
 import NutritionWheel from '@/components/NutritionWheel';
 import Screen from '@/components/Screen';
-import { SurfaceView } from '@/components/SurfaceView';
 import { ThemedText } from '@/components/ThemedText';
 import WeightTrackerChart from '@/components/WeightTrackerChart';
 import WorkoutCalories from '@/components/WorkoutCalories';
+import AsyncStorage from '@react-native-async-storage/async-storage';
 import { router } from 'expo-router';
 import { StyleSheet, TouchableOpacity, View } from 'react-native';
 
 
 
 export default function HomeScreen() {
+  const logUserCountry = async () => {
+    try {
+      const userCountry = await AsyncStorage.getItem('userCountry');
+      console.log(userCountry); // This will log the actual value or null if not set
+    } catch (error) {
+      console.error("Error retrieving userCountry from AsyncStorage:", error);
+    }
+  };
+  logUserCountry();
   return (
     <Screen type="scroll" style={styles.container}>
       <ThemedText type="title">Home</ThemedText>
+      <HelpButton title={'?'} message={'This is helpful'} messageTitle={'Help title'}/>
       <View style={styles.row}>
         <TouchableOpacity
           style={{ marginRight: 5, flex: 1 }}
@@ -40,7 +51,9 @@ export default function HomeScreen() {
       >
         <NutritionWheel />
       </TouchableOpacity>
+      <View style={{ marginRight: 5, flex: 1 }}>
       <WeightTrackerChart />
+      </View>
       <ThemedText></ThemedText>
     </Screen>
   );

@@ -57,6 +57,7 @@ const about = () => {
       <ThemedText style={styles.text}>{'\u00A0'.repeat(4)}AgrestJam</ThemedText>
       <ThemedText style={styles.text}>{'\u00A0'.repeat(4)}agrestjam@gmail.com</ThemedText>
       <ThemedText style={styles.text}>{'\u00A0'.repeat(4)}Adam Lenardt</ThemedText>
+      <ThemedText></ThemedText>
     </Screen>
   )
 }
@@ -67,7 +68,8 @@ const styles = StyleSheet.create({
   container: {
     padding: 20,
     marginTop: 30,
-    marginBottom: 50
+    marginBottom: 100,
+    paddingBottom: 30
   },
   listContainer: {
     paddingVertical: 20,

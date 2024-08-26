@@ -2,6 +2,7 @@ import React from 'react';
 import { Picker, PickerProps } from '@react-native-picker/picker';
 import { StyleSheet, View, ViewStyle, TextStyle } from 'react-native';
 import { useThemeColor } from '@/hooks/useThemeColor';
+import { ThemedText } from './ThemedText';
 
 export type ThemedPickerProps = PickerProps & {
   lightColor?: string;
@@ -11,7 +12,8 @@ export type ThemedPickerProps = PickerProps & {
   pickerStyle? : TextStyle;
   onValueChange: (itemValue: string, itemIndex: number) => void;
   selectedValue: string;
-  placeholder? :string
+  placeholder? :string;
+  label? : string;
 };
 
 export function ThemedPicker({
@@ -22,13 +24,17 @@ export function ThemedPicker({
   onValueChange,
   items,
   pickerStyle,
-  placeholder
+  placeholder,
+  label
 }: ThemedPickerProps) {
   const backgroundColor = useThemeColor({ light: lightColor, dark: darkColor }, 'background');
   const textColor = useThemeColor({ light: lightColor, dark: darkColor }, 'text');
 
   return (
+    <>
+    {label && <ThemedText style={styles.label}>{label}</ThemedText>}
     <View style={[styles.container, { backgroundColor, borderColor: textColor }, style]}>
+      
       <Picker
         dropdownIconColor={textColor}
         selectedValue={selectedValue}
@@ -43,6 +49,7 @@ export function ThemedPicker({
         ))}
       </Picker>
     </View>
+    </>
   );
 }
 
@@ -51,10 +58,13 @@ const styles = StyleSheet.create({
     borderRadius: 5,
     overflow: 'hidden',
     borderWidth: 1,
-    marginVertical: 10
   },
   picker: {
     height: 50,
     width: '100%',
+  },
+  label: {
+    fontSize: 14,
+    marginBottom: 4, // Space between label and input
   },
 });

@@ -6,6 +6,7 @@ import ThemedTextInput from "@/components/ThemedTextInput";
 import ThemedButton from "@/components/ThemedButton";
 import { ThemedText } from "@/components/ThemedText";
 import { useThemeColor } from "@/hooks/useThemeColor";
+import { handleNumberInputChange } from "@/utils/inputHandler";
 
 interface Nutriments {
   energy_100g?: string;
@@ -94,15 +95,37 @@ const CreateScreen = () => {
       alert("Please fill out all fields");
     }
   };
-
-  const handleInputChange = (
-    text: string,
-    setState: (value: string) => void
-  ) => {
-    // Replace anything that isn't a digit or decimal separator
-    const cleanedText = text.replace(/[^0-9.]/g, "");
-    setState(cleanedText);
-  };
+  // const handleInputChange = (
+  //   text: string,
+  //   setState: (value: string) => void,
+  //   intLength : number = 3,
+  //   decimalLength : number = 2,
+  // ) => {
+  //   // Replace commas with dots for consistency
+  //   let normalizedText = text.replace(/,/g, '.');
+  
+  //   // Remove any character that is not a digit or a dot
+  //   normalizedText = normalizedText.replace(/[^0-9.]/g, '');
+  
+  //   // Split the text into integer and decimal parts
+  //   const [integerPart, decimalPart] = normalizedText.split('.');
+  
+  //   // Limit the integer part to 3 digits
+  //   const limitedIntegerPart = integerPart.slice(0, intLength);
+  
+  //   // Limit the decimal part to 2 digits, if it exists
+  //   const limitedDecimalPart = decimalPart ? decimalPart.slice(0, decimalLength) : '';
+  
+  //   // Reassemble the text
+  //   let filteredText = limitedIntegerPart;
+  //   if (normalizedText.includes('.')) {
+  //     filteredText += '.' + limitedDecimalPart;
+  //   }
+  
+  //   // Update the state with the filtered text
+  //   setState(filteredText);
+  // };
+  
 
   return (
     <View style={{ flex: 1, padding: 16 }}>
@@ -130,28 +153,28 @@ const CreateScreen = () => {
       <ThemedText style={{ marginVertical: 8 }}>Energy per 100g(g):</ThemedText>
       <ThemedTextInput
         value={energy}
-        onChangeText={(text) => handleInputChange(text, setEnergy)}
+        onChangeText={(text) => handleNumberInputChange(text, setEnergy)}
         inputMode="decimal"
         style={styles.input}
       />
       <ThemedText style={{ marginVertical: 8 }}>Fat per 100g(g):</ThemedText>
       <ThemedTextInput
         value={fat}
-        onChangeText={(text) => handleInputChange(text, setFat)}
+        onChangeText={(text) => handleNumberInputChange(text, setFat)}
         inputMode="decimal"
         style={styles.input}
       />
       <ThemedText style={{ marginVertical: 8 }}>Proteins per 100g(g):</ThemedText>
       <ThemedTextInput
         value={proteins}
-        onChangeText={(text) => handleInputChange(text, setProteins)}
+        onChangeText={(text) => handleNumberInputChange(text, setProteins)}
         inputMode="decimal"
         style={styles.input}
       />
       <ThemedText style={{ marginVertical: 8 }}>Carbohydrates per 100g(g):</ThemedText>
       <ThemedTextInput
         value={carbohydrates}
-        onChangeText={(text) => handleInputChange(text, setCarbohydrates)}
+        onChangeText={(text) => handleNumberInputChange(text, setCarbohydrates)}
         inputMode="decimal"
         style={styles.input}
       />

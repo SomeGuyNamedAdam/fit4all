@@ -59,7 +59,7 @@ export default function RootLayout() {
     <ThemeProvider value={colorScheme === 'dark' ? DarkTheme : DefaultTheme}>
       <Stack>
         
-      <Stack.Screen name="index"  options={{ title : "Fit4All"}}/>
+      <Stack.Screen name="index"  options={{ title : "Fit4All", animation: 'none'}}/>
         <Stack.Screen name="(tabs)" options={{ headerShown: false }} />
         <Stack.Screen name="+not-found" />
   

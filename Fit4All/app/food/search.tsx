@@ -28,7 +28,7 @@ interface Product {
   relevanceScore?: number; // Relevance score to display
 }
 
-const SearchScreen = () => {
+const SearchScreen = async () => {
   const [searchTerm, setSearchTerm] = useState("");
   const [results, setResults] = useState<Product[]>([]);
   const [loading, setLoading] = useState(false); // Loading state
@@ -37,7 +37,7 @@ const SearchScreen = () => {
   const textColor = useThemeColor({}, "text");
 
   // Constants for relevance calculation
-  const country = "en:poland"; // User's current country
+  const country = await AsyncStorage.getItem('userCountry'); // User's current country
   const LENGTH_WEIGHT = 1.0; // Weight for shorter terms
   const COUNTRY_WEIGHT = 18.0; // Weight for matching country
   const WORLD_WEIGHT = 24.0;
@@ -118,12 +118,11 @@ const SearchScreen = () => {
         relevanceScore += LENGTH_WEIGHT / product.product_name.length;
 
         // Factor 2: Boost relevance if the product is available in the user's country
-        if (
-          country &&
-          product.countries_tags?.includes(country.toLowerCase())
-        ) {
+        if (country !== null){
+        if (product.countries_tags?.includes(country)) {
           relevanceScore += COUNTRY_WEIGHT;
         }
+      }
 
         // Factor 2.1: Boost relevance if the product is available globally
         if (product.countries_tags?.includes("en:world")) {

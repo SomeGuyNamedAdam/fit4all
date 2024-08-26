@@ -1,0 +1,25 @@
+Folder PATH listing
+Volume serial number is D0A6-79C3
+C:.
+|   +html.tsx
+|   +not-found.tsx
+|   about.tsx
+|   index.tsx
+|   tree.txt
+|   _layout.tsx
+|   
++---(tabs)
+|       food.tsx
+|       home.tsx
+|       settings.tsx
+|       workout.tsx
+|       _layout.tsx
+|       
++---food
+|       create.tsx
+|       detail.tsx
+|       search.tsx
+|       
+\---workout
+        search.tsx
+        

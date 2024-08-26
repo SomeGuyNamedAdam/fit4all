@@ -10,6 +10,7 @@ import { ThemedText } from './ThemedText';
 import ThemedTextInput from './ThemedTextInput';
 import { format, subMonths } from 'date-fns'; // Import subMonths function
 import { useThemeColor } from '@/hooks/useThemeColor';
+import { handleNumberInputChange } from '@/utils/inputHandler';
 
 const screenWidth = Dimensions.get("window").width;
 
@@ -26,12 +27,7 @@ const WeightTrackerChart: React.FC = ({
   lightColor,
   darkColor,
 }: WeightTrackerChartProps) => {
-  const [data, setData] = useState<WeightData[]>([
-    { value: -10, date: new Date('2024-01-25T00:40:19.057Z') },
-    { value: 10, date: new Date('2024-06-25T00:40:19.057Z') },
-    { value: 25, date: new Date('2024-07-25T00:40:19.057Z') },
-    { value: 20, date: new Date('2024-08-25T00:40:19.057Z') },
-  ]);
+  const [data, setData] = useState<WeightData[]>([]);
 
   const color = useThemeColor({light: lightColor, dark: darkColor}, 'text')
   const [loading, setLoading] = useState<boolean>(true);
@@ -42,6 +38,7 @@ const WeightTrackerChart: React.FC = ({
   const font = useFont(require('../assets/fonts/Roboto-Medium.ttf'), 12);
 
   useFocusEffect(
+   
     useCallback(() => {
       const fetchData = async () => {
         try {
@@ -95,30 +92,46 @@ const WeightTrackerChart: React.FC = ({
       return;
     }
 
+    // if (weights.length > 0) {
+    //   // Determine the oldest date in the data
+    //   const oldestDate = weights.reduce((earliest, current) => {
+    //     return current.date < earliest ? current.date : earliest;
+    //   }, weights[0].date);
+
+    //   // Add an item that's 3 months older than the oldest item
+    //   const olderEntry: WeightData = {
+    //     value: weights[0].value, // You can set this to whatever value you prefer
+    //     date: subMonths(oldestDate, 3),
+    //   };
+
     try {
       const newWeightEntry: WeightData = {
         value: parseFloat(newWeight),
         date: new Date()
       };
-      const updatedWeights = noData ? [newWeightEntry] : [...data, newWeightEntry];
+      let updatedWeights = noData ? [newWeightEntry] : [...data, newWeightEntry];
       await AsyncStorage.setItem('weights', JSON.stringify(updatedWeights));
 
       setNewWeight('');
       setInputError(false);
 
+      const oldestDate = updatedWeights.reduce((earliest, current) => {
+        return current.date < earliest ? current.date : earliest;
+      }, updatedWeights[0].date);
+
+      // Add an item that's 3 months older than the oldest item
+      const olderEntry: WeightData = {
+        value: updatedWeights[0].value, // You can set this to whatever value you prefer
+        date: subMonths(oldestDate, 3),
+      };
+      updatedWeights = [olderEntry, ...updatedWeights]
+    
       setData(updatedWeights);
       setNoData(updatedWeights.length === 0);
     } catch (error) {
       console.error('Failed to save weight', error);
     }
   };
-
-  const handleWeightInputChange = (text: string) => {
-    const filteredText = text.replace(/[^0-9.,]/g, '');
-    setNewWeight(filteredText);
-    setInputError(false);
-  };
-
   // Transform data for chart
   const chartData = data.map(entry => ({
     x: new Date(entry.date).getTime(), // Convert date to timestamp
@@ -149,14 +162,18 @@ const WeightTrackerChart: React.FC = ({
     return (
       <SurfaceView type='modal' style={styles.container}>
         <ThemedText>Loading...</ThemedText>
-        <ThemedButton title="Add weight" onPress={handleAddWeight} />
+        {/* <ThemedButton title="Add weight" onPress={(handleAddWeight)} /> */}
       </SurfaceView>
     );
   }
 
   return (
-    <SurfaceView type="modal">
-      <View style={{ height: 300 }}>
+    <SurfaceView type="modal" style={styles.container}>
+      {noData === true ? (
+        <View style={styles.chartContainer}>
+        <ThemedText style={styles.noDataText}>No data to show</ThemedText>
+        </View>) : (
+      <View style={[{ height: 300 }]}>
         <CartesianChart
           data={chartData}
           xKey="x"
@@ -176,21 +193,22 @@ const WeightTrackerChart: React.FC = ({
             labelColor : color
           }}
           domain={{ x: xDomain, y: yDomain }}
-          domainPadding={{ left: 20, right: 20 }}
+          domainPadding={{ left: 20, right: 20,  top: 20, bottom: 20 }}
         >
           {({ points }) => (
             <Line points={points.y} color="#04dac6" strokeWidth={3} />
           )}
         </CartesianChart>
+        
       </View>
-
+)}
       <View style={styles.addWeightContainer}>
         <ThemedTextInput
           style={[styles.textInput, inputError && styles.inputError]}
           placeholder="Enter weight"
           keyboardType="numeric"
           value={newWeight}
-          onChangeText={handleWeightInputChange}
+          onChangeText={(text) => {handleNumberInputChange(text, setNewWeight)}}
         />
         <ThemedButton
           title="Add weight"
@@ -213,6 +231,11 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     marginTop: 20,
   },
+  noDataText: {
+    textAlign: 'center',
+    fontSize: 16, // Adjust font size as needed
+    color: '#000', // Adjust color as needed
+  },
   textInput: {
     borderColor: '#ccc',
     borderWidth: 1,
@@ -223,7 +246,12 @@ const styles = StyleSheet.create({
   },
   inputError: {
     borderColor: 'red',
-  }
+  },
+  chartContainer: {
+    flex: 1, // Use flex to take up the available space
+    justifyContent: 'center', // Center vertically
+    alignItems: 'center', // Center horizontally
+  },
 });
 
 export default WeightTrackerChart;
