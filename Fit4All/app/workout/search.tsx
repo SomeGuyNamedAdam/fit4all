@@ -1,30 +1,16 @@
-import React, { useCallback, useEffect, useState } from 'react';
-import { ActivityIndicator, Button, StyleSheet, View } from 'react-native';
-import AsyncStorage from '@react-native-async-storage/async-storage';
-import { router, Stack } from 'expo-router';
 import workouts from '@/assets/datasets/workout.json';
+import Screen from '@/components/Screen';
+import ThemedButton from '@/components/ThemedButton';
+import { ThemedPicker } from '@/components/ThemedPicker';
 import { ThemedText } from '@/components/ThemedText';
 import ThemedTextInput from '@/components/ThemedTextInput';
-import { ThemedPicker } from '@/components/ThemedPicker';
 import { useThemeColor } from '@/hooks/useThemeColor';
+import AsyncStorage from '@react-native-async-storage/async-storage';
 import { useFocusEffect } from '@react-navigation/native';
-import ThemedButton from '@/components/ThemedButton';
-import Screen from '@/components/Screen'
-
-interface Activity {
-  code: string;
-  value: number;
-  description: string;
-}
-
-interface WeightData {
-  weight: number;
-  date: string; // Use ISO date string
-}
-
-interface Workouts {
-  [category: string]: Activity[];
-}
+import { router, Stack } from 'expo-router';
+import React, { useCallback, useEffect, useState } from 'react';
+import { ActivityIndicator, StyleSheet } from 'react-native';
+import { Activity, WeightData, Activities as Workouts } from '@/types';
 
 const workoutsData: Workouts = workouts as Workouts;
 
@@ -81,7 +67,7 @@ const Search = () => {
         if (weights.length > 0) {
           const latestWeightEntry = weights.sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime())[0];
           
-          setWeight((latestWeightEntry.weight * weightUnit).toString());
+          setWeight((latestWeightEntry.value * weightUnit).toString());
         }
       }
     } catch (error) {
@@ -183,7 +169,7 @@ const Search = () => {
         const existingWeightsString = await AsyncStorage.getItem('weights');
         const weightTrackerArray = existingWeightsString ? JSON.parse(existingWeightsString) : [];
         const weightEntry = {
-          weight: parseFloat(weight) / weightUnit,
+          value : parseFloat(weight) / weightUnit,
           date: new Date().toISOString(),
         };
         weightTrackerArray.push(weightEntry);

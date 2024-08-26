@@ -1,28 +1,14 @@
-import React, { useState } from "react";
-import { Alert, View, StyleSheet } from "react-native";
-import { Stack, useRouter } from "expo-router";
-import AsyncStorage from "@react-native-async-storage/async-storage";
-import ThemedTextInput from "@/components/ThemedTextInput";
 import ThemedButton from "@/components/ThemedButton";
 import { ThemedText } from "@/components/ThemedText";
+import ThemedTextInput from "@/components/ThemedTextInput";
 import { useThemeColor } from "@/hooks/useThemeColor";
 import { handleNumberInputChange } from "@/utils/inputHandler";
+import AsyncStorage from "@react-native-async-storage/async-storage";
+import { Stack, useRouter } from "expo-router";
+import React, { useState } from "react";
+import { Alert, StyleSheet, View } from "react-native";
+import { Product } from "@/types";
 
-interface Nutriments {
-  energy_100g?: string;
-  fat_100g?: string;
-  proteins_100g?: string;
-  carbohydrates_100g?: string;
-}
-
-interface Product {
-  id: string;
-  key?: string;
-  product_name: string;
-  nutriments: Nutriments;
-  dateAdded?: string;
-  amount: string;
-}
 
 const generateUniqueKey = (): string => {
   return `${new Date().getTime()}`;
@@ -67,6 +53,7 @@ const CreateScreen = () => {
         // Create product object
         const newProduct: Product = {
           id: uniqueKey,
+          key: generateUniqueKey(),
           product_name: productName,
           nutriments: {
             energy_100g: energy ? energy : undefined,

@@ -1,48 +1,58 @@
+import { useThemeColor } from '@/hooks/useThemeColor';
+import { handleNumberInputChange } from '@/utils/inputHandler';
 import AsyncStorage from '@react-native-async-storage/async-storage';
 import { useFocusEffect } from '@react-navigation/native';
 import { useFont } from '@shopify/react-native-skia';
+import { format, subMonths } from 'date-fns'; // import subMonths function
 import React, { useCallback, useState } from 'react';
-import { Alert, Dimensions, StyleSheet, useColorScheme, View } from 'react-native';
+import { Alert, Dimensions, StyleSheet, View } from 'react-native';
 import { CartesianChart, Line } from 'victory-native';
 import { SurfaceView } from './SurfaceView';
 import ThemedButton from './ThemedButton';
 import { ThemedText } from './ThemedText';
 import ThemedTextInput from './ThemedTextInput';
-import { format, subMonths } from 'date-fns'; // Import subMonths function
-import { useThemeColor } from '@/hooks/useThemeColor';
-import { handleNumberInputChange } from '@/utils/inputHandler';
+import { WeightData } from '@/types';
 
 const screenWidth = Dimensions.get("window").width;
 
-interface WeightData {
-  value: number;
-  date: Date;
-}
 export type WeightTrackerChartProps = {
   lightColor? : string;
   darkColor?: string
 };
 
-const WeightTrackerChart: React.FC = ({
+const WeightTrackerChart: React.FC<WeightTrackerChartProps> = ({
   lightColor,
   darkColor,
-}: WeightTrackerChartProps) => {
-  const [data, setData] = useState<WeightData[]>([]);
+}) => {
+  const [data, setData] = useState<WeightData[]>([{ value : 0, date: new Date()}]);
 
   const color = useThemeColor({light: lightColor, dark: darkColor}, 'text')
   const [loading, setLoading] = useState<boolean>(true);
   const [noData, setNoData] = useState<boolean>(true);
   const [newWeight, setNewWeight] = useState<string>('');
+  const [weightUnit, setWeightUnit] = useState<number>(1)
   const [inputError, setInputError] = useState<boolean>(false);
 
   const font = useFont(require('../assets/fonts/Roboto-Medium.ttf'), 12);
 
   useFocusEffect(
-   
     useCallback(() => {
-      const fetchData = async () => {
+      const fetchUnit = async() => {
+        try {
+          const storedData = await AsyncStorage.getItem('weightUnit')
+          if (storedData) {
+            const unit = storedData === 'lbs' ? 2.205 : 1;
+            setWeightUnit(unit)
+            console.log(storedData)
+          }
+        } catch (error) {
+          console.error
+        }
+      }
+      const fetchWeights = async () => {
         try {
           const storedData = await AsyncStorage.getItem('weights');
+          
           if (storedData) {
             const weights: WeightData[] = JSON.parse(storedData, (key, value) => {
               if (key === 'date') {
@@ -53,7 +63,7 @@ const WeightTrackerChart: React.FC = ({
               }
               return value;
             });
-
+            console.log(weights)
             if (weights.length > 0) {
               // Determine the oldest date in the data
               const oldestDate = weights.reduce((earliest, current) => {
@@ -80,8 +90,17 @@ const WeightTrackerChart: React.FC = ({
           setNoData(true);
         }
       };
-
-      fetchData().finally(() => setLoading(false));
+      const fetchData = async() => {
+        try {
+          await fetchUnit()
+          await fetchWeights()
+        } catch (error) {
+          console.error
+        } finally {
+          setLoading(false)
+        }
+      }
+      fetchData()
     }, [])
   );
 
@@ -92,21 +111,10 @@ const WeightTrackerChart: React.FC = ({
       return;
     }
 
-    // if (weights.length > 0) {
-    //   // Determine the oldest date in the data
-    //   const oldestDate = weights.reduce((earliest, current) => {
-    //     return current.date < earliest ? current.date : earliest;
-    //   }, weights[0].date);
-
-    //   // Add an item that's 3 months older than the oldest item
-    //   const olderEntry: WeightData = {
-    //     value: weights[0].value, // You can set this to whatever value you prefer
-    //     date: subMonths(oldestDate, 3),
-    //   };
-
     try {
+      // Divide the input weight by the unit before storing
       const newWeightEntry: WeightData = {
-        value: parseFloat(newWeight),
+        value: parseFloat(newWeight) / weightUnit,
         date: new Date()
       };
       let updatedWeights = noData ? [newWeightEntry] : [...data, newWeightEntry];
@@ -132,10 +140,11 @@ const WeightTrackerChart: React.FC = ({
       console.error('Failed to save weight', error);
     }
   };
+
   // Transform data for chart
   const chartData = data.map(entry => ({
     x: new Date(entry.date).getTime(), // Convert date to timestamp
-    y: entry.value
+    y: entry.value * weightUnit // Multiply by weightUnit for display
   }));
 
   // Calculate xDomain from today to 3 months back
@@ -234,7 +243,6 @@ const styles = StyleSheet.create({
   noDataText: {
     textAlign: 'center',
     fontSize: 16, // Adjust font size as needed
-    color: '#000', // Adjust color as needed
   },
   textInput: {
     borderColor: '#ccc',

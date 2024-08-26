@@ -1,6 +1,6 @@
 import React from 'react';
+import { Dimensions, Text, View } from 'react-native';
 import { LineChart } from 'react-native-chart-kit';
-import { Dimensions, View, Text } from 'react-native';
 
 // Screen width for responsive design
 const screenWidth = Dimensions.get('window').width;

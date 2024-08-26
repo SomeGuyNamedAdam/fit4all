@@ -1,11 +1,11 @@
-import React, { useEffect, useState } from 'react';
-import { View, Alert } from 'react-native';
-import AsyncStorage from '@react-native-async-storage/async-storage';
-import { Stack, useRouter } from 'expo-router';
+import ThemedButton from '@/components/ThemedButton';
 import { ThemedText } from '@/components/ThemedText';
 import ThemedTextInput from '@/components/ThemedTextInput';
 import { useThemeColor } from '@/hooks/useThemeColor';
-import ThemedButton from '@/components/ThemedButton';
+import AsyncStorage from '@react-native-async-storage/async-storage';
+import { Stack, useRouter } from 'expo-router';
+import React, { useEffect, useState } from 'react';
+import { Alert, View } from 'react-native';
 
 interface Nutriments {
   energy_100g?: string;

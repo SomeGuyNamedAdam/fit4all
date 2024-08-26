@@ -24,7 +24,7 @@ export default function HomeScreen() {
   return (
     <Screen type="scroll" style={styles.container}>
       <ThemedText type="title">Home</ThemedText>
-      <HelpButton title={'?'} message={'This is helpful'} messageTitle={'Help title'}/>
+      {/* <HelpButton title={'?'} message={'This is helpful'} messageTitle={'Help title'}/> */}
       <View style={styles.row}>
         <TouchableOpacity
           style={{ marginRight: 5, flex: 1 }}

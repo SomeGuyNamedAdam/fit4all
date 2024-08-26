@@ -1,34 +1,18 @@
-import React, { useState } from 'react';
 import AsyncStorage from '@react-native-async-storage/async-storage';
 import { useFocusEffect, useTheme } from '@react-navigation/native';
+import { router } from 'expo-router';
+import React, { useState } from 'react';
 import { ActivityIndicator, StyleSheet, View } from 'react-native';
 import { SurfaceView } from './SurfaceView';
-import { ThemedText } from './ThemedText';
 import ThemedButton from './ThemedButton';
-import { router } from 'expo-router';
-
-interface Nutriments {
-  energy_100g?: string;
-  fat_100g?: string;
-  proteins_100g?: string;
-  carbohydrates_100g?: string;
-}
-
-interface Product {
-  id: string;
-  key?: string;
-  product_name: string;
-  nutriments: Nutriments;
-  amount?: string;
-  dateAdded?: string; // Ensure the dateAdded field is available
-}
+import { ThemedText } from './ThemedText';
+import { Product } from '@/types'
 
 interface FoodCaloriesProps {
   selectedDate?: Date; // Optional prop
 }
 
 export default function FoodCalories({ selectedDate }: FoodCaloriesProps) {
-  const { colors } = useTheme();
   const [calories, setCalories] = useState(0);
   const [energyUnit, setEnergyUnit] = useState(4.184);
   const [loading, setLoading] = useState(true);

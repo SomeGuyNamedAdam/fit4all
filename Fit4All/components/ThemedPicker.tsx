@@ -1,7 +1,7 @@
-import React from 'react';
-import { Picker, PickerProps } from '@react-native-picker/picker';
-import { StyleSheet, View, ViewStyle, TextStyle } from 'react-native';
 import { useThemeColor } from '@/hooks/useThemeColor';
+import { Picker, PickerProps } from '@react-native-picker/picker';
+import React from 'react';
+import { StyleSheet, TextStyle, View } from 'react-native';
 import { ThemedText } from './ThemedText';
 
 export type ThemedPickerProps = PickerProps & {

@@ -1,10 +1,9 @@
-import { StyleSheet, Text, View } from 'react-native';
-import React from 'react';
-import { ThemedText } from '@/components/ThemedText';
-import { ScrollView } from 'react-native';
 import Screen from '@/components/Screen';
-import { Stack } from 'expo-router';
+import { ThemedText } from '@/components/ThemedText';
 import { useThemeColor } from '@/hooks/useThemeColor';
+import { Stack } from 'expo-router';
+import React from 'react';
+import { StyleSheet, View } from 'react-native';
 
 const about = () => {
   const textColor = useThemeColor({}, 'text');
@@ -12,7 +11,7 @@ const about = () => {
     <Screen type='scroll' style={styles.container}>
       <Stack.Screen
       options={{
-        headerTitle: 'About',
+        headerTitle: 'Privacy Policy',
         headerTintColor: textColor, // Use the dynamic theme-based color for header elements
         headerTitleStyle: {
           color: textColor, // Apply theme-based color to the header title
@@ -20,7 +19,7 @@ const about = () => {
       }}
     />
       <ThemedText type='default'>Created by Adam Lenardt</ThemedText>
-      <ThemedText type='title'>Privacy Policy</ThemedText>
+      <ThemedText type='title'>Terms of Service</ThemedText>
       <ThemedText type='subtitle' style={styles.subtitle}>1. Introduction</ThemedText>
       <ThemedText style={styles.text}>{'\u00A0'.repeat(4)}Thank you for choosing [Your App Name]. We value your privacy and are committed to safeguarding your personal information. This Privacy Policy explains how we collect, use, and protect your data.</ThemedText>
       <ThemedText type='subtitle' style={styles.subtitle}>2. Data Collection</ThemedText>

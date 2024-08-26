@@ -1,5 +1,5 @@
 import React from 'react';
-import { View, ScrollView, StyleSheet, ViewStyle, ScrollViewProps, ViewProps } from 'react-native';
+import { ScrollView, ScrollViewProps, StyleSheet, View, ViewStyle } from 'react-native';
 
 interface ScreenProps {
   children: React.ReactNode;

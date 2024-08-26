@@ -1,26 +1,14 @@
+import AsyncStorage from '@react-native-async-storage/async-storage';
+import { useFocusEffect } from '@react-navigation/native';
+import { router } from 'expo-router';
 import React, { useCallback, useState } from 'react';
 import { StyleSheet, useWindowDimensions, View } from 'react-native';
 import { PieChart } from 'react-native-chart-kit';
-import AsyncStorage from '@react-native-async-storage/async-storage';
-import { useFocusEffect } from '@react-navigation/native';
-import { ThemedText } from './ThemedText';
 import { SurfaceView } from './SurfaceView';
 import ThemedButton from './ThemedButton';
-import { router } from 'expo-router';
+import { ThemedText } from './ThemedText';
+import { Product } from '@/types';
 
-interface Nutriments {
-  energy_100g?: string;
-  fat_100g?: string;
-  proteins_100g?: string;
-  carbohydrates_100g?: string;
-}
-
-interface Product {
-  id: string;
-  product_name: string;
-  nutriments: Nutriments;
-  dateAdded?: string; // Ensure the dateAdded field is available
-}
 
 interface NutritionWheelProps {
   selectedDate?: Date; // Make selectedDate optional and of type Date
@@ -155,7 +143,6 @@ const styles = StyleSheet.create({
     borderWidth: 1,
   },
   noDataContainer: {
-    
     justifyContent: 'center',
     alignItems: 'center',
     height: 300,

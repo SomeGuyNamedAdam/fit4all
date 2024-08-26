@@ -18,21 +18,24 @@ export function ThemedTextInput({
   type = 'default',
   ...rest
 }: ThemedTextInputProps) {
-  const color = useThemeColor({ light: lightColor, dark: darkColor }, 'text');
-
+  const textColor = useThemeColor({ light: lightColor, dark: darkColor }, 'text');
+  const bgColor = useThemeColor({ light: lightColor, dark: darkColor }, 'surface');
   return (
     <View style={styles.container}>
       {label && <ThemedText style={styles.label}>{label}</ThemedText>}
       <TextInput
         style={[
-          { color },
+          { color : textColor,
+            backgroundColor: bgColor,
+            borderColor: textColor
+           },
           type === 'default' ? styles.default : undefined,
           type === 'outlined' ? styles.outlined : undefined,
           type === 'rounded' ? styles.rounded : undefined,
           type === 'underline' ? styles.underline : undefined,
           style,
         ]}
-        placeholderTextColor={color} // Ensures placeholder text is also themed
+        placeholderTextColor={textColor} // Ensures placeholder text is also themed
         {...rest}
       />
     </View>
@@ -51,7 +54,6 @@ const styles = StyleSheet.create({
     fontSize: 16,
     lineHeight: 24,
     borderWidth: 1,
-    borderColor: '#ccc',
     paddingHorizontal: 10,
     paddingVertical: 8,
     borderRadius: 4,

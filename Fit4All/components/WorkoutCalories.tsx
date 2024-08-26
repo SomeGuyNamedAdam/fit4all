@@ -1,20 +1,12 @@
-import React, { useState, useEffect } from 'react';
 import AsyncStorage from '@react-native-async-storage/async-storage';
 import { useFocusEffect, useTheme } from '@react-navigation/native';
+import { router } from 'expo-router';
+import React, { useEffect, useState } from 'react';
 import { ActivityIndicator, StyleSheet, View } from 'react-native';
 import { SurfaceView } from './SurfaceView';
-import { ThemedText } from './ThemedText';
 import ThemedButton from './ThemedButton';
-import { router } from 'expo-router';
-
-interface Workout {
-  category: string;
-  activity: string;
-  duration: string;
-  weight: string;
-  caloriesBurned: number;
-  date: string;
-}
+import { ThemedText } from './ThemedText';
+import { Workout } from '@/types';
 
 interface WorkoutCaloriesProps {
   selectedDate?: Date; // Make selectedDate optional

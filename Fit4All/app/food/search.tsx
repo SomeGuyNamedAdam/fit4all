@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useCallback, useState } from "react";
 import {
   View,
   FlatList,
@@ -6,7 +6,7 @@ import {
   StyleSheet,
   ActivityIndicator,
 } from "react-native";
-import { Stack, useRouter } from "expo-router";
+import { Stack, useFocusEffect, useRouter } from "expo-router";
 import AsyncStorage from "@react-native-async-storage/async-storage";
 import { ThemedText } from "@/components/ThemedText";
 import ThemedTextInput from "@/components/ThemedTextInput";
@@ -28,16 +28,16 @@ interface Product {
   relevanceScore?: number; // Relevance score to display
 }
 
-const SearchScreen = async () => {
+const SearchScreen = () => {
   const [searchTerm, setSearchTerm] = useState("");
   const [results, setResults] = useState<Product[]>([]);
   const [loading, setLoading] = useState(false); // Loading state
   const [hasSearched, setHasSearched] = useState(false);
+  const [country, setCountry] = useState("")
   const router = useRouter();
   const textColor = useThemeColor({}, "text");
 
-  // Constants for relevance calculation
-  const country = await AsyncStorage.getItem('userCountry'); // User's current country
+  // Constants for relevance calculation // User's current country
   const LENGTH_WEIGHT = 1.0; // Weight for shorter terms
   const COUNTRY_WEIGHT = 18.0; // Weight for matching country
   const WORLD_WEIGHT = 24.0;
@@ -47,6 +47,18 @@ const SearchScreen = async () => {
   const PARTIAL_MATCH_WEIGHT = 3.0; // Weight for partial matches
   const RELEVANCY_MIN = 4.0;
 
+  useFocusEffect(useCallback(() => {
+    const fetchCountry = async () => {
+      try {
+        const storedCountry = await AsyncStorage.getItem('userCountry')  
+        setCountry(storedCountry ? storedCountry : "")
+      } catch (error) {
+        console.error
+      }
+    }
+    fetchCountry();
+    
+  },[]))
   const fetchResults = async () => {
     setLoading(true); // Show loading indicator
     setHasSearched(true);
