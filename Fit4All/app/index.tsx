@@ -1,14 +1,14 @@
-import React, { useEffect, useState } from "react";
-import { StyleSheet, View, Alert, ActivityIndicator } from "react-native";
-import { router, Stack } from "expo-router";
-import AsyncStorage from "@react-native-async-storage/async-storage";
-import { LinearGradient } from 'expo-linear-gradient';
-
+import Checkbox from "@/components/Checkbox";
+import FeatureBox from "@/components/FeatureBox";
 import Screen from "@/components/Screen";
 import ThemedButton from "@/components/ThemedButton";
 import { ThemedText } from "@/components/ThemedText";
-import Checkbox from "@/components/Checkbox";
 import { useThemeColor } from "@/hooks/useThemeColor";
+import AsyncStorage from "@react-native-async-storage/async-storage";
+import { router, Stack } from "expo-router";
+import React, { useEffect, useState } from "react";
+import { ActivityIndicator, Alert, StyleSheet } from "react-native";
+
 
 const Index = () => {
   const textColor = useThemeColor({}, "text");
@@ -18,30 +18,30 @@ const Index = () => {
   const [isError, setIsError] = useState(false);
 
   useEffect(() => {
+    const checkHomeVisit = async () => {
+      try {
+        const hasVisitedHome = await AsyncStorage.getItem("hasVisitedHome");
+        if (hasVisitedHome === "true") {
+          router.navigate("/(tabs)/home");
+        } else {
+          setLoading(false);
+        }
+      } catch (error) {
+        console.error("Error checking home visit:", error);
+        setLoading(false);
+      }
+    };
+
     checkHomeVisit();
   }, []);
 
-  const checkHomeVisit = async () => {
-    try {
-      const hasVisitedHome = await AsyncStorage.getItem("hasVisitedHome");
-      if (hasVisitedHome === "true") {
-        router.navigate("/(tabs)/home");
-      } else {
-        setLoading(false);
-      }
-    } catch (error) {
-      console.error("Error checking home visit:", error);
-      setLoading(false);
-    }
-  };
-
-  const handleHomeButton = () => {
+  const handleHomeButton = async () => {
     if (isPrivacyChecked && isTermsChecked) {
-      router.navigate("/setup");
+        router.navigate("/setup");
     } else {
       Alert.alert(
         "Attention",
-        "You need to accept our privacy policy and terms to proceed.",
+        "You need to accept our privacy policy if you wish to proceed further",
         [{ text: "OK" }]
       );
       setIsError(true);
@@ -49,168 +49,113 @@ const Index = () => {
   };
 
   if (loading) {
-    return (
-      <View style={styles.loadingContainer}>
-        <ActivityIndicator size="large" color="#0000ff" />
-      </View>
-    );
+    return <ActivityIndicator size="large" color="#0000ff" />;
   }
 
+
   return (
-    <LinearGradient
-      colors={['#4c669f', '#3b5998', '#192f6a']}
-      style={styles.gradientBackground}
-    >
-      <Screen type="scroll" style={styles.screen}>
-        <Stack.Screen
-          options={{
-            headerShown: false,
-          }}
-        />
-        <View style={styles.contentContainer}>
-          <ThemedText type="title" style={styles.title}>
-            Welcome to Fit4All
-          </ThemedText>
-          <ThemedText style={styles.subtitle}>
-            Created by Adam Lenardt (AgrestJam)
-          </ThemedText>
-          
-          <View style={styles.featureContainer}>
-            <ThemedText type="subtitle" style={styles.sectionTitle}>
-              Key Features:
-            </ThemedText>
-            <ThemedText style={styles.feature}>• Log meals, exercises, and weight</ThemedText>
-            <ThemedText style={styles.feature}>• View nutrient values for meals</ThemedText>
-            <ThemedText style={styles.feature}>• Track calories eaten and burned</ThemedText>
-          </View>
-
-          <ThemedText style={styles.longText}>
-            This app was created as part of the "Mazowiecki Program Stypendialny dla uczniów szkół zawodowych" scholarship program.
-          </ThemedText>
-
-          <View style={styles.agreementContainer}>
-            <ThemedText type="subtitle" style={styles.sectionTitle}>
-              User Agreements
-            </ThemedText>
-            <Checkbox
-              title="Accept privacy policy"
-              value={isPrivacyChecked}
-              onChange={setIsPrivacyChecked}
-              style={isError ? styles.errorCheckbox : styles.checkbox}
-            />
-            <Checkbox
-              title="Accept terms and conditions"
-              value={isTermsChecked}
-              onChange={setIsTermsChecked}
-              style={isError ? styles.errorCheckbox : styles.checkbox}
-            />
-          </View>
-
-          <ThemedButton
-            title="Get Started"
-            style={styles.primaryButton}
-            onPress={handleHomeButton}
-          />
-          <View style={styles.secondaryButtonsContainer}>
-            <ThemedButton
-              title="Privacy Policy"
-              style={styles.secondaryButton}
-              type="info"
-              onPress={() => router.push("/privacy")}
-            />
-            <ThemedButton
-              title="Terms of Service"
-              style={styles.secondaryButton}
-              type="info"
-              onPress={() => router.push("/terms")}
-            />
-          </View>
-        </View>
-      </Screen>
-    </LinearGradient>
+    <Screen type="scroll" style={styles.screen}>
+      <Stack.Screen
+        options={{
+          headerTitle: "Fit4All",
+          headerTintColor: textColor,
+          headerTitleStyle: {
+            color: textColor,
+          },
+          headerShown: false,
+        }}
+      />
+      <ThemedText type="title" style={styles.title}>
+        Welcome to Fit4All
+      </ThemedText>
+      <ThemedText style={styles.subtitle}>
+        Created by Adam Lenardt (AgrestJam)
+      </ThemedText>
+      <ThemedText type="subtitle">Key features</ThemedText>
+      <FeatureBox title={"Comprehensive Tracking"} message={"Log your meals, exercises and weight to keep track of your journey"} ionicon={"analytics-sharp"} color="#145adb"/>
+      <FeatureBox title={"Nutrient Insights"} message={"Get detailed breakdowns of meal nutrients to ensure dietary goals"} ionicon={"nutrition"} color="#82bf92"/>
+      <FeatureBox title={"Calorie Management"} message={"Keep an eye on your calorie intake and expenditure"} ionicon={"flame-sharp"} color="#e67255"/>
+      <ThemedText type="subtitle">User agreements</ThemedText>
+      <Checkbox
+        title="Accept privacy policy"
+        value={isPrivacyChecked}
+        onChange={setIsPrivacyChecked}
+        style={
+          isError
+            ? {
+                borderColor: "#ff0000",
+                borderWidth: 2,
+                borderRadius: 5,
+                padding: 5,
+              }
+            : {}
+        } // Pass the state setter to update the state
+      />
+      <Checkbox
+        title="Accept terms and conditions"
+        value={isTermsChecked}
+        onChange={setIsTermsChecked}
+        style={
+          isError
+            ? {
+                borderColor: "#ff0000",
+                borderWidth: 2,
+                borderRadius: 5,
+                padding: 5,
+              }
+            : {}
+        } // Pass the state setter to update the state
+      />
+      <ThemedButton
+        title={"Get Started"}
+        style={styles.button}
+        onPress={handleHomeButton}
+      />
+      <ThemedButton
+        title={"Privacy Policy"}
+        style={styles.button}
+        type="info"
+        onPress={() => {
+          router.push("/privacy");
+        }}
+      />
+      <ThemedButton
+        title={"Terms of Service"}
+        style={styles.button}
+        type="info"
+        onPress={() => {
+          router.push("/terms");
+        }}
+      />
+      <></>
+    </Screen>
   );
 };
 
+export default Index;
+
 const styles = StyleSheet.create({
-  gradientBackground: {
-    flex: 1,
-  },
-  screen: {
-    flex: 1,
-  },
-  contentContainer: {
-    flex: 1,
-    padding: 20,
-    justifyContent: 'center',
-  },
   title: {
-    fontSize: 28,
-    fontWeight: 'bold',
-    textAlign: 'center',
-    marginBottom: 10,
-    color: '#ffffff',
+    textAlign: "center",
   },
   subtitle: {
-    fontSize: 16,
-    textAlign: 'center',
-    marginBottom: 20,
-    color: '#e0e0e0',
-  },
-  sectionTitle: {
-    fontSize: 20,
-    fontWeight: 'bold',
-    marginBottom: 10,
-    color: '#ffffff',
-  },
-  featureContainer: {
-    backgroundColor: 'rgba(255, 255, 255, 0.1)',
-    borderRadius: 10,
-    padding: 15,
-    marginBottom: 20,
-  },
-  feature: {
-    fontSize: 16,
-    marginBottom: 5,
-    color: '#ffffff',
+    textAlign: "center",
   },
   longText: {
-    textAlign: 'center',
-    marginBottom: 20,
-    color: '#e0e0e0',
+    textAlign: "justify",
+    marginVertical: 20,
   },
-  agreementContainer: {
-    marginBottom: 20,
-  },
-  checkbox: {
-    marginBottom: 10,
-  },
-  errorCheckbox: {
-    marginBottom: 10,
-    borderColor: "#ff0000",
-    borderWidth: 2,
-    borderRadius: 5,
-    padding: 5,
-  },
-  primaryButton: {
-    backgroundColor: '#4CAF50',
-    paddingVertical: 12,
-    borderRadius: 25,
-    marginBottom: 15,
-  },
-  secondaryButtonsContainer: {
-    flexDirection: 'row',
-    justifyContent: 'space-between',
-  },
-  secondaryButton: {
-    flex: 1,
-    marginHorizontal: 5,
-    backgroundColor: 'rgba(255, 255, 255, 0.2)',
+  screen: {
+    marginTop: 50,
+    marginVertical: 50,
+    paddingVertical: 10,
   },
   loadingContainer: {
     flex: 1,
-    justifyContent: 'center',
-    alignItems: 'center',
+    justifyContent: "center",
+    alignItems: "center",
+  },
+  button: {
+    marginVertical: 5,
   },
 });
-
-export default Index;

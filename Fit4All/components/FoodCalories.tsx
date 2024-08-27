@@ -7,6 +7,8 @@ import { SurfaceView } from './SurfaceView';
 import ThemedButton from './ThemedButton';
 import { ThemedText } from './ThemedText';
 import { Product } from '@/types'
+import { Ionicons } from '@expo/vector-icons';
+import { green } from 'react-native-reanimated/lib/typescript/reanimated2/Colors';
 
 interface FoodCaloriesProps {
   selectedDate?: Date; // Optional prop
@@ -81,9 +83,13 @@ export default function FoodCalories({ selectedDate }: FoodCaloriesProps) {
         <ThemedText style={styles.headerText}>Food</ThemedText>
         <ThemedButton style={styles.button} title="+" type="primary" onPress={() => { router.push('/food/search'); }} />
       </View>
+      <View style={styles.row}>
+      <Ionicons name='nutrition' size={30} style={styles.icon}/>
+
       <ThemedText style={styles.text}>
-        🍏: {(Math.round(calories) / energyUnit).toFixed(0)} {energyUnit === 1 ? 'kJ' : 'kcal'}
+        : {(Math.round(calories) / energyUnit).toFixed(0)} {energyUnit === 1 ? 'kJ' : 'kcal'}
       </ThemedText>
+      </View>
     </SurfaceView>
   );
 }
@@ -120,4 +126,13 @@ const styles = StyleSheet.create({
     fontSize: 20,
     marginTop: 10,
   },
+  row: {
+    flex: 1,
+    flexDirection: 'row',
+    gap: 5,
+    alignItems: 'center'
+  }, 
+  icon :{
+    color: '#82bf92'
+  }
 });

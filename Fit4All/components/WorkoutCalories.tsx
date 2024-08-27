@@ -7,6 +7,7 @@ import { SurfaceView } from './SurfaceView';
 import ThemedButton from './ThemedButton';
 import { ThemedText } from './ThemedText';
 import { Workout } from '@/types';
+import { Ionicons } from '@expo/vector-icons';
 
 interface WorkoutCaloriesProps {
   selectedDate?: Date; // Make selectedDate optional
@@ -87,9 +88,13 @@ export function WorkoutCalories({ selectedDate }: WorkoutCaloriesProps) {
         <ThemedText style={styles.headerText}>Exercise</ThemedText>
         <ThemedButton style={styles.button} title="+" type="primary" onPress={() => { router.push('/workout/search'); }} />
       </View>
+      <View style={styles.row}>
+      <Ionicons name='flame' size={30} style={styles.icon}/>
+
       <ThemedText style={styles.text}>
-        🔥: {(Math.round(calories) / energyUnit).toFixed(0)} {energyUnit === 1 ? 'kJ' : 'kcal'}
+        : {(Math.round(calories) / energyUnit).toFixed(0)} {energyUnit === 1 ? 'kJ' : 'kcal'}
       </ThemedText>
+      </View>
     </SurfaceView>
   );
 }
@@ -122,6 +127,15 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     borderRadius: 50
   },
+  row: {
+    flex: 1,
+    flexDirection: 'row',
+    gap: 5,
+    alignItems: 'center'
+  }, 
+  icon :{
+    color: '#e67255'
+  }
 });
 
 export default WorkoutCalories;

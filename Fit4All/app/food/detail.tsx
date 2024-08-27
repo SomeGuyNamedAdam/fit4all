@@ -2,6 +2,7 @@ import ThemedButton from '@/components/ThemedButton';
 import { ThemedText } from '@/components/ThemedText';
 import ThemedTextInput from '@/components/ThemedTextInput';
 import { useThemeColor } from '@/hooks/useThemeColor';
+import { handleNumberInputChange } from '@/utils/inputHandler';
 import AsyncStorage from '@react-native-async-storage/async-storage';
 import { Stack, useRouter } from 'expo-router';
 import React, { useEffect, useState } from 'react';
@@ -73,7 +74,7 @@ const DetailScreen = () => {
   }, []);
 
   const saveToStorage = async () => {
-    if (amount === '' || parseInt(amount) <= 0) {
+    if (amount === '' || parseFloat(amount) <= 0) {
       Alert.alert('Insert proper value. Value must be higher than zero');
       return;
     }
@@ -131,7 +132,7 @@ const DetailScreen = () => {
       </ThemedText>
       <ThemedTextInput
         value={amount}
-        onChangeText={setAmount}
+        onChangeText={(text) => {handleNumberInputChange(text, setAmount )}}
         placeholder=""
         inputMode="numeric"
         label='Enter product amount (g)'
