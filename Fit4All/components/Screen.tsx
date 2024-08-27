@@ -27,7 +27,7 @@ const Screen: React.FC<ScreenProps> = ({ children, style, type = 'view', scrollP
 const styles = StyleSheet.create({
   container: {
     padding: 10,
-    marginTop: 30,
+    marginTop: 20,
     flex: 1
   },
 });

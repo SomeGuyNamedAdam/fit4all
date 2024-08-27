@@ -7,6 +7,7 @@ import { useFocusEffect } from '@react-navigation/native'
 import { router } from 'expo-router'
 import React, { useCallback, useState } from 'react'
 import { StyleSheet, View } from 'react-native'
+import Screen from '@/components/Screen'
 
 const workout = () => {
   const [selectedDate, setSelectedDate] = useState(new Date());
@@ -30,7 +31,7 @@ const workout = () => {
     }, [])
   );
   return (
-    <View style={{ flex: 1, padding: 10, marginTop: 30 }}>
+    <Screen type='scroll' style={{ flex: 1, padding: 10, marginTop: 30 }}>
       <ThemedText type='title'>Workout log</ThemedText>
       <WorkoutCalories selectedDate={selectedDate}/>
       <ThemedButton title='Add' style={styles.button} type='primary'onPress={() => {router.push(`/workout/search`)}} />
@@ -44,7 +45,7 @@ const workout = () => {
         />
       )}
       <WorkoutLog selectedDate={selectedDate}/>
-    </View>
+    </Screen>
   )
 }
 

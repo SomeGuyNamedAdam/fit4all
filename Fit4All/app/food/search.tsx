@@ -51,7 +51,7 @@ const SearchScreen = () => {
     const fetchCountry = async () => {
       try {
         const storedCountry = await AsyncStorage.getItem('userCountry')  
-        setCountry(storedCountry ? storedCountry : "")
+        setCountry(storedCountry ? ("en:" + storedCountry) : "")
       } catch (error) {
         console.error
       }

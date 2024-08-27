@@ -21,7 +21,7 @@ const about = () => {
       <ThemedText type='default'>Created by Adam Lenardt</ThemedText>
       <ThemedText type='title'>Terms of Service</ThemedText>
       <ThemedText type='subtitle' style={styles.subtitle}>1. Introduction</ThemedText>
-      <ThemedText style={styles.text}>{'\u00A0'.repeat(4)}Thank you for choosing [Your App Name]. We value your privacy and are committed to safeguarding your personal information. This Privacy Policy explains how we collect, use, and protect your data.</ThemedText>
+      <ThemedText style={styles.text}>{'\u00A0'.repeat(4)}Thank you for choosing Fit4All. We value your privacy and are committed to safeguarding your personal information. This Privacy Policy explains how we collect, use, and protect your data.</ThemedText>
       <ThemedText type='subtitle' style={styles.subtitle}>2. Data Collection</ThemedText>
       <ThemedText style={styles.text}>{'\u00A0'.repeat(4)}Our app collects and stores the following types of personal information, which you input yourself:</ThemedText>
       <View style={styles.listContainer}>

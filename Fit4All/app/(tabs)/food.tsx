@@ -33,7 +33,7 @@ export default function FoodScreen() {
   );
 
   return (
-    <Screen>
+    <Screen type='scroll'>
       <ThemedText type='title'>Food log</ThemedText>
       <FoodCalories selectedDate={selectedDate} />
       <NutritionWheel selectedDate={selectedDate} />

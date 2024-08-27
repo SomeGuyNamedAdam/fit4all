@@ -8,6 +8,8 @@ import { Stack, useRouter } from "expo-router";
 import React, { useState } from "react";
 import { Alert, StyleSheet, View } from "react-native";
 import { Product } from "@/types";
+import { ThemedView } from "@/components/ThemedView";
+import Screen from "@/components/Screen"
 
 
 const generateUniqueKey = (): string => {
@@ -82,90 +84,59 @@ const CreateScreen = () => {
       alert("Please fill out all fields");
     }
   };
-  // const handleInputChange = (
-  //   text: string,
-  //   setState: (value: string) => void,
-  //   intLength : number = 3,
-  //   decimalLength : number = 2,
-  // ) => {
-  //   // Replace commas with dots for consistency
-  //   let normalizedText = text.replace(/,/g, '.');
-  
-  //   // Remove any character that is not a digit or a dot
-  //   normalizedText = normalizedText.replace(/[^0-9.]/g, '');
-  
-  //   // Split the text into integer and decimal parts
-  //   const [integerPart, decimalPart] = normalizedText.split('.');
-  
-  //   // Limit the integer part to 3 digits
-  //   const limitedIntegerPart = integerPart.slice(0, intLength);
-  
-  //   // Limit the decimal part to 2 digits, if it exists
-  //   const limitedDecimalPart = decimalPart ? decimalPart.slice(0, decimalLength) : '';
-  
-  //   // Reassemble the text
-  //   let filteredText = limitedIntegerPart;
-  //   if (normalizedText.includes('.')) {
-  //     filteredText += '.' + limitedDecimalPart;
-  //   }
-  
-  //   // Update the state with the filtered text
-  //   setState(filteredText);
-  // };
-  
 
   return (
-    <View style={{ flex: 1, padding: 16 }}>
+    <Screen type='scroll' style={{ flex: 1, padding: 16 }}>
       <Stack.Screen
         options={{
-          headerTitle: "Add Product",
+          headerTitle: "Create Product",
           headerTintColor: textColor, // Use the dynamic theme-based color for header elements
           headerTitleStyle: {
             color: textColor, // Apply theme-based color to the header title
           },
         }}
       />
-      <ThemedText style={{ marginVertical: 8 }}>Product name: </ThemedText>
+      
       <ThemedTextInput
         value={productName}
         onChangeText={(text) => {
           setProductName(text);
           setIsNameValid(true); // Reset border color when typing
         }}
+        label="Product name: "
         style={[
           styles.input,
           isError.name ? styles.invalidInput : null, // Apply red border if name is invalid
         ]}
       />
-      <ThemedText style={{ marginVertical: 8 }}>Energy per 100g(g):</ThemedText>
       <ThemedTextInput
         value={energy}
         onChangeText={(text) => handleNumberInputChange(text, setEnergy)}
         inputMode="decimal"
         style={styles.input}
+        label="Energy per 100g:"
       />
-      <ThemedText style={{ marginVertical: 8 }}>Fat per 100g(g):</ThemedText>
       <ThemedTextInput
         value={fat}
         onChangeText={(text) => handleNumberInputChange(text, setFat)}
         inputMode="decimal"
         style={styles.input}
+        label="Fat per 100g:"
       />
-      <ThemedText style={{ marginVertical: 8 }}>Proteins per 100g(g):</ThemedText>
       <ThemedTextInput
         value={proteins}
         onChangeText={(text) => handleNumberInputChange(text, setProteins)}
         inputMode="decimal"
         style={styles.input}
+        label="Proteins per 100g:"
       />
-      <ThemedText style={{ marginVertical: 8 }}>Carbohydrates per 100g(g):</ThemedText>
       <ThemedTextInput
         value={carbohydrates}
         onChangeText={(text) => handleNumberInputChange(text, setCarbohydrates)}
         inputMode="decimal"
         style={styles.input}
+        label="Carbohydrates per 100g:"
       />
-      <ThemedText style={{ marginVertical: 8 }}>Enter product amount(g):</ThemedText>
       <ThemedTextInput
         value={amount}
         onChangeText={(text) => {
@@ -174,22 +145,21 @@ const CreateScreen = () => {
             name: isError.name,
             amount: false,
           });
+        
         }}
+        label="Product amount(g):"
         style={[
           styles.input,
           isError.amount ? styles.invalidInput : null, // Apply red border if name is invalid
         ]}
       />
       <ThemedButton title="Save" onPress={saveToStorage} />
-    </View>
+    </Screen>
   );
 };
 
 const styles = StyleSheet.create({
   input: {
-    borderWidth: 1,
-    padding: 8,
-    marginVertical: 8,
   },
   invalidInput: {
     borderColor: "red",

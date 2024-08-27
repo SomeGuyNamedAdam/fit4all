@@ -109,7 +109,7 @@ const DetailScreen = () => {
     <View style={{ flex: 1, padding: 16 }}>
       <Stack.Screen
         options={{
-          headerTitle: 'Add Exercise',
+          headerTitle: 'Add Product',
           headerTintColor: textColor, // Use the dynamic theme-based color for header elements
           headerTitleStyle: {
             color: textColor, // Apply theme-based color to the header title
@@ -132,9 +132,9 @@ const DetailScreen = () => {
       <ThemedTextInput
         value={amount}
         onChangeText={setAmount}
-        placeholder="Enter amount (g)"
+        placeholder=""
         inputMode="numeric"
-        style={{ borderWidth: 1, padding: 8, marginVertical: 16 }}
+        label='Enter product amount (g)'
       />
       <ThemedButton title="Save" onPress={saveToStorage} />
     </View>

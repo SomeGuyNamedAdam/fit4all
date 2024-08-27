@@ -3,6 +3,8 @@
  * There are many other ways to style your app. For example, [Nativewind](https://www.nativewind.dev/), [Tamagui](https://tamagui.dev/), [unistyles](https://reactnativeunistyles.vercel.app), etc.
  */
 
+import { TextInput } from "react-native-gesture-handler";
+
 const tintColorLight = '#0a7ea4';
 const tintColorDark = '#fff';
 
@@ -17,6 +19,7 @@ export const Colors = {
     onSurface: '#151718',
     onPrimary: '',
     onSecondary: '',
+    textInput: '',
     tint: tintColorLight,
     icon: '#687076',
     tabIconDefault: '#ff0000',
@@ -32,6 +35,7 @@ export const Colors = {
     surface: '#1d1d1d',
     onSurface: '#d9d9d9',
     text: '#ECEDEE',
+    textInput: '',
     tint: tintColorDark,
     icon: '#9BA1A6',
     tabIconDefault: '#00ff00',

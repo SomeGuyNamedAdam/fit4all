@@ -60,7 +60,7 @@ const styles = StyleSheet.create({
     borderWidth: 1,
   },
   picker: {
-    height: 50,
+    minHeight: 50,
     width: '100%',
   },
   label: {

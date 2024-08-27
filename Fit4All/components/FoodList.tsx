@@ -152,26 +152,27 @@ const FoodList: React.FC<FoodListProps> = ({ selectedDate, onDateChange }) => {
       {filteredFoods.length === 0 ? (
         <ThemedText>No food items added on this date.</ThemedText>
       ) : (
-        <FlatList
-          style={{ flex: 1 }}
-          data={filteredFoods}
-          keyExtractor={(_, index) => index.toString()}
-          renderItem={({ item }) => (
-            <View style={styles.itemContainer}>
+        <View style={{ flex: 1 }}>
+          {filteredFoods.map((item, index) => (
+            <View key={index.toString()} style={styles.itemContainer}>
               <TouchableOpacity onPress={() => handlePress(item)} style={styles.itemTouchable}>
-                <ThemedText style={styles.productName}>{item.product_name.charAt(0).toUpperCase() + item.product_name.slice(1)}</ThemedText>
-                <ThemedText style={styles.detailText}>Energy: {item.nutriments.energy_100g ? `${calculateTotalEnergy(item)} ${energyUnit === 1 ? 'kJ' : "kcal"}` : 'No data'}</ThemedText>
+                <ThemedText style={styles.productName}>
+                  {item.product_name.charAt(0).toUpperCase() + item.product_name.slice(1)}
+                </ThemedText>
+                <ThemedText style={styles.detailText}>
+                  Energy: {item.nutriments.energy_100g ? `${calculateTotalEnergy(item)} ${energyUnit === 1 ? 'kJ' : 'kcal'}` : 'No data'}
+                </ThemedText>
               </TouchableOpacity>
               <View style={styles.deleteButtonContainer}>
-                <ThemedButton title="-" onPress={() => handleDelete(item)} type='danger'/>
+                <ThemedButton title="-" onPress={() => handleDelete(item)} type='danger' />
               </View>
             </View>
-          )}
-        />
+          ))}
+        </View>
       )}
     </View>
   );
-};
+}
 
 const styles = StyleSheet.create({
   subtitle: {

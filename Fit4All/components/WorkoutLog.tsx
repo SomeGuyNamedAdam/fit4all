@@ -123,7 +123,17 @@ const WorkoutLog: React.FC<WorkoutLogProps> = ({ selectedDate }) => {
 
   // Reverse the filtered workouts array before passing it to the FlatList
   const filteredWorkouts = filterWorkoutsByDate(workoutLogs, currentDate).reverse();
-
+  function formatDuration(durationStr: string): string {
+    const duration = parseInt(durationStr, 10); // Convert the string to an integer representing minutes
+    const hours = Math.floor(duration / 60); // Calculate the number of hours
+    const minutes = duration % 60; // Calculate the remaining minutes
+  
+    const hoursDisplay = hours > 0 ? `${hours}hr ` : '';
+    const minutesDisplay = minutes > 0 ? `${minutes}min` : '';
+  
+    return hoursDisplay + minutesDisplay;
+  }
+  
   return (
     <View style={{ flex: 1, padding: 0 }}>
       <ThemedText type='subtitle' style={styles.subtitle}>-- Workout Log --</ThemedText>
@@ -134,16 +144,15 @@ const WorkoutLog: React.FC<WorkoutLogProps> = ({ selectedDate }) => {
         <ThemedText>No workout logs available for the selected date.</ThemedText>
         
       ) : (
-        <FlatList
-          style={{ flex: 1 }}
-          data={filteredWorkouts}
-          keyExtractor={(_, index) => index.toString()}
-          renderItem={({ item }) => (
-            <View style={styles.itemContainer}>
+        <View style={{ flex: 1 }}>
+          {filteredWorkouts.map((item, index) => (
+            <View key={index.toString()} style={styles.itemContainer}>
               <View style={styles.itemContent}>
                 <TouchableOpacity onPress={() => handlePress(item)} style={styles.itemTouchable}>
                   <ThemedText style={styles.activityText}>{item.activity.charAt(0).toUpperCase() + item.activity.slice(1)}</ThemedText>
-                  <ThemedText style={styles.detailText}>Duration: {item.duration} minutes</ThemedText>
+                  <ThemedText style={styles.detailText}>
+                    Duration: {formatDuration(item.duration)}
+                  </ThemedText>
                   <ThemedText style={styles.detailText}>Burned: {(item.caloriesBurned / energyUnit).toFixed(0)} {energyUnit === 1 ? "kJ" : "kcal"}</ThemedText>
                 </TouchableOpacity>
               </View>
@@ -151,8 +160,8 @@ const WorkoutLog: React.FC<WorkoutLogProps> = ({ selectedDate }) => {
                 <ThemedButton title="-" type="danger" onPress={() => handleDelete(item)} />
               </View>
             </View>
-          )}
-        />
+          ))}
+        </View>
       )}
     </View>
   );

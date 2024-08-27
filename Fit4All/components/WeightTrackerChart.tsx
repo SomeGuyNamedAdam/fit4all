@@ -114,7 +114,7 @@ const WeightTrackerChart: React.FC<WeightTrackerChartProps> = ({
     try {
       // Divide the input weight by the unit before storing
       const newWeightEntry: WeightData = {
-        value: parseFloat(newWeight) / weightUnit,
+        value: parseFloat((parseFloat(newWeight) / weightUnit).toFixed(2)),
         date: new Date()
       };
       let updatedWeights = noData ? [newWeightEntry] : [...data, newWeightEntry];
@@ -214,7 +214,7 @@ const WeightTrackerChart: React.FC<WeightTrackerChartProps> = ({
       <View style={styles.addWeightContainer}>
         <ThemedTextInput
           style={[styles.textInput, inputError && styles.inputError]}
-          placeholder="Enter weight"
+          placeholder={"Enter weight (" + (weightUnit === 1 ? "kg" : "lbs") +")"}
           keyboardType="numeric"
           value={newWeight}
           onChangeText={(text) => {handleNumberInputChange(text, setNewWeight)}}

@@ -73,25 +73,25 @@ export function NutritionWheel({ selectedDate }: NutritionWheelProps) {
         const newData = [
           {
             name: "Proteins",
-            value: nutrientTotals.proteins,
+            value: Math.round(nutrientTotals.proteins * 100) / 100,
             color: "#81b29a",
             legendFontColor: "#7f7f7f",
-            legendFontSize: 15
+            legendFontSize: 15,
           },
           {
             name: "Fat",
-            value: nutrientTotals.fat,
+            value: Math.round(nutrientTotals.fat * 100) / 100,
             color: "#e07a5f",
             legendFontColor: "#7f7f7f",
-            legendFontSize: 15
+            legendFontSize: 15,
           },
           {
             name: "Carbos",
-            value: nutrientTotals.carbohydrates,
+            value: Math.round(nutrientTotals.carbohydrates * 100) / 100,
             color: "#977390",
             legendFontColor: "#7f7f7f",
-            legendFontSize: 15
-          }
+            legendFontSize: 15,
+          },
         ];
 
         setChartData(newData);

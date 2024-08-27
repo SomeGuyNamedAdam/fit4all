@@ -67,7 +67,7 @@ const Search = () => {
         if (weights.length > 0) {
           const latestWeightEntry = weights.sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime())[0];
           
-          setWeight((latestWeightEntry.value * weightUnit).toString());
+          setWeight((latestWeightEntry.value * weightUnit).toFixed(2).toString());
         }
       }
     } catch (error) {
@@ -195,45 +195,58 @@ const Search = () => {
   }
 
   return (
-    <Screen style={styles.container}>
+    <Screen type="scroll" style={styles.container}>
       <Stack.Screen
         options={{
-          headerTitle: 'Add Exercise',
+          headerTitle: "Add Exercise",
           headerTintColor: textColor,
           headerTitleStyle: {
             color: textColor,
           },
         }}
       />
-      <ThemedText style={styles.label}>Select Category:</ThemedText>
       <ThemedPicker
         selectedValue={selectedCategory}
         onValueChange={(itemValue) => setSelectedCategory(itemValue as string)}
-        items={categories.map(category => ({ label: category, value: category }))}
+        items={categories.map((category) => ({
+          label: category.charAt(0).toUpperCase() + category.slice(1),
+          value: category,
+        }))}
         style={[styles.picker, isError.category ? styles.pickerError : null]}
-        placeholder='Choose a category'
+        placeholder="Choose a category"
+        label="Select category:"
       />
 
       {selectedCategory ? (
         <>
-          <ThemedText style={styles.label}>Select Activity:</ThemedText>
           <ThemedPicker
             selectedValue={selectedActivity}
-            onValueChange={(itemValue) => setSelectedActivity(itemValue as string)}
-            items={activities.map(activity => ({ label: activity.description, value: activity.description }))}
-            style={[styles.picker, isError.activity ? styles.pickerError : null]}
-            placeholder='Choose an activity'
+            onValueChange={(itemValue) =>
+              setSelectedActivity(itemValue as string)
+            }
+            items={activities.map((activity) => ({
+              label:
+                activity.description.charAt(0).toUpperCase() +
+                activity.description.slice(1),
+              value: activity.description,
+            }))}
+            style={[
+              styles.picker,
+              isError.activity ? styles.pickerError : null,
+            ]}
+            placeholder="Choose an activity"
+            label="Select activity:"
           />
         </>
       ) : null}
 
-      <ThemedText>Duration</ThemedText>
       <ThemedTextInput
         style={[styles.input, isError.hours ? styles.inputError : null]}
         placeholder="Hours"
         keyboardType="numeric"
         value={hours}
         onChangeText={handleTextChange(setHours)}
+        label="Hours: "
       />
 
       <ThemedTextInput
@@ -242,19 +255,23 @@ const Search = () => {
         keyboardType="numeric"
         value={minutes}
         onChangeText={handleTextChange(setMinutes)}
+        label="Minutes: "
       />
 
-      <ThemedText>Weight ({weightUnit === 1 ? 'kg' : 'lbs'})</ThemedText>
       <ThemedTextInput
         style={[styles.input, isError.weight ? styles.inputError : null]}
         placeholder="Weight (kg)"
         keyboardType="numeric"
         value={weight}
         onChangeText={handleTextChange(setWeight)}
+        label={"Weight (" + (weightUnit === 1 ? "kg" : "lbs") + ")"}
       />
 
       {caloriesBurned > 0 ? (
-        <ThemedText style={styles.result}>Burned: {(caloriesBurned / energyUnit).toFixed(0)} {energyUnit === 1 ? 'kj' : 'kcal'}</ThemedText>
+        <ThemedText style={styles.result}>
+          Burned: {(caloriesBurned / energyUnit).toFixed(0)}{" "}
+          {energyUnit === 1 ? "kj" : "kcal"}
+        </ThemedText>
       ) : null}
 
       <ThemedButton title="Save Workout" onPress={saveWorkout} />
@@ -274,11 +291,10 @@ const styles = StyleSheet.create({
     marginBottom: 10,
   },
   input: {
-    height: 40,
-    borderColor: '#ccc',
+    // height: 40,
     borderWidth: 1,
-    marginBottom: 20,
-    paddingHorizontal: 10,
+    // marginBottom: 20,
+    // paddingHorizontal: 10,
   },
   inputError: {
     borderColor: 'red',

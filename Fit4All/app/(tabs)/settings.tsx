@@ -6,7 +6,7 @@ import { handleInputChange } from "@/utils/inputHandler";
 import AsyncStorage from "@react-native-async-storage/async-storage";
 import { useRouter } from "expo-router";
 import React, { useEffect, useState } from "react";
-import { Alert, Appearance, StyleSheet, View } from "react-native";
+import { ActivityIndicator, Alert, Appearance, StyleSheet, View } from "react-native";
 import countryCodes from "@/assets/datasets/country_codes.json"; 
 import { CountryCodes } from "@/types";
 import { center, TextAlign } from "@shopify/react-native-skia";
@@ -22,6 +22,7 @@ const Settings = () => {
   const [energyUnit, setEnergyUnit] = useState("kcal");
   
   const [country, setCountry] = useState("");
+  const [loading, setLoading] = useState(true)
   const router = useRouter();
 
   // Load settings from AsyncStorage on component mount
@@ -46,13 +47,22 @@ const Settings = () => {
         }
         if (country !== null)  {
           setCountry(country)
+          console.log(country)
         }
       } catch (error) {
         console.error("Failed to load settings", error);
       }
     };
-
-    loadSettings();
+    const fetchData = async () => {
+      try {
+        await loadSettings();
+      } catch (error) {
+        console.error
+      } finally {
+        setLoading(false)
+      }
+    }
+    fetchData();
   }, []);
 
   // Save settings to AsyncStorage whenever they change
@@ -62,7 +72,8 @@ const Settings = () => {
         await AsyncStorage.setItem(THEME_KEY, isDarkMode ? "dark" : "light");
         await AsyncStorage.setItem(WEIGHT_UNIT_KEY, weightUnit);
         await AsyncStorage.setItem(ENERGY_UNIT_KEY, energyUnit);
-        await AsyncStorage.setItem('userCountry', country);
+        await AsyncStorage.setItem('userCountry', country.toLowerCase());
+        
       } catch (error) {
         console.error("Failed to save settings", error);
       }
@@ -135,6 +146,10 @@ const Settings = () => {
     });
   };
   const countryItems = getCountryItems("en");
+
+  if (loading) {
+    return <ActivityIndicator size="large" color="#0000ff" />;
+  }
 
   return (
     <Screen type="scroll">
