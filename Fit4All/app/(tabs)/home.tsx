@@ -15,7 +15,6 @@ export default function HomeScreen() {
   const logUserCountry = async () => {
     try {
       const userCountry = await AsyncStorage.getItem('userCountry');
-      console.log(userCountry); // This will log the actual value or null if not set
     } catch (error) {
       console.error("Error retrieving userCountry from AsyncStorage:", error);
     }

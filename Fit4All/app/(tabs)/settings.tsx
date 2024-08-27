@@ -47,7 +47,6 @@ const Settings = () => {
         }
         if (country !== null)  {
           setCountry(country)
-          console.log(country)
         }
       } catch (error) {
         console.error("Failed to load settings", error);

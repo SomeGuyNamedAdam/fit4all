@@ -43,7 +43,6 @@ const WeightTrackerChart: React.FC<WeightTrackerChartProps> = ({
           if (storedData) {
             const unit = storedData === 'lbs' ? 2.205 : 1;
             setWeightUnit(unit)
-            console.log(storedData)
           }
         } catch (error) {
           console.error
